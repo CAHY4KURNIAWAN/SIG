@@ -36,3 +36,30 @@ Jika anda melihat tampilan home MAPSERVER atau MS4W proses instalasi anda berhas
 		\end{figure}
 \end{enumerate}
 Sekian Proses instalasi Mapserver pada Windows
+
+\subsection{M4SW}
+MS4W dilengkapi dengan berbagai modul tambahan yang mempermudah kita membangun dan mengadministrasi sistem WebGIS. Antara lain : MapLab, KaMap, Chameleon, dan lain-lain. MapLab digunakan untuk mempermudah kita membuat file konfigurasi MapServer ( *.map ) pada aplikasi WebGIS yang kita kembangkan. Sedang Chameleon adalah framework yang menyediakan berbagai class dan method yang mempermudah kita membangun interface aplikasi WebGIS yang kita kembangkan, seperti menambahkan fitur zoom, pan, dsb. Informasi mengenai MS4W, MapLab dan Chameleon dapat diperoleh di situs www.maptools.org. Di situs tersebut di dalamnya sudah terdapat aplikasi Apache Web Server, PHP, Map Server dan berbagai library yang diperlukan untuk membangun sistem WebGIS. Terdapat dua versi MS4W yang dapat didownload, versi 1.x dan versi 2.x. Akan tetapi Apabila kita akan menggunakan framework chameleon, lebih bagus pilih MS4W versi 1.x (versi 1.6) karena Chameleon belum mendukung penuh PHP5 pada paket MS4W versi 2.x.
+
+\begin{table}[h]
+\caption{Paket dasar M4SW}
+\centering
+\begin{tabular}{cc}
+\hline
+1&Webserver Apache\\
+\hline
+2&PHP\\
+\hline
+3&MapServer CGI\\
+\hline
+4&PHP/Mapscript\\
+\hline
+5&Program utiliti (pustaka) GDAL dan OGR\\
+\hline
+6&Program utiliti MapServer (shp2img, legend, scalebar, sortshp, sym2img, shptree, dan tile4ms)\\
+\hline
+7&Ekstensi OGR/PHP\\
+\hline
+8&OWTChart\\
+\hline
+\end{tabular}
+\end{table}
