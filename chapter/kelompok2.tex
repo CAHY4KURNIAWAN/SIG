@@ -2,6 +2,7 @@
 % M. Amran Hakim Siregar 1154106
 % Yusri Rizal 1154072
 % Muhamad Rifan Zamaludin 1154088
+% Faisal Syarifuddin 1154104
 
 
 \section{Raster Layer dan Vektor Layer}
@@ -50,3 +51,19 @@ Pisang, Apel, dan lain-lain.
 \subsection{MapServer}
 MapServer adalah applikasi Open Source yang memungkinkan sebuah data peta diakses melalui web. Teknologi ini pertama kali dikembangkan oleh Universitas Minesotta Amerika Serikat. Hadirnya MapServer menjadikan pekerjaan membuat Peta Digital menjadi lebih mudah dan interaktif. Interaktif peta disini diartikan bahwa pengguna dapat dengan mudah melihat dan mengubah tampilan peta seperti zoom, rotate, dan menampilkan informasi (seperti menampilkan info jalan) dan analisis( seperti menentukan rute perjalanan) pada permukaan geografi. Diagram berikut menggambarkan bagaimana user berinteraksi dengan peta interaktif berbasis MapServer.
 Map Server bekerja secara berdampingan dengan applikasi web server. Web Server menerima request peta melalui MapServer. MapServer mengenerate request terhadap peta dan mengirimkannya ke web server. Fungsi utama dari MapServer adalah melakukan pembacaan data dari banyak sumber dan menempatkannya kedalam layer-layer secara bersamaan menjadi file graphic. Salah satu layernya bisa saja berupa gambar satelit. Setiap layer saling overlay satu dengan lainnya dan ditampilkan kedalam web browser.
+
+Mapserver menghasilkan keluaran berupa file graphic berdasarkan masukan yang diberikan oleh user. 
+Komponen kuncinya adalah MapServer executable yang terdiri dari CGI program, file peta, sumber data dan output gambar. 
+Seperti pada gambar dibawah ini semua komponen bekerja bersama-sama, 
+setelah user melakukan request/perminataan maka CGI akan mengakses file peta, 
+menggambarkan informasi yang didapat dari sumber data dan kembali menampilkannya pada peta.
+
+Secara sederhana MapServer menjalankan executable applikasi CGI pada web server yang secara teknis merupakan 
+proses stateless berbasis pada HTTP. Stateless adalah sebuah proses permintaan yang dilanjutkan dengan stop running. 
+Applikasi CGI menerima permintaan dari web server, kemudian proses dilakukan dan mengembalikan respon atau data ke web server.
+CGI bekerja sangat sederhana tidak diperlukan sebuah pemrograman untuk dapat menggunakannya. 
+Kita tinggal melakukan edit berdasarkan text base, konfigurasi runtime file, membuat halaman web, 
+dan menempatkannya bekerja pada web server. MapServer CGI executable bekerja sebagai perantara antara file peta 
+dengan program web server yang meminta peta. Permintaan di lewatkan dalam bentuk CGI parameter dari web server menuju MapServer.
+Gambar yang di buat oleh MapServer selanjutnya memberikan fed back ke web server dan selanjutnya menuju 
+user melalui web browser.
