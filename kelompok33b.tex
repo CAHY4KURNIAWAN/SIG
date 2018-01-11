@@ -1,6 +1,7 @@
 % Kelompok 3
 % Indah Rahmawati (1154070)
 % Boby Jamis Hari Sel (1154040)
+% Dhea Amelia (1154123)
 
 
 
@@ -18,6 +19,18 @@ Beberapa fungsi penting yang terdapat pada class,antara lain :
 \item	Untuk menggambarkan legend,dan disimpan ke dalam classs image object.
 \item	Untuk menggambar scalebar, dan disimpan ke dalam class image object.
 \item   fungsi yang digunakan untuk mengatur kelaskelas pada sebuah obyek(layer).
+
+\section{Definisi Symbols}
+    Definisi simbol dapat disertakan dalam file peta utama atau lebih umum lagi dalam file terpisah. Definisi simbol dalam file terpisah ditunjuk menggunakan kata kunci SYMBOLSET , sebagai bagian dari objek MAP . Pengaturan yang disarankan ini sangat ideal untuk menggunakan kembali definisi simbol pada beberapa aplikasi MapServer.
+
+\subsection {Jenis-jenis symbols}
+Ada 3 jenis simbol utama di MapServer: Marker, Garis dan Shadesets.
+
+- Simbol 0 selalu merupakan kasus yang merosot untuk kelas simbol tertentu. Untuk titik, simbol 0 adalah piksel tunggal, untuk simbol shading (yaitu poligon penuh) 0 adalah isian padat, dan untuk garis, simbol 0 adalah garis lebar satu piksel.
+- Definisi simbol tidak mengandung informasi warna, warna diatur dalam objek GAYA .
+- Gaya garis dipindahkan ke GAYA KELAS di MapServer versi 5. Mekanisme tidak lagi tersedia dalam SYMBOL .
+- Untuk versi MapServer <5 ada maksimal 64 simbol per file. Hal ini dapat diubah dengan mengedit mapsymbol.h dan mengubah nilai MS_MAXSYMBOLS di bagian atas file. Seperti pada MapServer 5.0 tidak ada batas simbol.
+- Informasi lebih lanjut dapat ditemukan dalam dokumen Konstruksi Simbol Kartrid .
 
 
 
