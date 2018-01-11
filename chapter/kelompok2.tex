@@ -69,3 +69,13 @@ Gambar yang di buat oleh MapServer selanjutnya memberikan fed back ke web server
 user melalui web browser.
 
 MapServer seperti sebuah mesin yang membutuhkan bahan bakar untuk dapat bekerja dan membutuhkan system pengiriman (delivery system) bahan bakar untuk mencapai mesin . Program MapServer perlu mengetahui layer peta yang akan digambar, bagaimana menggambarkannya, dan dimana lokasi sumber datanya. Data merupakan bahan bakarnya dan file peta atau .map.file merupakan system pengirimannya (delivery system). File Peta adalah text konfigurasi yang terdiri dari list setting yang digunakan untuk menggambar dan berinteraksi dengan peta. Informasi yang termuat didalamnya adalah layer data apa yang akan digambar, dimana focus geografis petanya, system proyeksi yang digunakan, format apa yang akan digunakan untuk menampilkan gambar, dan cara menentukan legenda dan skala pada peta.
+
+\subsection{About STYLE Objects}
+Sama seperti Anda menggunakan gaya paragraf dan karakter untuk memformat teks dengan cepat, Anda dapat menggunakan gaya objek untuk membuat grafik dan bingkai dengan cepat. Gaya objek termasuk pengaturan untuk stroke, warna, transparansi, bayangan drop, gaya paragraf, bungkus teks, dan banyak lagi. Anda dapat menetapkan efek transparansi yang berbeda untuk objek, isi, goresan, dan teks.
+
+Anda dapat menerapkan gaya objek ke objek, kelompok, dan bingkai (termasuk bingkai teks). Sebuah gaya dapat menghapus dan mengganti semua pengaturan objek atau hanya dapat mengganti pengaturan tertentu, sehingga pengaturan lainnya tidak berubah. Anda mengontrol pengaturan mana yang mempengaruhi gaya dengan memasukkan atau mengecualikan kategori pengaturan dalam definisi.
+
+Anda juga bisa menerapkan gaya objek ke bingkai grid. Secara default, setiap grid bingkai yang Anda buat menggunakan gaya objek [Kotak Dasar]. Anda bisa mengedit gaya [Grid Dasar] atau Anda bisa menerapkan gaya objek lain ke grid. Saat Anda membuat atau mengedit gaya objek untuk bingkai kotak, gunakan bagian Story Options untuk menentukan arah penulisan, tipe frame, dan kotak bernama.
+
+Saat membuat gaya, Anda mungkin menemukan beberapa gaya memiliki beberapa karakteristik yang sama. Alih-alih menetapkan karakteristik tersebut setiap kali Anda menentukan gaya berikutnya, Anda dapat mendasarkan satu gaya objek ke objek lainnya. Bila Anda mengubah gaya dasar, atribut bersama apa pun yang muncul dalam perubahan gaya "orang tua" pada gaya "anak" juga.
+------
