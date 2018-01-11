@@ -15,6 +15,23 @@ dan menyimpan data spasial dengan menggunakan struktur matriks atau piksel-pikse
 Setiap piksel atau sel ini memiliki atribut tersendiri, termasuk koordinatnya yang unik.
 Raster layer terdiri dari piksel (atau sel), dan setiap piksel memiliki nilai yang terkait. Menyederhanakan sedikit, foto digital adalah contoh dataset raster dimana setiap nilai piksel sesuai dengan warna tertentu. Dalam GIS, nilai piksel dapat mewakili elevasi di atas permukaan laut, atau konsentrasi kimiawi, atau curah hujan dan lain-lain. Intinya adalah bahwa semua data ini diwakili sebagai kotak sel (biasanya persegi). Perbedaan antara model elevasi digital (DEM) di GIS dan foto digital adalah bahwa DEM mencakup informasi tambahan yang menjelaskan di mana tepi gambar berada di dunia nyata, bersamaan dengan seberapa besar setiap sel berada di tanah. Ini berarti GIS Anda dapat memposisikan gambar raster Anda (DEM, hillshade, peta lereng dll) dengan benar relatif terhadap satu sama lain, dan ini memungkinkan Anda membangun peta Anda.
 
+\subsubsection{cara menambahkan Raster Layer}
+Deklarasi lapisan raster sederhana terlihat seperti ini. File DATA ditafsirkan relatif terhadap SHAPEPATH, sama seperti shapefile.
+
+\begin{verbatim}
+LAYER
+  NAME "JacksonvilleNC_CIB"
+  DATA "Jacksonville.tif"
+  TYPE RASTER
+  STATUS ON
+END
+\end{verbatim}
+
+Layer raster dapat memiliki informasi PROJECTION, METADATA, PROCESSING, MINSCALE, dan MAXSCALE. Tidak dapat memiliki informasi label, CONNECTION, CONNECTIONTYPE, atau FEATURE.
+
+\subsubsection{Classifying Rasters}
+
+
 
 \subsection{Vektor Layer}
 Data vektor adalah data yang diperoleh dalam bentuk koordinat titik yang menampilkan, 
