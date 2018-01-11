@@ -15,6 +15,15 @@ dan menyimpan data spasial dengan menggunakan struktur matriks atau piksel-pikse
 Setiap piksel atau sel ini memiliki atribut tersendiri, termasuk koordinatnya yang unik.
 Raster layer terdiri dari piksel (atau sel), dan setiap piksel memiliki nilai yang terkait. Menyederhanakan sedikit, foto digital adalah contoh dataset raster dimana setiap nilai piksel sesuai dengan warna tertentu. Dalam GIS, nilai piksel dapat mewakili elevasi di atas permukaan laut, atau konsentrasi kimiawi, atau curah hujan dan lain-lain. Intinya adalah bahwa semua data ini diwakili sebagai kotak sel (biasanya persegi). Perbedaan antara model elevasi digital (DEM) di GIS dan foto digital adalah bahwa DEM mencakup informasi tambahan yang menjelaskan di mana tepi gambar berada di dunia nyata, bersamaan dengan seberapa besar setiap sel berada di tanah. Ini berarti GIS Anda dapat memposisikan gambar raster Anda (DEM, hillshade, peta lereng dll) dengan benar relatif terhadap satu sama lain, dan ini memungkinkan Anda membangun peta Anda.
 
+Sementara struktur data raster sederhana, ini sangat berguna untuk berbagai aplikasi. Dalam GIS, penggunaan data raster termasuk dalam empat kategori utama:
+
+Raster sebagai basemaps
+Penggunaan data raster yang umum di GIS adalah sebagai tampilan latar belakang untuk lapisan fitur lainnya. Misalnya,
+orthophotographs yang ditampilkan di bawah lapisan lain memberi pengguna peta keyakinan bahwa lapisan peta selaras spasial 
+dan mewakili objek nyata, serta informasi tambahan. Tiga sumber utama raster basemaps adalah orthophotos dari fotografi udara,
+citra satelit, dan peta yang dipindai. Berikut adalah raster yang digunakan sebagai basemap untuk data jalan.
+
+
 \subsubsection{cara menambahkan Raster Layer}
 Deklarasi lapisan raster sederhana terlihat seperti ini. File DATA ditafsirkan relatif terhadap SHAPEPATH, sama seperti shapefile.
 
@@ -30,8 +39,6 @@ END
 Layer raster dapat memiliki informasi PROJECTION, METADATA, PROCESSING, MINSCALE, dan MAXSCALE. Tidak dapat memiliki informasi label, CONNECTION, CONNECTIONTYPE, atau FEATURE.
 
 \subsubsection{Classifying Rasters}
-
-
 
 \subsection{Vektor Layer}
 Data vektor adalah data yang diperoleh dalam bentuk koordinat titik yang menampilkan, 
@@ -86,6 +93,24 @@ Gambar yang di buat oleh MapServer selanjutnya memberikan fed back ke web server
 user melalui web browser.
 
 MapServer seperti sebuah mesin yang membutuhkan bahan bakar untuk dapat bekerja dan membutuhkan system pengiriman (delivery system) bahan bakar untuk mencapai mesin . Program MapServer perlu mengetahui layer peta yang akan digambar, bagaimana menggambarkannya, dan dimana lokasi sumber datanya. Data merupakan bahan bakarnya dan file peta atau .map.file merupakan system pengirimannya (delivery system). File Peta adalah text konfigurasi yang terdiri dari list setting yang digunakan untuk menggambar dan berinteraksi dengan peta. Informasi yang termuat didalamnya adalah layer data apa yang akan digambar, dimana focus geografis petanya, system proyeksi yang digunakan, format apa yang akan digunakan untuk menampilkan gambar, dan cara menentukan legenda dan skala pada peta.
+
+Contoh script dasar pemetaan dengan satu layer.
+MAP
+SIZE 600 300
+EXTENT -180 -90 180 90
+LAYER
+NAME countries
+TYPE POLYGON
+STATUS DEFAULT
+DATA countries.shp
+CLASS
+OUTLINECOLOR 100 100 100
+END
+END
+END
+
+Ketika request atau permintaan dating dari applikasi MapServer maka reguest tersebut mesti menyebutkan sepesifikasi 
+file peta yang diinginkan. Kemudian MapServer membuat petanya berdasarkan pada setting pada file peta yang diberikan tadi.
 
 \subsection{About STYLE Objects}
 Sama seperti Anda menggunakan gaya paragraf dan karakter untuk memformat teks dengan cepat, Anda dapat menggunakan gaya objek untuk membuat grafik dan bingkai dengan cepat. Gaya objek termasuk pengaturan untuk stroke, warna, transparansi, bayangan drop, gaya paragraf, bungkus teks, dan banyak lagi. Anda dapat menetapkan efek transparansi yang berbeda untuk objek, isi, goresan, dan teks.
