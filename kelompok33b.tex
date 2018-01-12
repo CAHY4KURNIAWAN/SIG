@@ -21,7 +21,7 @@ Beberapa fungsi penting yang terdapat pada class,antara lain :
 \item   fungsi yang digunakan untuk mengatur kelaskelas pada sebuah obyek(layer).
 
 \section{Pendahuluan Symbols}
-    Peta adalah representasi abstrak yang memanfaatkan simbol titik, garis dan area. Bertin (1974) menciptakan skema simbol yang jelas dan logis dimana simbol dapat bervariasi mengacu pada variabel grafis. Variabel grafis berikut dapat digunakan di MapServer: FORMULIR, UKURAN, POLA, WARNA DAN LIGHTNESS. Simbol titik dan area serta font teks (ttf) juga dapat ditampilkan dengan bingkai yang kita sebut GARIS.
+    Peta adalah representasi abstrak yang memanfaatkan simbol titik, garis dan area. Bertin (1974) menciptakan skema simbol yang jelas dan logis dimana simbol dapat bervariasi mengacu pada variabel grafis. Variabel grafis berikut dapat digunakan di MapServer: FORMULIR, UKURAN, POLA, WARNA DAN LIGHTNESS. Simbol titik dan area serta font teks (ttf) juga dapat ditampilkan dengan bingkai yang kita sebut GARIS. Simbol tidak mengandung informasi warna, warna diatur dalam objek style. Jika STYLE menggunakan simbol ini tidak mengandung ukuran yang eksplisit, maka ukuran simbol default akan didasarkan pada kisaran nilai "y" pada koordinat titik. misalnya jika koordinat y dari titik-titik di kisaran simbol dari 0 sampai 5, maka ukuran default untuk simbol ini akan diasumsikan 5.
     
 \subsection {Simbol Scaling}
 Ada dua cara yang berbeda untuk menangani ukuran layar simbol dan elemen kartografi di peta dengan skala yang berbeda. Ukuran elemen kartografi diatur sebagai berikut :
