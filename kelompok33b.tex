@@ -20,17 +20,23 @@ Beberapa fungsi penting yang terdapat pada class,antara lain :
 \item	Untuk menggambar scalebar, dan disimpan ke dalam class image object.
 \item   fungsi yang digunakan untuk mengatur kelaskelas pada sebuah obyek(layer).
 
-\section{Definisi Symbols}
+\section{Pendahuluan Symbols}
+    Peta adalah representasi abstrak yang memanfaatkan simbol titik, garis dan area. Bertin (1974) menciptakan skema simbol yang jelas dan logis dimana simbol dapat bervariasi mengacu pada variabel grafis. Variabel grafis berikut dapat digunakan di MapServer: FORMULIR, UKURAN, POLA, WARNA DAN LIGHTNESS. Simbol titik dan area serta font teks (ttf) juga dapat ditampilkan dengan bingkai yang kita sebut GARIS.
+    
+\subsection {Simbol Scaling}
+Ada dua cara yang berbeda untuk menangani ukuran layar simbol dan elemen kartografi di peta dengan skala yang berbeda. Ukuran elemen kartografi diatur sebagai berikut :
+\begin{enumerate}
+\item Jika ukurannya diatur dalam unit dunia nyata (misalnya meter), simbol akan menyusut dan tumbuh sesuai skala tampilan peta.
+\item Jika ukurannya diatur dalam piksel layar, simbol terlihat sama pada semua skala.
+
+Perilaku default MapServer adalah menerapkan tipe layar "layar piksel" untuk menampilkan elemen kartografi.
+
+\subsection {Definisi Symbols}
     Definisi simbol dapat disertakan dalam file peta utama atau lebih umum lagi dalam file terpisah. Definisi simbol dalam file terpisah ditunjuk menggunakan kata kunci SYMBOLSET , sebagai bagian dari objek MAP . Pengaturan yang disarankan ini sangat ideal untuk menggunakan kembali definisi simbol pada beberapa aplikasi MapServer.
 
 \subsection {Jenis-jenis symbols}
-Ada 3 jenis simbol utama di MapServer: Marker, Garis dan Shadesets.
-
-- Simbol 0 selalu merupakan kasus yang merosot untuk kelas simbol tertentu. Untuk titik, simbol 0 adalah piksel tunggal, untuk simbol shading (yaitu poligon penuh) 0 adalah isian padat, dan untuk garis, simbol 0 adalah garis lebar satu piksel.
-- Definisi simbol tidak mengandung informasi warna, warna diatur dalam objek GAYA .
-- Gaya garis dipindahkan ke GAYA KELAS di MapServer versi 5. Mekanisme tidak lagi tersedia dalam SYMBOL .
-- Untuk versi MapServer <5 ada maksimal 64 simbol per file. Hal ini dapat diubah dengan mengedit mapsymbol.h dan mengubah nilai MS_MAXSYMBOLS di bagian atas file. Seperti pada MapServer 5.0 tidak ada batas simbol.
-- Informasi lebih lanjut dapat ditemukan dalam dokumen Konstruksi Simbol Kartrid .
-
-
-
+Ada 3 jenis simbol utama di MapServer: 
+\begin{enumerate}
+\item Marker
+\item Garis 
+\item Shadesets.
