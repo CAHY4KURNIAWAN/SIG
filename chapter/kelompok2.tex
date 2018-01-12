@@ -39,6 +39,29 @@ END
 Layer raster dapat memiliki informasi PROJECTION, METADATA, PROCESSING, MINSCALE, dan MAXSCALE. Tidak dapat memiliki informasi label, CONNECTION, CONNECTIONTYPE, atau FEATURE.
 
 \subsubsection{Classifying Rasters}
+Layer Raster dapat diklasifikasikan dengan cara yang mirip dengan vektor, dengan beberapa pengecualian.
+
+Tidak perlu menentukan CLASSITEM. Nilai piksel mentah itu sendiri ("[pixel]") dan, untuk gambar yang diberi palet, warna merah, hijau dan biru yang dikaitkan dengan nilai piksel itu ("[merah]", "[hijau]" dan "[biru]") tersedia untuk digunakan dalam klasifikasi. Bila digunakan dalam ekspresi yang dievaluasi, kata kunci pixel, merah, hijau dan biru harus dalam huruf kecil.
+
+\begin{verbatim}
+LAYER
+  NAME "JacksonvilleNC_CIB"
+  DATA "Jacksonville.tif"
+  TYPE RASTER
+  STATUS ON
+  CLASSITEM "[pixel]"
+  # class using simple string comparison, equivalent to ([pixel] = 0)
+  CLASS
+    EXPRESSION "0"
+    STYLE
+      COLOR 0 0 0
+    END
+  END
+  # class using an EXPRESSION using only [pixel].
+  CLASS
+    EXPRESSION ([pixel] >= 64 AND [pixel] < 128)
+    STYLE
+
 
 \subsection{Vektor Layer}
 Data vektor adalah data yang diperoleh dalam bentuk koordinat titik yang menampilkan, 
