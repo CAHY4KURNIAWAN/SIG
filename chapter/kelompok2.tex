@@ -70,6 +70,26 @@ LAYER
   CLASS
     EXPRESSION ([pixel] >= 64 AND [pixel] < 128)
     STYLE
+    COLOR 255 0 0
+    END
+  END
+  # class using the red/green/blue values from the palette
+  CLASS
+    NAME "near white"
+    EXPRESSION ([red] > 200 AND [green] > 200 AND [blue] > 200)
+    STYLE
+      COLOR 0 255 0
+    END
+  END
+  # Class using a regular expression to capture only pixel values ending in 1
+  CLASS
+    EXPRESSION /*1/
+    STYLE
+      COLOR 0 0 255
+    END
+  END
+END
+\end{verbatim}
 
 
 \subsection{Vektor Layer}
