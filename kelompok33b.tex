@@ -38,6 +38,15 @@ Ada dua cara yang berbeda untuk menangani ukuran layar simbol dan elemen kartogr
 
 Perilaku default MapServer adalah menerapkan tipe layar "layar piksel" untuk menampilkan elemen kartografi.
 
+\subsection {Spesifikasi MapServer dan simbol}
+Dalam aplikasi MapServer, parameter SYMBOL diatur dalam file peta sebagai berikut:
+\begin{enumerate}
+\item Setiap LAPIS memiliki parameter TYPE yang mendefinisikan tipe geometri (titik, garis atau poligon). Simbol diberikan pada titik, sepanjang garis atau area yang sesuai.
+\item Simbol dasar didefinisikan dalam elemen SYMBOL , dengan menggunakan parameter TYPE , POINTS , IMAGE , FILLED , ANCHORPOINT dan lainnya (elemen SYMBOL dapat dikumpulkan dalam file simbol terpisah untuk digunakan kembali).
+\item Warna, ringan, ukuran dan garis besar didefinisikan di dalam bagian GAYA dari bagian KELAS menggunakan parameter COLOR , SIZE , WIDTH dan OUTLINECOLOR .
+\item Pola untuk garis styling dan poligon didefinisikan pada bagian GAYA dengan GAP dan POLA .
+\item Beberapa elemen dasar dapat dikombinasikan untuk mencapai tanda tangan yang kompleks dengan menggunakan beberapa STYLE s dalam satu KELAS .
+
 \subsection {Definisi Symbols}
     Definisi simbol dapat disertakan dalam file peta utama atau lebih umum lagi dalam file terpisah. Definisi simbol dalam file terpisah ditunjuk menggunakan kata kunci SYMBOLSET , sebagai bagian dari objek MAP . Pengaturan yang disarankan ini sangat ideal untuk menggunakan kembali definisi simbol pada beberapa aplikasi MapServer.
 
