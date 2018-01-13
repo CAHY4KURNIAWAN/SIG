@@ -6,7 +6,7 @@
 
 
 \section{Pendahuluan Mapfile}
-    Map  File  merupakan  sebuah  konfigurasi  data  yang terstruktur  yang  digunakan  pada  MapServer.  Map  File mendefinisikan  area-area  pada  peta  dan  juga  menentukan input-an dan output-an kepada program MapServer. Selain itu Map File juga berfungsi untuk mendefinisikan lapisan layer yang digunakan pada MapServer yang meliputi data atribut, proyeksi peta, dan simbol-simbol. Map File harus memiliki format .Map untuk dapat diidentifikasi oleh MapServer.MapScript digunakan sebagai interface untuk class-class yang terdapat di MapServer.Secara garis besar,peta tersusun dari beberapa layer.Layer tersusun dari bentuk-bentuk yang polygon,garis, atau titik yang disebut dengan Shape.Class-class yang terdapat di MapServer melingkupi manipulasi untuk Peta,Layer,dan Shape.Class-class didalam MapServer yang sering digunakan untuk mengembangkan Web GIS.
+    Map  File  merupakan  sebuah  konfigurasi  data  yang terstruktur  yang  digunakan  pada  MapServer.  Map  File mendefinisikan  area-area  pada  peta  dan  juga  menentukan input-an dan output-an kepada program MapServer. Selain itu Map File juga berfungsi untuk mendefinisikan lapisan layer yang digunakan pada MapServer yang meliputi data atribut, proyeksi peta, dan simbol-simbol. Map File harus memiliki format .Map untuk dapat diidentifikasi oleh MapServer.MapScript yang digunakan sebagai interface untuk class-class yang terdapat di MapServer.Secara garis besar,peta tersusun dari beberapa layer.Layer tersusun dari bentuk-bentuk yang polygon,garis, atau titik yang disebut dengan Shape.Class-class yang terdapat di MapServer melingkupi manipulasi untuk Peta,Layer,dan Shape.Class-class didalam MapServer yang sering digunakan untuk mengembangkan Web GIS.Struktur map file yang digunakan berisi konfigurasi dari peta yang akan ditampilkan isinya memuat beberapa bagian penting yang menjadi kelas utama untuk diproses,bagian-bagian ini disebut dengan parameter yang nantinya akan diproses oleh map script obyek untuk penanganan obyek yang akan disajikan dalam sebuah website.
 
 \section{Pengertian Class}
     Class merupakan sesuatu yang berhubungan dengan MapFile atau secara tidak langsung berhubungan dengan data peta.Class ini juga sebagai class utama di MapScript untuk memproses dan menyimpan data peta ke file gambar.
@@ -48,7 +48,7 @@ Dalam aplikasi MapServer, parameter SYMBOL diatur dalam file peta sebagai beriku
 \item Beberapa elemen dasar dapat dikombinasikan untuk mencapai tanda tangan yang kompleks dengan menggunakan beberapa STYLE s dalam satu KELAS .
 
 \subsection {Definisi Symbols}
-    Definisi simbol dapat disertakan dalam file peta utama atau lebih umum lagi dalam file terpisah. Definisi simbol dalam file terpisah ditunjuk menggunakan kata kunci SYMBOLSET , sebagai bagian dari objek MAP . Pengaturan yang disarankan ini sangat ideal untuk menggunakan kembali definisi simbol pada beberapa aplikasi MapServer.
+    simbol dapat disertakan dalam file peta utama atau lebih umum lagi dalam file terpisah. Dalam simbol terdapat file terpisah ditunjuk menggunakan kata kunci SYMBOLSET , sebagai bagian dari objek MAP . Pengaturan yang disarankan ini sangat ideal untuk menggunakan kembali definisi simbol pada beberapa aplikasi MapServer.Simbol digunakan untuk bekerja dengan data peta lebih detail terutama untuk menangani penggunaan obyek simbol pada peta.
 
 \subsection {Jenis-jenis symbols}
 Ada 3 jenis simbol utama di MapServer: 
@@ -58,8 +58,4 @@ Ada 3 jenis simbol utama di MapServer:
 \item Shadesets.
 
 \section {Pengetian Label}
-Label merupakan class yang dapat mengatur label-label yang akan tampil pada peta.
-
-\subsection {Memberi Label}
-    Untuk melengkapi informasi pada peta perlu diberikan berbagai macam keterangan-keterangan. Tambahan informasi tersebut
-berupa atribut peta yang tersedia pada template seperti nama pembuat, tahun pembuatan, nama-nama tempat pada dan di sektar lokasi peta, dan lain-lain.
+Label merupakan class yang dapat mengatur label-label yang akan tampil pada peta.Untuk melengkapi informasi pada peta,label perlu diberikan berbagai macam keterangan-keterangan. Tambahan informasi tersebut berupa atribut peta yang tersedia pada template seperti nama pembuat, tahun pembuatan, nama-nama tempat pada dan di sektar lokasi peta, dan lain-lain.Label juga dapat digunakan untuk membersihkan memori yang dialokasikan sebagai cache label dari peta yang akan ditampilkan.
