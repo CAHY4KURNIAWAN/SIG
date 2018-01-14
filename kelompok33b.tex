@@ -9,7 +9,7 @@
     Map  File  merupakan  sebuah  konfigurasi  data  yang terstruktur  yang  digunakan  pada  MapServer.  Map  File mendefinisikan  area-area  pada  peta  dan  juga  menentukan input-an dan output-an kepada program MapServer. Selain itu Map File juga berfungsi untuk mendefinisikan lapisan layer yang digunakan pada MapServer yang meliputi data atribut, proyeksi peta, dan simbol-simbol. Map File harus memiliki format .Map untuk dapat diidentifikasi oleh MapServer.MapScript yang digunakan sebagai interface untuk class-class yang terdapat di MapServer.Secara garis besar,peta tersusun dari beberapa layer.Layer tersusun dari bentuk-bentuk yang polygon,garis, atau titik yang disebut dengan Shape.Class-class yang terdapat di MapServer melingkupi manipulasi untuk Peta,Layer,dan Shape.Class-class didalam MapServer yang sering digunakan untuk mengembangkan Web GIS.Struktur map file yang digunakan berisi konfigurasi dari peta yang akan ditampilkan isinya memuat beberapa bagian penting yang menjadi kelas utama untuk diproses,bagian-bagian ini disebut dengan parameter yang nantinya akan diproses oleh map script obyek untuk penanganan obyek yang akan disajikan dalam sebuah website.
 
 \section{Pengertian Class}
-    Class merupakan sesuatu yang berhubungan dengan MapFile atau secara tidak langsung berhubungan dengan data peta.Class ini juga sebagai class utama di MapScript untuk memproses dan menyimpan data peta ke file gambar.
+    Class merupakan sesuatu yang berhubungan dengan MapFile atau secara tidak langsung berhubungan dengan data peta.Class ini juga sebagai class utama di MapScript untuk memproses dan menyimpan data peta ke file gambar. 
     
 \subsection {Fungsi- Fungsi Class}
 Beberapa fungsi penting yang terdapat pada class,antara lain :
@@ -26,6 +26,8 @@ Beberapa fungsi penting yang terdapat pada class,antara lain :
 \item Fungs GetShape untuk mengambil sebuah shape yang ada pada layer.Disimpan dalam shapeObj class.
 \item AddFeature untuk menambah layer dengan sebuah shape baru.
 
+\section{Class Object}
+    semua fitur dalam seperangkat data spasial yang diberikan dalam lapisan harus memiliki tipe geometrika yang sama. Namun, tidak setiap titik, garis, atau poligon dalam kumpulan data perlu memiliki makna yang sama dalam arti kartografi sehingga peta harus membedakan jalan dari jalur sepeda untuk menghindari kebingungan (mungkin bencana), misalnya.
 
 \section {Pendahuluan Symbols}
     Peta adalah representasi abstrak yang memanfaatkan simbol titik, garis dan area. Bertin (1974) menciptakan skema simbol yang jelas dan logis dimana simbol dapat bervariasi mengacu pada variabel grafis. Variabel grafis berikut dapat digunakan di MapServer: FORMULIR, UKURAN, POLA, WARNA DAN LIGHTNESS. Simbol titik dan area serta font teks (ttf) juga dapat ditampilkan dengan bingkai yang kita sebut GARIS. Simbol tidak mengandung informasi warna, warna diatur dalam objek style. Jika STYLE menggunakan simbol ini tidak mengandung ukuran yang eksplisit, maka ukuran simbol default akan didasarkan pada kisaran nilai "y" pada koordinat titik. misalnya jika koordinat y dari titik-titik di kisaran simbol dari 0 sampai 5, maka ukuran default untuk simbol ini akan diasumsikan 5.
