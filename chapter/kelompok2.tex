@@ -112,6 +112,35 @@ titik-titik pada dataset vektor tidak boleh secara teratur spasi.
 Bidang vektor digunakan misalnya di meteorologi untuk menyimpan / menampilkan arah angin dan magnitude-nya.
 Sumbernya adalah dua band data raster, band pertama mewakili komponen U dari vektor, dan pita kedua komponen V. Dengan menggunakan nilai u, v pada lokasi tertentu, kita dapat menghitung rotasi dan besarnya dan menggunakannya untuk menggambar anak panah dengan ukuran yang sebanding dengan magnitude dan menunjuk ke arah fenomena (angin, arus, dll.)
 
+\subsection{Menampilkan Map Bandung}
+\begin{verbatim}
+MAP  
+name "bandung"  
+status on  
+extent 392000 9094000 483500 9166500  
+imagetype png  
+size 800 600  
+shapepath "../data"  
+imagecolor 255 200 34      
+
+WEB   
+imagepath "/tmp/ms_tmp/"   
+imageurl "/ms_tmp/"  END 
+ 
+ LAYER   
+name "bandung"   
+data "bandung_indonesia_osm_polygon"   
+status default   
+type polygon 
+
+CLASS    
+color 123 34 56    
+outlinecolor 255 2 3      
+END    
+END 
+END
+\end{verbatim}
+
 
 \subsection{Class}
 Class adalah prototype, atau blueprint, atau rancangan yang mendefinisikan variable dan method-methode pada seluruh objek tertentu. 
