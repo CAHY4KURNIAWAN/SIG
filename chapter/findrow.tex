@@ -20,13 +20,16 @@ Shapefiles awalnya dikembangkan oleh Environmental Systems Research Institute (E
 	\centerline{\includegraphics[width=1\textwidth]{figures/esri.JPG}}
 	\caption{ESRI.}
 	\label{esri}
-	\end{figure}dan merupakan format data geospasial untuk perangkat lunak sistem informasi geografis , seperti ESRI ArcGIS dan Quantum GIS\cite{halchuk2014fifth}.
+	\end{figure}
+	dan merupakan format data geospasial untuk perangkat lunak sistem informasi geografis , seperti ESRI ArcGIS dan Quantum GIS.
 	Format shapefile spasial menggambarkan geometri sebagai fitur titik, polyline, atau poligon
 
 Shapefile adalah pengelompokan beberapa file untuk mewakili aspek geodata yang berbeda:
-\item .shp: bentuk format; geometri fitur itu sendiri.
-\item .shx: bentuk format indeks; indeks posisi geometri fitur untuk memungkinkan pencarian cepat.
-\item .dbf: format atribut; atribut columnar untuk setiap bentuk, dalam format dBase IV.
+\begin{enumerate}
+	\item .shp: bentuk format; geometri fitur itu sendiri.
+	\item .shx: bentuk format indeks; indeks posisi geometri fitur untuk memungkinkan pencarian cepat.
+	\item .dbf: format atribut; atribut columnar untuk setiap bentuk, dalam format dBase IV.
+\end{enumerate}
 Atribut fitur dapat diperiksa di perangkat lunak SIG, atau dengan membuka berkas .dbf di Microsoft Excel, misalnya. Ada juga beberapa file pilihan dalam format shapefile. Yang paling penting adalah file .prj yang menggambarkan sistem koordinat dan informasi proyeksi yang digunakan. Shapefiles yang dihasilkan untuk model bahaya NBCC2015 ditentukan dengan proyeksi WGS84
 
 \subsection{basic usage}
@@ -77,9 +80,11 @@ Lalu masuk ke python
 
 Retrive data berfungsi untuk melihat isi data Geospasial berupa data vektor yaitu shapefile shp
 File yang dibutuhkan:
-\item Ship : koordinat/titik
-\item      Dbf : tabel/database
-\item   Shx : index data
+\begin{enumerate}
+	\item Ship : koordinat/titik
+	\item      Dbf : tabel/database
+	\item   Shx : index data
+\begin{enumerate}
 Ada 2 cara untuk membukanya:
 \subsection QGIS
 Dengan cara klik kanan view data tetapi buka terlebih dahulu datanya dengan cara drag and drop
