@@ -1,0 +1,90 @@
+%kelompok 4 D4 TI-2D
+%Ayu Permata Sari        1154022
+%Librantara Erlangga     1154071
+%Martin Luter Zega       1154120
+%Putri Aulia Ramadhanie  1154096
+%Ryan Hafizh Herdiana    1154067
+%Copyright (c) 2017 Copyright Holder All Rights Reserved.
+
+\section{Pyshp}
+Shapefile adalah file yang berisi domain map dataset dan dapat dibuka dengan aplikasi-aplikasi tertentu yang memiliki fitur GIS didalamnya.
+Python adalah bahasa pemrograman yang dapat digunakan untuk membuka shapefile tersebut.
+Pyshp adalah library python yang berfungsi agar bisa membaca shapefile, salah satunya format (.shp).
+Pip adalah Package Management System yang berfungsi untuk meng-install dan me-manage paket software yang ada didalam Python.
+Metode yang saya lakukan diatas adalah menghitung jumlah shape yang tersedia didalam file shapefile tersebut.
+
+\subsection{ESRI Shapefile}
+\ref{esri}
+	\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/esri.JPG}}
+	\caption{ESRI.}
+	\label{esri}
+	\end{figure}
+
+Shapefiles awalnya dikembangkan oleh Environmental Systems Research Institute (ESRI, 1998)\ref{esri} dan merupakan format data geospasial untuk perangkat lunak sistem informasi geografis (SIG), seperti ESRI ArcGIS dan Quantum GIS.
+Format shapefile spasial menggambarkan geometri sebagai fitur 'titik', 'polyline', atau 'poligon' (OpenStreetMap, 2013) \cite{halchuk2014fifth}.
+
+Shapefile adalah pengelompokan beberapa file untuk mewakili aspek geodata yang berbeda (OpenStreetMap, 2013):
+.shp: bentuk format; geometri fitur itu sendiri.
+.shx: bentuk format indeks; indeks posisi geometri fitur untuk memungkinkan pencarian cepat.
+.dbf: format atribut; atribut columnar untuk setiap bentuk, dalam format dBase IV.
+Atribut fitur dapat diperiksa di perangkat lunak SIG, atau dengan membuka berkas .dbf di Microsoft Excel, misalnya. Ada juga beberapa file pilihan dalam format shapefile. Yang paling penting adalah file .prj yang menggambarkan sistem koordinat dan informasi proyeksi yang digunakan. Shapefiles yang dihasilkan untuk model bahaya NBCC2015 ditentukan dengan proyeksi WGS84
+
+\subsection{basic usage}
+berikut ini adalah basic penggunaan module pyshp di python
+
+Membuat file pada pyshp
+  \begin{verbatim}
+  import shapefile
+  a = shapefile.Writer(shapeType=1)
+  a.field('nama','C','40')
+  a.field('alamat','C','255')
+  a.save('namafile.shp')
+  \end{verbatim}
+
+Mengedit atau Menambah record
+\begin{verbatim}
+  import shapefile
+  a = shapefile.Editor(shapefile='namafile.shp')
+  a.record('politeknis pos','jl.sarijadi')
+  a.point(-6.8731953,107,5737873,0,0)
+  a.save('namafile')
+\end{verbatim}
+
+Menghapus record
+\begin{verbatim}
+  import shapefile
+  a = shapefile.Editor('namafile.shp')
+  a.shape(0) //masukan data ke berapa //karena array jadi dimulai dari 0
+  a.delete(0)
+  a.save('namafile')
+\end{verbatim}
+
+Membaca record
+\begin{verbatim}
+  import shapefile
+  a = shapefile.Reader('namafile.shp')
+  a.records() //menampilkan semua record
+  a.record(0) //spesifik record
+\end{verbatim}
+
+\subsection
+Cara Menghitung jumlah record dari File .shp menggunakan python
+Install Python terlebih dahulu
+Install PIP di python
+Buka cmd lalu ketik: Python –m pip install pyshp ,lalu enter
+Kemudian upgrade pip dengan mengetikkan di cmd: Python –m pip install - -upgrade pip ,lalu enter
+Lalu masuk ke python
+Ketikkan script berikut: import shapefile ,klik enter f = shapefile.Reader("lokasi file .shp") ,klik enter shapes = f.shapes() ,klik enter print len (shapes)
+Lalu klik enter,maka akan keluar hasil nya,disini kita menghitung jumlah record yang ada di dalam file .shp Membuka file shapefile juga dapat kita lakukan dengan membuat file .py(python),dimana didalam file .py berisikan script untuk membuka file .shp sama seperti script di atas. Penutup: Kesimpulan: Dengan script diatas kita dapat mengetahui jumlah record yang ada pada file shp yang kita buka Saran: Sebaiknya langsung dipraktekkan dan dipahami, atau bisa dibandingkan dengan membuka file shp tersebut menggunakan QGIS.
+
+Retrive data berfungsi untuk melihat isi data Geospasial berupa data vektor yaitu shapefile(.shp)
+File yang dibutuhkan:
+1.      Ship : koordinat/titik
+2.      Dbf : tabel/database
+3.      Shx : index data
+Ada 2 cara untuk membukanya:
+1.QGIS
+Dengan cara klik kanan ‘view data’ tetapi buka terlebih dahulu datanya dengan cara drag and drop
+2. Library pyshp
+Ini merupakan library dari bahasa pemrograman python.
