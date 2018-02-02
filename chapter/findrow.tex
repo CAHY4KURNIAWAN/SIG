@@ -14,15 +14,14 @@ Pip adalah Package Management System yang berfungsi untuk meng-install dan me-ma
 Metode yang saya lakukan diatas adalah menghitung jumlah shape yang tersedia didalam file shapefile tersebut.
 
 \subsection{ESRI Shapefile}
-\ref{esri}
+	
+Shapefiles awalnya dikembangkan oleh Environmental Systems Research Institute (ESRI, 1998)\ref{esri}
 	\begin{figure}[ht]
 	\centerline{\includegraphics[width=1\textwidth]{figures/esri.JPG}}
 	\caption{ESRI.}
 	\label{esri}
-	\end{figure}
-
-Shapefiles awalnya dikembangkan oleh Environmental Systems Research Institute (ESRI, 1998)\ref{esri} dan merupakan format data geospasial untuk perangkat lunak sistem informasi geografis (SIG), seperti ESRI ArcGIS dan Quantum GIS.
-Format shapefile spasial menggambarkan geometri sebagai fitur 'titik', 'polyline', atau 'poligon' (OpenStreetMap, 2013) \cite{halchuk2014fifth}.
+	\end{figure}dan merupakan format data geospasial untuk perangkat lunak sistem informasi geografis (SIG), seperti ESRI ArcGIS dan Quantum GIS.
+Format shapefile spasial menggambarkan geometri sebagai fitur \'titik\', \'polyline\', atau \'poligon\'\cite{halchuk2014fifth}(OpenStreetMap, 2013).
 
 Shapefile adalah pengelompokan beberapa file untuk mewakili aspek geodata yang berbeda (OpenStreetMap, 2013):
 .shp: bentuk format; geometri fitur itu sendiri.
@@ -80,11 +79,11 @@ Lalu klik enter,maka akan keluar hasil nya,disini kita menghitung jumlah record 
 
 Retrive data berfungsi untuk melihat isi data Geospasial berupa data vektor yaitu shapefile(.shp)
 File yang dibutuhkan:
-1.      Ship : koordinat/titik
-2.      Dbf : tabel/database
-3.      Shx : index data
+\item Ship : koordinat/titik
+\item      Dbf : tabel/database
+\item   Shx : index data
 Ada 2 cara untuk membukanya:
-1.QGIS
+\subsection QGIS
 Dengan cara klik kanan ‘view data’ tetapi buka terlebih dahulu datanya dengan cara drag and drop
-2. Library pyshp
+\subsection  Library pyshp
 Ini merupakan library dari bahasa pemrograman python.
