@@ -1,113 +1,357 @@
-%qgis
-%kelompok 4 D4 TI-2D
-%Ayu Permata Sari        1154022
-%Librantara Erlangga     1154071
-%Martin Luter Zega       1154120
-%Putri Aulia Ramadhanie  1154096
-%Ryan Hafizh Herdiana    1154067
-%Copyright (c) 2017 Copyright Holder All Rights Reserved.
 
-\section{pengenlan qgis}
-	\ref{qgis_logo}
-	\begin{figure}[ht]
-	\centerline{\includegraphics[width=1\textwidth]{figures/qgis_logo.JPG}}
-	\caption{Logo qgis / quantum GIS.}
-	\label{qgis_logo}
-	\end{figure}
-	  qgis(dulu dikenal dengan nama quantum GIS) adalah salah satu perangkat lunak open source untuk keperulan GIS(Geographic information systems) yang paling populer, dengan basis penggunanya yang terus meningkat dan berkembang.
-	 aplikasi ini dapat melakukan banyak hal yaitu pembuatan data spasial,editing, dan juga analisis pemetaan.Selain berbasis dekstop aplikasi ini juga menyediakan server digunakan dalam web dan bahkan qgis siap digunakan dalam hp.
+\section{QGIS}
+QGIS merupakan sebuah perangkat SIG Open Source yang user friendly dengan lisensi di General Public License. QGIS merupakan suatu proyek yang tidak resmi dari Open Source OSGeo. QGIS dapat dijalankan pada OS Linux, Unix, Windows, Android dan Mac OSX. serta mendukung banyak format dan fungsionalitas data dari vektor, basisdata dan raster.
+Quantum GIS mendukung GPS tools untuk upload atau download data ke unit GPS. Pengguna juga bisa mengkonversi format GPS ke format GPX atau melakukan kegiatan import atau export data format GPX.
+Jika pengguna mempunyai sebuah web server yang telah terpasang fitur UMN MapServer, pengguna dapat melakukan publikasi map di internet untuk berbagi dengan pengguna lainnya.
 
-	Quantum GIS dikembangkan dengan bahasa pemrograman C++ dan bersifat multi platform. Salah satu perangkat lunak ini dapat dijalankan pada berbagai sistem operasi. Saat ini, versi binary (installer) Quantum GIS tersedia untuk sistem operasi Microsoft Windows, Linux (berbagai varian distro), FreeBSD dan MacOS X. Quantum GIS bahkan sudah mulai dicoba dijalankan di sistem operasi Android yang banyak digunakan di perangkat mobile (smartphone/tablet). Saat ini versi stabil Quantum GIS adalah 1.8.0, dan sedang dalam tahap pengembangan untuk mencapai versi mayor 2.0.
+SIG adalah sebuah perangkat sistem yang dirancang untuk memungkinkan orang-orang bekerja dengan data yang berkaitan. SIG memungkinkan pembuatan, penyimpanan, manipulasi, dan analisis data geografis. SIG merupakan satu konsep yang dapat melibatkan hardware dan software yang rumit. Tetapi, untuk memenuhi tujuan kebanyakan orang, yang dibutuhkan adalah sebuah perangkat lunak SIG yang sederhana, dan pada unit ini kita akan mempelajari bagaimana menggunakan aplikasi open-source yang unggul, QGIS.
 
-	Quantum GIS dapat digunakan untuk pengolahan data atribut secara umum seperti melakukan overlay layer, menguhitung luasan suatu wilayah, memberikan informasi tambahan pada suatu titik, ataupun merancang layout peta. Quantum GIS juga mendukung penggunaan GPS sehingga pengguna dapat langsung memindahkan data langsung dari GPS ke PC atau sebaliknya. Quantum GIS sangat layak untuk dijadikan alternative perangkat lunak pemetaan dalam berbagai keperluan.
+\subsection{Getting QGIS}
+\begin{enumerate}
+\item
+Buka browser internet Anda dan ketikkan pada bagian atas jendela browser Anda dengan tulisan qgis.org. Kemudian tekan Enter.\ref{image1}.
+\begin{figure}[ht]
+        \centerline{\includegraphics[width=0.25\textwidth]{figures/image1}}
+        \caption{gambar}
+        \label{image1}
+        \end{figure}
 
-	Quantum GIS terdiri dari beberapa modul, yaitu :
-	\begin{enumerate}
-		\item QGIS Desktop : untuk input data, penampilan data, query data, analisa data, dan presentasi dalam bentuk peta.
-		\item QGIS Browser : untuk manajemen data (copy, paste, preview, delete).
-		\item QGIS Server : untuk mengelola basis data special dan layanan peta yang mendukung koneksi web site.
-		\item QGIS Client : framework aplikasi GIS berbasis web yang mengkonsumsi data dari Quantum GIS Server.
-	\end{enumerate}
+Situs resmi QGIS akan terlihat seperti ini:\ref{image2}.
+\begin{figure}[ht]
+        \centerline{\includegraphics[width=1.00\textwidth]{figures/image2}}
+        \caption{gambar}
+        \label{image2}
+        \end{figure}
+\item
+Klik Unduh Sekarang
+\item
+Jika Anda menggunakan Windows, klik pada QGIS Standalone Installer Version 2.8 (32 bit). Nomor versi komputer Anda mungkin berbeda.\ref{image3}.
+\begin{figure}[ht]
+        \centerline{\includegraphics[width=0.25\textwidth]{figures/image3}}
+        \caption{gambar}
+        \label{image3}
+        \end{figure}
+\item
+Jika Anda tidak menggunakan Windows, pilih Sistem Operasi Anda dari menu yang tersedia. Ikuti intruksi instalasi.\ref{image4}.
+\begin{figure}[ht]
+        \centerline{\includegraphics[width=0.25\textwidth]{figures/image4}}
+        \caption{gambar}
+        \label{image4}
+        \end{figure}
+\item
+Ketika file selesai didownload, jalankan dan ikuti perintah untuk menginstal QGIS.
+\end{enumerate}
 
-	 \subsection{latar belakang}
-		qgis merupakan perangkat lunak berbasis open source yang merupakan projek dari GIS,yang dimulai pada tahun 2002. Tujuan awal proyek ini adalah untuk membuat spasial data. hari ini qgis sudah mencapai titik dimana qgis berevolusi di mana qgis digunakan oleh berbagai pengguna setiap hari untuk melihat data spasial,mengedit juga menganalisis , terutama dalam kegiatan pembelajaran.
-	 qgis banyak digunakan oleh orang yang menggunakan platform linux dan unix , disusul oleh windows dan mac os x dan telah di publikasikan dibawah lisensi GNU(kumpulan software gratis).core qgis dikembangkan dengan toolkit qt dan c++.selain itu qgis juga menyediakan api(application program interface)python, yang diunakan untuk memperluas jangakuan fungsinya.Sebuah api Python yang powerful dapat membantu memanfaatkan kemampuan secara efisien GIS dan mengintegrasikan berbagai alat dan bahasa pemrograman untuk mengembangkannya.
-	 effeknya, semakin meningkatan jumlah kontribusi yang telah sangat terlihat sejak diperkenalkannya API Python QGIS di QGIS 0.9 pada tahun 2007 ketika pengembang baru mulai menambahkan fungsionalitas menggunakan plugin Python.
+\subsection{Installing QGIS}
+\begin{enumerate}
+\item
+Buka folder dimana anda menyimpan file instalasi QGIS.\ref{image5}.
+\begin{figure}[ht]
+        \centerline{\includegraphics[width=0.05\textwidth]{figures/image5}}
+        \caption{gambar}
+        \label{image5}
+        \end{figure}
+\item
+Jalankan file instalasi tersebut. Jika Anda menginstal QGIS versi 2.x, akan terlihat seperti ini:\ref{image6}.
+\begin{figure}[ht]
+        \centerline{\includegraphics[width=0.25\textwidth]{figures/image6}}
+        \caption{gambar}
+        \label{image6}
+        \end{figure}
+\item 
+Klik Next
+\item
+Klik I Agree untuk setuju dengan syarat dan ketentuan yang berlaku.\ref{image7}.
+\begin{figure}[ht]
+        \centerline{\includegraphics[width=0.25\textwidth]{figures/image7}}
+        \caption{gambar}
+        \label{image7}
+        \end{figure}
+\item
+Pada jendela berikutnya Anda akan ditanyakan dimana Anda akan menginstall QGIS. Pada kasus umum, pengaturan bawaan yang ada sudah dapat digunakan. Klik Next.\ref{image8}.
+\begin{figure}[ht]
+        \centerline{\includegraphics[width=0.25\textwidth]{figures/image8}}
+        \caption{gambar}
+        \label{image8}
+        \end{figure}
+\item
+Pada jendela berikutnya, klik Install tanpa mencentang apapun yang ada di dalam kotak.\ref{image9}.
+\begin{figure}[ht]
+        \centerline{\includegraphics[width=0.25\textwidth]{figures/image9}}
+        \caption{gambar}
+        \label{image9}
+        \end{figure}
 
-	 \subsection{pengembangan qgis}
-		Melakukan proses penulisan ulang dari proyek Sistema Extremeño de Análisis Territorial (SEXTANTE),dimana proyek ini diluncurkan pada tahun 2004. awalnya, SEXTANTE ditulis dengan menggunakan bahasa java dan berjalan pada GIS desktop.namun akhirnya, SEXTANTE menjadi sebuah library terpisah dengan framework analisis,seperangkat algoritma, alat grafis untuk menggunakan algortimanya dan menjelaskannya melalu analisis workflow.
-	 Sebenarnya algoritma yang ada pada SEXTANTE pada versi java merupakan adaptasi dari proyek System for Automated Geoscientific Analyses (SAGA),yang dimana merupakan GIS berbasis desktop dengan analisi tingkat lanjut.Keputusan untuk mengubah SEXTANTE menjadi library terpisah memungkinkannya menggabungkannya ke GIS berbasis Java lainnya, seperti OpenJUMP, uDig, Kosmo dan OrbisGIS.
-	 Kemajuan paling pesat dalam kerangka desain diperlihatkan pada saat migrasi ke qgis ketika kerangka/inti SEXTANTE di buat ulang sebagai plugin pada pyhton.bukan melakukan porting algortima ke dalam python melainkan pendekatan baru yang dilakukan yaitu membiarkan SEXTANTE untuk terhubung ke dalam aplikasi. Dengan demikian, binari dari SAGA yang asli dapa meningkatan kemampuan analisis.
-	 Pada tahun 2012, SEXTANTE digunakan sebagai plugin inti pada qgis dan diganti namanya menjadi processing\cite{graser2015processing}.Pada saat ini kerangka pemrosesaan data geospasial pada qgis desktop gis juga pada versi javanya telah terintergrasi dengan SEXTANTE dalam gvSIG, dan pengembangannya dilakukan dalam bagian gvSIG. dan oleh karena itu SEXTANTE framework tidak tersedia lagi sebagai lbrary yang berdiri sendiri.
+QGIS akan memulai untuk menginstall. Ini mungkin akan membutuhkan beberapa waktu untuk selesai.\ref{image10}.
+\begin{figure}[ht]
+        \centerline{\includegraphics[width=0.25\textwidth]{figures/image10}}
+        \caption{gambar}
+        \label{image10}
+        \end{figure}
+\item
+Klik Finish untuk melengkapi instalasi. Kemudian komputer Anda akan me-reboot secara otomatis.\ref{image11}.
+\begin{figure}[ht]
+        \centerline{\includegraphics[width=0.25\textwidth]{figures/image11}}
+        \caption{gambar}
+        \label{image11}
+        \end{figure}
+\item
+Buka QGIS dari Start Menu, berikut tampilan QGIS.\ref{image12}.
+\begin{figure}[ht]
+        \centerline{\includegraphics[width=0.25\textwidth]{figures/image12}}
+        \caption{gambar}
+        \label{image12}
+        \end{figure}
+\end{enumerate}
 
-\section{Fungsi-Fungsi}
-	\subsection{melihat data}
-	User bisa melihat dan overlay data raster dan vektor dalam format dan penggambaran yang berbeda tanpa adanya konversi ke dalamformat internal maupun format umum. Format yang didukung termasuk:
-	Tabel spasial-enabled dan tampilan menggunakan PostGIS, SpatiaLite dan MSSQL Spasial, Oracle Spasial, format vektor yang didukung oleh perpustakaan OGR, termasuk ESRI shapefile, MapInfo, SDTS, GML dan banyak lagi, lihat bagian Pekerjaan dengan Data Vektor.
-	Format raster dan citra yang didukung dengan terpasangnya GDAL (Geospatial Data Abstraction Library) perpustakaan, seperti GeoTiff, ERDAS IMG, ArcInfo ASCII GRID, JPEG, PNG dan banyak lagi, lihat bagian Pekerjaan dengan Data Raster.
-	Data raster dan vektor GRASS dari basis data GRASS (lokasi/mapset). Lihat bagian GRASS GIS Integration.
-	Data spasial dalam jaringan sebagai Layanan OGC Web, termasuk WMS, WMTS, WCS, WFS, dan WFS-T. Lihat bagian Pekerjaan dengan Data OGC.
-	\subsection{Explore data and compose maps}
-	User bisa menyusun peta dan secara interaktif mengeksplorasi data spasial dengan GUI yang ramah. Banyak alat bantu yang tersedia di GUI meliputi: QGIS browser, On-the-fly reprojection, DB Manager, Map composer, Overview panel, Spatial bookmarks, Annotation tools, Identify/select features, Edit/view/search attributes, mendefinisikan data dengan fitur labelling, mendefinisikan data  vector dan raster symbology tools, Atlas map composition with graticule layers, North arrow scale bar and copyright label for maps, Support for saving and restoring projects.
-	\subsection{Create, edit, manage and export data}
-	Anda dapat membuat, mengedit, mengelola dan mengekspor lapisan vektor dan raster dalam beberapa format. QGIS dapat memberikan fitur berikut ini: Alat digitalisasi untuk format yang didukung oleh OGR dan lapisan vektor GRASS, Kemampuan untuk membuat dan mengedit shapefiles dan layer vektor GRASS, Plugin Georeferencer ke gambar geocode, Alat GPS untuk mengimpor dan mengekspor format GPX, dan mengonversi format GPS lainnya ke GPX atau turun / mengunggah langsung ke unit GPS Pada Linux, usb: telah ditambahkan ke listr perangkat GPS.), Kemampuan untuk memvisualisasikan dan mengedit data OpenStreetMap, Kemampuan untuk membuat tabel database spasial dari shapefiles dengan plugin DB Manager, Perbaikan penanganan tabel database spasial, Alat untuk mengelola tabel atribut vektor, Opsi untuk menyimpan tangkapan layar sebagai gambar georeferensi, Alat DXF-Export dengan kemampuan yang disempurnakan untuk mengekspor gaya dan plugin untuk melakukan fungsi seperti CAD.
-	\subsection{Analyze Data}
-	Anda bisa melakukan analisis data spasial pada database spasial dan format pendukung OGR lainnya. QGIS saat ini menawarkan analisis vektor, sampling, geoprocessing, geometri dan alat manajemen basis data. Anda juga dapat menggunakan alat GRASS terpadu, yang mencakup fungsionalitas GRASS lengkap lebih dari 400 modul. Atau, Anda dapat bekerja dengan Plugin Pemrosesan, yang menyediakan kerangka analisis geospasial yang kuat untuk memanggil algoritma asli dan pihak ketiga dari QGIS, seperti GDAL, SAGA, GRASS, fTools dan lainnya.
-	\subsection{skala}
-	Skala adalah perbandingan antara jarak pada model (peta) dan jarak sebenarnya dilapangan. Mengatur skala adalah salah satu cara yang dapat digunakan mengatur zoom karena skala dapat berperan sebagai zoom level. Skala pada peta tersebut ditampilkan pada toolbar dibagian bawah jendela utama QGIS.
-	\subsection{layout peta}
-	Untuk membuat layout peta yang baik perlu dipahami bahwa fungsi pembuatan peta adalah:
-	\begin{enumerate}
-		\item Menunjukkan posisi atau lokasi suatu tempat dipermukaan bumi.
-		\item Memperlihatkan ukuran dan arah suatu tempat dipermukaan bumi.
-		\item Menggambar bentuk-bentuk permukaan bumi.
-		\item Membantu mengetahui kondisi suatu daerah.
-		\item Menyajikan data potensi suatu wilayah.
-		\item Sebagai alat analisis.
-		\item Alat untuk mempelajari fenomena geografi dipermukaan bumi.
-	\end{enumerate}
-	Sedangkan tujuan pembuatan peta antara lain adalah:
-	\begin{enumerate}
-		\item Untuk komunikasi informasi ruang.
-		\item Untuk menyimpan informasi.
-		\item Digunakan untuk membantu pekerjaan tertentu.
-		\item Untuk analisis data spasial.
-	\end{enumerate}
-	Beberapa elemen peta yang utama adalah sebagai berikut:
-	\begin{enumerate}
-		\item Isi peta, bagian utama pada layout peta yang berisi informasi yang berisi informasi yang ingin disampikan/ditampilkan.
-		\item Judul peta, merupakan deskripsi singkat mengenai isi peta, harus menggambarkan isi/informasi peta.
-		\item Skala, perbandingan jarak pada peta terhadap jarak sesungguhnya dilapangan.
-		\item Legenda, keterangan dari simbol-simbol yang digunakan pada peta.
-		\item Orientasi, menunjukkan arah utara.
-		\item Garis koordinat, memudahkan untuk melihat posisi/lokasi daerah pemetaan dipermukaan bumi.
-		\item Inzet, menunjukkan lokasi yang dipetakan pada konteks yang lebih yang lebih luas, sangat penting terutama apabila peta ditunjukkan apabila  peta ditunjukkan kepada orang belum familiar dengan daerah yang dipetakan.
-		\item Sumber peta, merupakan referensi, bahan-bahan yang diacu dalam menyusun/membuat peta.
-	\end{enumerate}
+\subsection{Classification}
+Pemberian label merupakan cara untuk mengkomunikasikan informasi seperti nama dari suatu tempat. Contohnya kita ingin menunjukkan tiap-tiap jenis vegetasi tersebut berada dimana. Dengan menggunakan sebuah label, akan tampak seperti gambar ini:\ref{image13}.
+\begin{figure}[ht]
+        \centerline{\includegraphics[width=0.25\textwidth]{figures/image13}}
+        \caption{gambar}
+        \label{image13}
+        \end{figure}
+Bisa kita lihat, hal tersebut tampak tidak ideal, jadi kita membutuhkan solusi yang lain. 
 
-	\subsection{tools pada qgis}
-	Pengenalan tools:
-	\begin{enumerate}
-		\item Menu Bar, menyediakan berbagai macam fitur/fungsi pada Quantum GIS yang akan digunakan untuk pengoperasian lebih lanjut. Sebagaian besar fungsi yang ada pada menu bar juga terdapat pada tool bar.
-		\item Tool bar, terdiri dari deretan gambar(icon) yang menyediakan akses cepat (shortcut\_ pada fungsi-fungsi yang sebagaian besar sama seperti yang ada pada menu bar.
-		\item Map legend, menampilkan daftar layer yang sedang dibuka pada project, baik layer yang aktif maupun tidak aktif akan ditampilkan semua. Dapat juga diatur urutan kenampakan layer dengan cara drag dan drop pada layer.
-		\item Map view, merupakan area dimana layer-layer ditampilkan. Tampilan pada map view tergantung dari layer yang aktif
-		\item status bar, menunjukkan posisi koordinar cursor berada, dengan catatan yang ada pada jendela map view sudah memiliki Georeference. Selain menunjukkan posisi, status bar juga menunjukkan skala tampilan pada mapview.
-	\end{enumerate}
 
-	Tool bar pada baris paling atas qgis :
-	\begin{enumerate}
-		\item file : toolbar ini berisi alat untuk membuat, membuka, menyimpan, dan mencetak proyek
-		\item manage layers : toolbar ini berisi alat untuk menambahkan lapisan dari file vektor atau raster, database, layanan web, file teks, atau membuat lapisan baru.
-		\item Database : Saat ini, toolbar ini hanya berisi pengelola DB, tapi database lainnya akan muncul di sini saat dipasang
-		\item help : download manual pengguna
-	\end{enumerate}
+\subsection{Toolbar}
+Pada bagian atas dari tampilan QGIS terdapat banyak sekali tool, dimana masing-masing tool tersebut masuk ke dalam beberapa kategori “toolbar”. Misalnya file mengizinkan pengguna untuk menyimpan dan memulai proyek baru.\ref{toolbar}
+\begin{figure}[ht]
+    \centerline{\includegraphics[width=0.25\textwidth]{figures/toolbar}}
+    \caption{gambar toolbar yang ada pada QGis}
+    \label{toolbar}
+    \end{figure}
 
-	baris kedua toolbar berisi berikut ini:
-	\begin{enumerate}
-		\item map navigation : toolbar ini berisi alat pan dan zoom
-		\item atribut: alat ini digunakan untuk mengidentifikasi, memilih, membuka tabel atribut, ukuran, dan sebagainya
-		\item label: alat ini digunakan untuk menambahkan, mengkonfigurasi, dan memodifikasi label
-		\item vector: saat ini kosong, namun akan diisi oleh plugin python tambahan
-		\item web: saat ini kosong, tapi akan diisi oleh plugin python tambahan
-	\end{enumerate}
+Dengan mengarakan mouse ke ikon, nama pada tool akan muncul untuk membantu mengidentifikasi setiap tool yang ada. Tool dikelompokkan sesuai fungsi pada toolbars. dengan meng-klik menggunakan mouse ,dapat memindahkan toolbar ke tempat yang lebih sesuai.\ref{toolbar1}.
+\begin{figure}[ht]
+    \centerline{\includegraphics[width=0.25\textwidth]{figures/toolbar1}}
+    \caption{gambar toolbar yang ada pada QGis}
+    \label{toolbar1}
+    \end{figure}
+    
+\subsection{Status Bar}
+Status bar akan menampilkan informasi mengenai peta Anda. pengguna juga diperbolehkan untuk mengatur skala pada peta dan melihat koordinat peta.
+
+Koordinat peta ini sama dengan tipe koordinat yang telah Anda pelajari ketika Anda belajar mengenai GPS.
+Mungkin hal ini masih belum terlalu jelas untuk Anda, tapi seiring dengan meningkatnya kemampuan Anda di SIG, hal ini nantinya akan terlihat masuk akal. \ref{statbar}.
+\begin{figure}[ht]
+    \centerline{\includegraphics[width=0.25\textwidth]{figures/statbar}}
+    \caption{gambar status bar yang ada pada QGis}
+    \label{statbar}
+    \end{figure}
+
+\subsection{Menu Bar}
+Menu bar memberikan akses ke berbagai fitur QGIS menggunakan hirarki menu standar. Menu utama dan beberapa pilihan menu yang tercantum dengan ikon yang sesuai seperti yang ditampilkan pada toolbar dibawah ini. serta cara pintas keyboard. Cara pintas keyboard juga dapat dikonfigurasi secara manual (cara pintas yang disajikan dalam bagian ini adalah default), menggunakan [Configure Shortcuts] alat di bawah Setting. Beberapa pilihan menu hanya muncul jika plugin yang sesuai dimuat. Untuk informasi lebih lanjut tentang alat dan toolbar, lihat Bagian Toolbar. \ref{menubar}
+\begin{enumerate}
+\item
+Project
+\begin{figure}[ht]
+    \centerline{\includegraphics[width=0.25\textwidth]{figures/menubar}}
+    \caption{Gambar project pada Menu Bar}
+    \label{menubar}
+    \end{figure}
+\item
+Edit
+\begin{figure}[ht]
+    \centerline{\includegraphics[width=0.25\textwidth]{figures/menubar1}}
+    \caption{Gambar edit pada Menu Bar}
+    \label{menubar1}
+    \end{figure}
+\item
+View
+\begin{figure}[ht]
+    \centerline{\includegraphics[width=0.25\textwidth]{figures/menubar2}}
+    \caption{Gambar view pada Menu Bar}
+    \label{menubar2}
+    \end{figure}
+\item
+Setting
+\begin{figure}[ht]
+    \centerline{\includegraphics[width=0.25\textwidth]{figures/menubar3}}
+    \caption{Gambar setting pada Menu Bar}
+    \label{menubar3}
+    \end{figure}
+\item
+Plugin
+\begin{figure}[ht]
+    \centerline{\includegraphics[width=0.25\textwidth]{figures/menubar4}}
+    \caption{Gambar plugin pada Menu Bar}
+    \label{menubar4}
+    \end{figure}
+\item
+Vector
+\begin{figure}[ht]
+    \centerline{\includegraphics[width=0.25\textwidth]{figures/menubar5}}
+    \caption{Gambar vector pada Menu Bar}
+    \label{menubar5}
+    \end{figure}
+\item
+Raster
+\begin{figure}[ht]
+    \centerline{\includegraphics[width=0.25\textwidth]{figures/menubar6}}
+    \caption{Gambar raster pada Menu Bar}
+    \label{menubar6}
+    \end{figure}
+\item
+Database
+\begin{figure}[ht]
+    \centerline{\includegraphics[width=0.25\textwidth]{figures/menubar7}}
+    \caption{Gambar database pada Menu Bar}
+    \label{menubar7}
+    \end{figure}
+\item
+Pengolahan
+\begin{figure}[ht]
+    \centerline{\includegraphics[width=0.25\textwidth]{figures/menubar8}}
+    \caption{Gambar pengolahan pada Menu Bar}
+    \label{menubar8}
+    \end{figure}
+\item
+Bantuan
+\begin{figure}[ht]
+    \centerline{\includegraphics[width=0.25\textwidth]{figures/menubar9}}
+    \caption{Gambar bantuan pada Menu Bar}
+    \label{menubar9}
+    \end{figure}
+\end{enumerate}
+
+\subsection{Atribut}
+Data gis mempunyai fitur dan attribut. Atributt adalah data terstruktur mengenai setiap fitur. Cara ini menunjukkan bagaimana cara melakukan query standard pada attribut di QGIS.
+Berikut langkahnya :
+\begin{enumerate}
+\item
+Buka proyek yang telah dikerjakan sebelumnya.
+\item
+Pilih salah satu jalan pada panel daftar Layer.
+\item
+Klik kanan, dan klik tombol Open Attribute Table :
+Akann terlihat tabel dengan data yang lebih banyak tentang layer jalan. Data ekstra tersebut disebut data atribut. Garis-garis yang Anda dapat lihat pada peta Anda menggambarkan kemana garis tersebut menuju – ini merupakan data spatial.
+\item
+Lihatlah pada tabel atribut. Setiap baris tabel menghubungkan satu fitur pada layer jalan. Setiap kolom mengandung satu atribut.
+\item
+Tutup tabel atribut
+\end{enumerate}
+
+\subsection{Label Tool}
+Untuk menambahkan label pada QGIS ada beberapa cara lebih baik dibandingkan yang lain. Berikut langkah-langkahnya :\ref{label}
+\begin{enumerate}
+\item
+Pergi ke menu item View --> Toolbars
+\item
+Pastikan item Label telah memiliki tanda centang disebelahnya. Jika belum, klik pada item Label dan fitur tersebut akan diaktifkan.\ref{label}.
+\begin{figure}[ht]
+    \centerline{\includegraphics[width=0.25\textwidth]{figures/label}}
+    \caption{Toolbar Label tampak seperti ini}
+    \label{label}
+    \end{figure}
+\item
+Klik layer POI\_Bandung\_OSM yang terdapat pada panel Daftar Layer, sehingga layer tersebut tersorot
+\item
+Klik tombol Layer Labelling Options
+\begin{figure}[ht]
+    \centerline{\includegraphics[width=0.25\textwidth]{figures/layer}}
+    \caption{tombol Layer Labelling Options}
+    \label{layer}
+    \end{figure}
+\item
+Setelah klik tombol diatas maka akan muncul halaman pengaturan Layer Labelling. Centang kotak yang ada tulisan Layer this Label With
+\begin{figure}[ht]
+    \centerline{\includegraphics[width=0.25\textwidth]{figures/laylabel}}
+    \caption{tombol Layer this Label With}
+    \label{laylabel}
+    \end{figure}
+\item
+Pilih Field Name untuk pemberian label
+\begin{figure}[ht]
+    \centerline{\includegraphics[width=0.25\textwidth]{figures/name}}
+    \caption{Field Name}
+    \label{name}
+    \end{figure}
+\item
+Klik OK maka peta akan muncul dengan label
+\end{enumerate}
+
+\subsection{Fitur Dasar Quantum GIS Dalam Pengelolaan Data Vektor dan Raster}
+Sebagai perangkat lunak Sistem Informasi Geografik, Quantum GIS memiliki kapabilitas untuk menampilkan, mengolah dan menyajikan data. Contohnya sebagai berikut:
+\begin{enumerate}
+\item
+Membaca dan mengedit data dalam format vektor dan raster, termasuk data atribut
+Quantum GIS dapat membaca dan mengolah data dalam banyak format, baik dalam bentuk raster maupun vektor.
+\item
+Konversi sistem koordinat dan proyeksi peta
+Konversi sistem koordinat dan proyeksi peta dapat dilakukan dengan mudah di Quantum GIS, dengan memilih opsi CRS ketika menyimpan data, seperti gambar berikut:
+\begin{figure}[ht]
+    \centerline{\includegraphics[width=0.25\textwidth]{figures/proyeksi}}
+    \caption{Gambar konversi sistem koordinat dan proyeksi peta pada QGIS}
+    \label{proyeksi}
+    \end{figure}
+\item
+Navigasi peta
+Pada Quantum GIS, navigasi peta bisa dilakukan melalui toolbar khusus, dengan fungsi navigasi yang bisa digunakan antara lain: Perbesar (zoom in) dan Perkecil (zoom out), Penggeseran (pan).
+\item
+Setting tampilan peta
+Tampilan peta dapat diatur melalui menu Layer > Properties. Hal-hal yang dapat diatur antara lain: warna dan pola arsiran, warna dan ketebalan garis, bentuk dan ukuran simbol, dan sebagainya. Tampilan setting layer seperti berikut:
+\begin{figure}[ht]
+    \centerline{\includegraphics[width=0.25\textwidth]{figures/setting}}
+    \caption{Gambar setting tampilan peta pada QGIS}
+    \label{setting}
+    \end{figure}
+\end{enumerate}
+
+\subsection{Menambahkan Data Vektor}
+\begin{enumerate}
+\item 
+Buka proyek QGIS yang baru. Peta dan daftar layer yang akan tampak masih kosong.
+\item
+Terdapat dua cara untuk menambahkan sebuah layer vektor baru pada proyek.
+\item
+Klik pada tombol Navigasi ke direktori qgis/sarijadi/ dan pilih Jalan\_Sarijadi\_OSM, POI\_Sarijadi dan Kecamatan\_Sukasari. Anda dapat memilih lebih dari satu file dengan menahan tombol CTRL pada keyboard dan klik tiap file. Klik Open lalu Open lagi.
+\end{enumerate}
+
+Peta Anda sekarang akan terlihat seperti ini:\ref{vektor}
+\begin{enumerate}
+\item
+Project
+\begin{figure}[ht]
+    \centerline{\includegraphics[width=0.25\textwidth]{figures/vektor}}
+    \caption{Gambar vektor pada qgis}
+    \label{vektor}
+    \end{figure}
+
+\end{enumerate}
+
+\subsection{Mode Algoritma}
+Pada mode algoritma ini menggunakan algoritma yang berbeda untuk memilah sebuah data ke kelas yang berbeda.
+•	Interval sama: seperti namanya, metode ini akan menghasilkan kelas dengan ukuran yang sama.
+•	Kuantil : Merupakan Metode untuk memutuskan kelas di mana jumlah nilai pada setiap kelas adalah sama.
+
+\subsection{Klasifikasi Data Vektor}
+Untuk menampilkan simbol-simbol yang berbeda pada sebuah objek. Contoh: Peta Kuliner, isinya objek yang telah diklasifikasikan berdasar jenis tempat kuliner.
+
+\subsection{MS4W}
+MapServer merupakan pengembangan sebuah perangkat lunak open source yang dapat digunakan untuk mengembangkan aplikasi internet-based yang melibatkan tampilan data spasial peta digital.\cite{supriantoaplikasi}
+
+\begin{table}[h]
+\caption{Paket dasar M4SW}
+\centering
+\begin{tabular}{cc}
+\hline
+1&Webserver Apache\\
+\hline
+2&PHP\\
+\hline
+3&MapServer CGI\\
+\hline
+4&PHP/Mapscript\\
+\hline
+5&Program utiliti (pustaka) GDAL dan OGR\\
+\hline
+6&Program utiliti MapServer (shp2img, legend, scalebar, sortshp, sym2img, shptree, dan tile4ms)\\
+\hline
+7&Ekstensi OGR/PHP\\
+\hline
+8&OWTChart\\
+\hline
+\end{tabular}
+\end{table}
+
