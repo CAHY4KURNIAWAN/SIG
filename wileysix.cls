@@ -60,8 +60,10 @@ This version is dated \currversion^^J^^J}
 %% to make the 6 1/8 by 9 1/4 trim size
 \textheight=45pc \textwidth=28pc
 
-\topmargin .75in
-\headheight 12pt
+%\topmargin .75in
+%\headheight 12pt
+\topmargin = 0pt
+\headheight = 0pt
 \headsep 18pt
 \topskip  10pt
 \footskip 18pt
@@ -97,6 +99,8 @@ This version is dated \currversion^^J^^J}
 \evensidemargin=0pt
 \advance\evensidemargin-.5in
 \marginparwidth .75in
+\paperwidth=420pt
+\paperheight=595pt
 
 \if@twocolumn
  \setlength\marginparsep {10\p@}
@@ -2005,9 +2009,10 @@ to2pc{\hskip3pt\hrulefill}\hss}\hss}%
 
 %\docropmarks
 
-\voffset-25pt
-\hoffset40pt % was 48
-
+%\voffset-25pt
+%\hoffset40pt % was 48
+\voffset = -65pt
+\hoffset = 10pt
 
 %% new additions, as of Jan 25, 2005
 \newtheorem{theorem}{Theorem}[chapter]
