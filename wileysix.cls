@@ -2011,8 +2011,8 @@ to2pc{\hskip3pt\hrulefill}\hss}\hss}%
 
 %\voffset-25pt
 %\hoffset40pt % was 48
-\voffset = -65pt
-\hoffset = 10pt
+\voffset = -67pt
+\hoffset = 7pt
 
 %% new additions, as of Jan 25, 2005
 \newtheorem{theorem}{Theorem}[chapter]
