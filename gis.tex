@@ -1,5 +1,6 @@
 \documentclass{WileySix}
 
+%\usepackage[a5paper]{geometry}
 \usepackage{w-bookps}
 \usepackage{graphicx}
 
@@ -10,61 +11,53 @@
 
 
 \booktitle{Pengantar Sistem Informasi Geografis}
-\subtitle{Konsep Dasar dan Aplikasi Pembangun SIG}
+\subtitle{Sejarah, Definisi dan Konsep Dasar}
 
 \author{Rolly Maulana Awangga}
 
 \halftitlepage
 \titlepage
 
-\offprintinfo{Pengantar Sistem Informasi Geografis, pre-release}{Rolly Maulana Awangga}
+\offprintinfo{Pengantar Sistem Informasi Geografis}{Rolly Maulana Awangga}
 
 
-\begin{copyrightpage}{2017}
-Pengantar Sistem Informasi Geografis / Rolly Maulana Awangga
+\begin{copyrightpage}{Desember 2018}
+Pengantar Sistem Informasi Geografis
 \end{copyrightpage}
 
 
- \begin{copyrightpage}{2017}
- Pengantar Sistem Informasi Geografis / Rolly Maulana Awangga . . . [et al.].
- \       p. cm.---(Rolly Book series in Geospatial Intellegence)
- \    ``Unpublished work."
- \    Includes bibliographical references and index.
- \    ISBN --- (pbk.)
- \    1. Pengantar---Sistem Informasi Geografis.  2. Sistem 
- \  Informasi---Geografis---Berbasiskan Open Source.  Rolly Maulana Awangga. %
- Series.\\
-
- xxxxxxxx 2017
- xxx.x'xx---xxxx                                             XXXXXXXXXX
- \end{copyrightpage}
-
-\dedication{For my family Bunda, Kafa dan Jabang}
+\dedication{For my family Bunda, Khafayah dan Khanza}
 
 %\dedication{To my parents, Mamah Umiyatin dan Papah Waryo}
 
+\begin{preface}
+	Saya ucapkan alhamdulillah atas selesainya buku ini. Berkat semua dukungan rekan dan mahasiswa alhamdulillah buku ini bisa terselesaikan. Terima kasih untuk keluarga kecil saya bunda Mila, Khafa dan Khanza yang senantiasa menemani dan mendukung seluruh aktifitas penulis. Tidak lupa pula terima kasih kepada rekan-rekan mahasiswa bimbingan yang membantu layouting dan editing agar buku ini bisa terbit.
 
-\contentsinbrief %optional
+	Buku ini merupakan buku hasil pemikiran dan uji coba serta praktek lapangan selama mendalami Sistem Informasi Geografis. Diawali dengan kebutuhan akan aplikasi open source pada Kementrian Sekretariat Negara yang menolak menggunakan Google Map untuk dijadikan base map di Aplikasinya. Hal ini dikarenakan untuk mengendalikan kedaulatan data rahasia milik negara yang tidak ingin dikirimkan ke pihak manapun apalagi pihak luar. Yang akhirnya saya mencoba berbagai macam alternatif untuk membangun sendiri server peta dan kelengkapan penggunaannya. Seiiring perkembangan waktu dan kerjas sama dengan berbagai pihak. Ternyata memang banyak kebutuhan GIS dengan aplikasi open source ini dengan alasan yang sama yaitu kedaulatan data. Selain itu open source yang membawa jargon “free” sesuai dengan filosofi keamanan data tanpa kebergantungan dengan berbagai aplikasi Propietary. Dengan aplikasi open source juga bisa menekan biaya pengeluaran instansi dalam hal pengeluaran pembelian piranti lunak GIS. Termasuk dalam hal pembelajaran di kampus. Kampus tidak perlu lagi membeli piranti lunak mahal, dan mahasiswa tidak perlu untuk melanggan Google Maps yang cukup menguras uang ketika akan mengimplementasikannya di tempat kerja. Mungkin kita sudah mengetahui betapa mudahnya menggunakan Google Maps API pada saat kuliah. Akan tetapi ketika diterapkan pada sebuah proyek GIS, nilainya akan tinggi sekali untuk pembayaran penggunaan API tersebut. Belum lagi masalah keamanan data yang terus di pantau oleh Google.
+
+	Semoga kedepannya buku ini akan terus dikembangkan dan akan semakin dilengkapi dengan pengalaman-pengalaman baru penulis di edisi selanjutnya. Go Open Source Go Freedom.
+
+\where{Bandung, Desember 2018}
+Penulis	
+\prefaceauthor{Rolly Maulana Awangga}
+\end{preface}
+
+%\contentsinbrief %optional
 \tableofcontents
 \listoffigures %optional
 \listoftables  %optional
 
 
-\begin{foreword}
-Terima Kasih Atas semua dukungannya
-\end{foreword}
+%\begin{foreword}
+%Terima Kasih Atas semua dukungannya
+%\end{foreword}
 
 
-\begin{preface}
-Saya sangat bangga atas buku ini
-\prefaceauthor{Rolly Maulana Awangga}
-\where{Bandung\\
- November, 2017}
-\end{preface}
 
-\acknowledgments
-acknowledgment buat semuaya
-\authorinitials{RMA} % ie, I. R. S.
+
+%\acknowledgments
+%acknowledgment buat semuaya
+%\authorinitials{RMA} % ie, I. R. S.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -89,17 +82,17 @@ acknowledgment buat semuaya
 % \end{symbols}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{introduction}
-\introauthor{Rolly Maulana Awangga}{Program Studi Sarjana Terapan Teknik Informatika, Politeknik Pos Indonesia}
- Perkenalkan saya Rolly Maulana Awangga Dosen Politeknik Pos Indonesia dengan mata kuliah
-Sistem Informasi Geografis, Kecerdasan Buatan dan Sistem Multimedia
-\end{introduction}
+%\begin{introduction}
+%\introauthor{Rolly Maulana Awangga}{Program Studi Sarjana Terapan Teknik Informatika, Politeknik Pos Indonesia}
+% Perkenalkan saya Rolly Maulana Awangga Dosen Politeknik Pos Indonesia dengan mata kuliah
+%Sistem Informasi Geografis, Kecerdasan Buatan dan Sistem Multimedia
+%\end{introduction}
 
 \part[Pendahuluan]
-{Pendahuluan\\ Pengantar Geospasial}
+{Definisi, Teori\\ dan Sejarah Geospasial}
 
 \chapter[Definisi]
-{Pendahuluan\\ definisi}
+{Pendahuluan\\ Definisi}
 \input{chapter/definisi.tex}
 
 \chapter[Sejarah Ptolemy]
@@ -251,8 +244,8 @@ Sistem Informasi Geografis, Kecerdasan Buatan dan Sistem Multimedia
 {Aplikasi GIS\\ Desktop QGIS}
 \input{chapter/qgis.tex}
 
-\chapter[findrow]
-{Find Row\\ Desktop QGIS}
+\chapter[Python Shapefile]
+{Python\\ Shapefile}
 \input{chapter/findrow.tex}
 
 

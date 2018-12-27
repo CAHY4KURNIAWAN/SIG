@@ -32,8 +32,15 @@ Shapefile adalah pengelompokan beberapa file untuk mewakili aspek geodata yang b
 \end{enumerate}
 Atribut fitur dapat diperiksa di perangkat lunak SIG, atau dengan membuka berkas .dbf di Microsoft Excel, misalnya. Ada juga beberapa file pilihan dalam format shapefile. Yang paling penting adalah file .prj yang menggambarkan sistem koordinat dan informasi proyeksi yang digunakan. Shapefiles yang dihasilkan untuk model bahaya NBCC2015 ditentukan dengan proyeksi WGS84
 
-\subsection{basic usage}
-berikut ini adalah basic penggunaan module pyshp di python
+\subsection{Instalasi pyshp}
+Install Python terlebih dahulu
+Install PIP di python
+Buka cmd lalu ketik: Python m pip install pyshp ,lalu enter
+Kemudian upgrade pip dengan mengetikkan di cmd: Python m pip install upgrade pip ,lalu enter
+Lalu masuk ke python
+
+\subsection{Dasar Penggunaan}
+berikut ini adalah dasar penggunaan module pyshp di python
 
 Membuat file pada pyshp
   \begin{verbatim}
@@ -70,24 +77,8 @@ Membaca record
   a.record(0) //spesifik record
 \end{verbatim}
 
-\subsection
-Cara Menghitung jumlah record dari File shp menggunakan python
-Install Python terlebih dahulu
-Install PIP di python
-Buka cmd lalu ketik: Python m pip install pyshp ,lalu enter
-Kemudian upgrade pip dengan mengetikkan di cmd: Python m pip install upgrade pip ,lalu enter
-Lalu masuk ke python
 
-Retrive data berfungsi untuk melihat isi data Geospasial berupa data vektor yaitu shapefile shp
-File yang dibutuhkan:
-\begin{enumerate}
-	\item Ship : koordinat/titik
-	\item      Dbf : tabel/database
-	\item   Shx : index data
-\end{enumerate}
 
-Ada 2 cara untuk membukanya:
-\subsection QGIS
-Dengan cara klik kanan view data tetapi buka terlebih dahulu datanya dengan cara drag and drop
-\subsection  Library pyshp
-Ini merupakan library dari bahasa pemrograman python.
+
+
+
