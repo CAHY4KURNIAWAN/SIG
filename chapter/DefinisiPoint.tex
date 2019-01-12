@@ -22,9 +22,7 @@ Diagram  Voronoi merupakan konsep interdisipliner yang telah diterapkan pada ber
 
 \subsection{Diagram Voronoi untuk Point, Line dan Poligon dalam fitur GIS}
 	Mengingat satu set jumlah terbatas titik berbeda di ruang 2-D Euclidean, diagram Voronoi titik set adalah kumpulan dari daerah yang membagi pesawat, dan semua lokasi di satu wilayah (kecuali pada batas wilayah) lebih dekat ke titik sponding corre- daripada titik lain (Gbr. 1). Diagram Voronoi dinamai matematikawan Rusia Georgy Fedoseevich Voronoi yang didefinisikan dan mempelajari kasus n-dimensi umum pada tahun 1908. Diskusi tentang konsep diagram Voronoi dari titik pandangan-sejarah dan geometris dapat ditemukan di Okabe et al. (1992, 2000).
-	Diagram Voronoi telah banyak diterapkan untuk masalah partisi ruang dalam berbagai disiplin ilmu, dari astronomi untuk geografi untuk zoologi. Okabe et al. (2000) tercatat 22 bidang di mana aplikasi diagram Voronoi dapat ditemukan, dan diyakini bahwa bidang aplikasi tidak terbatas pada daftar. Contoh aplikasi terbaru dari diagram Voronoi termasuk berbasis Voronoi selular automata (Shi dan Pang, 2000), tomografi adaptif 3-D di (. Bo Hm et al, 2000) geofisika prospeksi, analisis distribusi gempa bumi-dan peringatan dini.
-
-\ref{point} Sebuah Gambar Voronoi Diagram Point.
+	Diagram Voronoi telah banyak diterapkan untuk masalah partisi ruang dalam berbagai disiplin ilmu, dari astronomi untuk geografi untuk zoologi. Okabe et al. (2000) tercatat 22 bidang di mana aplikasi diagram Voronoi dapat ditemukan, dan diyakini bahwa bidang aplikasi tidak terbatas pada daftar. Contoh aplikasi terbaru dari diagram Voronoi termasuk berbasis Voronoi selular automata (Shi dan Pang, 2000), tomografi adaptif 3-D di (. Bo Hm et al, 2000) geofisika prospeksi, analisis distribusi gempa bumi-dan peringatan dini. Gambar \ref{point} adalah ilustrasi dari Voronoi Diagram Point.
 \begin{figure}[ht]
 	\centerline{\includegraphics[width=1\textwidth]{figures/voronoi.PNG}}
 	\caption{voronoi.}
@@ -35,17 +33,13 @@ Diagram  Voronoi merupakan konsep interdisipliner yang telah diterapkan pada ber
 Vektor  pada GIS mampu melakukan penempatan, menampilkan data spasial bahkan menyimpan datanya yang menggunakan titik-titik, garis-garis dan juga poligon yang dilengkapi dengan artibut-artibutnya. Bentuk-bentuk dasar representasi dari data spasial ini di dalam sistem model data vektor dapat didefinisikan oleh sistem koordinat kartesian dua dimensi (X,Y). Dimana di dalam model data spasial vektor, garis-garis atau kurva (busur atau arcs) adalah berupa sekumpulan titik-titik terurut yang saling berhubungan (Prahasta, 2002a). 
 
 \subsubsection{Model data Vektor dengan bentuk point/titik pada Geographics Information System GIS}
-Point/titik merupakan representasi grafis yang paling sederhana pada suatu objek. titik pada data vektor tidak mempunyai dimensi tetapi bisa ditampilkan ke dalam bentuk simbol baik pada peta maupun dalam layar monitor. contoh  lokasi fasilitas kesehatan, kantor pemerintah dan lain-lain.
-Pada gambar \ref{point} dijelaskan bahwa gambar point/titik data vektor GIS sebagai berikut.
+Point/titik merupakan representasi grafis yang paling sederhana pada suatu objek. titik pada data vektor tidak mempunyai dimensi tetapi bisa ditampilkan ke dalam bentuk simbol baik pada peta maupun dalam layar monitor. contoh  lokasi fasilitas kesehatan, kantor pemerintah dan lain-lain. Pada gambar \ref{point} dijelaskan bahwa gambar point/titik data vektor GIS. Dalam sebuah artikel dari husein yang menyebutkan bahwa  GIS merupakan pemahaman dari
+Geography, Information dan System \cite{widiatmoko2009aplikasi}.
 \begin{figure}[ht]
 	\centerline{\includegraphics[width=1\textwidth]{figures/point.JPG}}
 	\caption{point.}
 	\label{point}
 	\end{figure}
-
-Maka artikel :
-	Dalam sebuah artikel dari husein yang menyebutkan bahwa  GIS merupakan pemahaman dari
-	Geography, Information dan System \cite{widiatmoko2009aplikasi}.
 
 \section{contoh perancangan sistem (GEOGRAPHICS INFORMATION SYSTEM) dengan menggunakan Point}
 Pada Point dapat menampung SHP yang bertipe Point.
@@ -75,8 +69,10 @@ tipe data yang digunakan merupaka tipe data point yang terdapat koordinat real, 
 	Pada estimasi dari data spasial, adalah teknik analisis data geostatistika bertujuan untuk mengetahui serta untuk melakukan estimasi nilai dari variabel teregional pada lokasi s. Nilai dari suatu variabel yang diamati nantinya dapat dinyatakan sebagai variabel random spasial  Z(s) dengan s adalah vektor lokasi $D € R^d$. Dan menggunakan metode kriging ini merupakan metode untuk melakukan estimasi nilai dari variabel yang teregional Z(s) pada suatu lokasi  A. berdasarkan variabel random spasial Z(s). Variabel random spasial  Z(s) pada data geostatistika merupakan suatu variabel random  Z di lokasi s . 
 	Pada data spasial variabel random X dapat didefinisikan sebagai variabel random spasial Z(s) di lokasi  s dan dari variabel random Y didefinisikan sebagai variabel random spasial  $Z(s+h)$ di lokasi s+h.  Pada analisis data geostatistika variansi ini digunakan untuk menentukan korelasi antara variabel random spasial Z(s) dan $Z(s+h)$. Nilai variansi dari variabel random spasial pada lokasi Z(s) dan $Z(s+h)$ dapat ditentukan dengan rumus sebagai berikut:
 \begin{equation}
-	var{z(s)  z(s+h)} = var{z9s0} + var{z(s+h)} 2cov{z(s).z(s+h)}
+	\begin{split}
+	var{z(s)  z(s+h)} = var{z9s0} + var{z(s+h)} 2cov{z(s).z(s+h)} \\
 			    = E{Z(s)-z(s+h)}-{{E(z(s))-E(Z(s+h))}]}
+			\end{split}
 \end{equation}
 
 \subsection{Point dalam MongoDB}

@@ -64,7 +64,9 @@ Menghapus record
 \begin{verbatim}
   import shapefile
   a = shapefile.Editor('namafile.shp')
-  a.shape(0) //masukan data ke berapa //karena array jadi dimulai dari 0
+  a.shape(0) 
+  #masukan data ke berapa 
+  #karena array jadi dimulai dari 0
   a.delete(0)
   a.save('namafile')
 \end{verbatim}
@@ -73,8 +75,8 @@ Membaca record
 \begin{verbatim}
   import shapefile
   a = shapefile.Reader('namafile.shp')
-  a.records() //menampilkan semua record
-  a.record(0) //spesifik record
+  a.records() #menampilkan semua record
+  a.record(0) #spesifik record
 \end{verbatim}
 
 

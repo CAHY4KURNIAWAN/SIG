@@ -51,9 +51,9 @@ Layer raster dapat memiliki informasi PROJECTION, METADATA, PROCESSING, MINSCALE
 \subsubsection{Classifying Rasters}
 Layer Raster dapat diklasifikasikan dengan cara yang mirip dengan vektor, dengan beberapa pengecualian.
 
-Tidak perlu menentukan CLASSITEM. Nilai piksel mentah itu sendiri ("[pixel]") dan, untuk gambar yang diberi palet, warna merah, hijau dan biru yang dikaitkan dengan nilai piksel itu ("[merah]", "[hijau]" dan "[biru]") tersedia untuk digunakan dalam klasifikasi. Bila digunakan dalam ekspresi yang dievaluasi, kata kunci pixel, merah, hijau dan biru harus dalam huruf kecil.
+Tidak perlu menentukan CLASSITEM. Nilai piksel mentah itu sendiri ("[pixel]") dan, untuk gambar yang diberi palet, warna merah, hijau dan biru yang dikaitkan dengan nilai piksel itu (`[merah]', `[hijau]' dan `[biru]') tersedia untuk digunakan dalam klasifikasi. Bila digunakan dalam ekspresi yang dievaluasi, kata kunci pixel, merah, hijau dan biru harus dalam huruf kecil.
 
-\begin{verbatim}
+\begin{lstlisting}
 LAYER
   NAME "JacksonvilleNC_CIB"
   DATA "Jacksonville.tif"
@@ -90,7 +90,7 @@ LAYER
     END
   END
 END
-\end{verbatim}
+\end{lstlisting}
 
 
 \subsection{Vektor Layer}

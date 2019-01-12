@@ -179,7 +179,7 @@ Muncul 5 baris isi bintang
 
 \subsubsection{Nested Loop for Nested Data}
 Disini kita memiliki list data dari murid-murid. Jadi, setiap murid memiliki nama yang dipasangkan dengan list subyek(mata pelajaran) yang mereka ambil. Dan akan mencetak setiap nama murid, dan jumlah dari subyek (mata pelajaran) yang mereka ambil
-\begin{verbatim}
+\begin{lstlisting}
 students = [
     ("John", ["TIK", "IPS"]),
     ("Vusi", ["Matematika", "TIK", "IPA"]),
@@ -189,7 +189,7 @@ students = [
 
 for (name, subjects) in students:
     print(name, "takes", len(subjects), "courses")
-\end{verbatim}
+\end{lstlisting}
 Lalu, setelah dijalankan (run) maka akan tampil seperti ini:
 \begin{verbatim}
 John takes 2 courses
@@ -365,8 +365,8 @@ Lalu, setelah perintah diatas dijalankan (run) maka akan tampil bilangan seperti
 \ref{2range}
 
 \begin{figure}[ht]
-    \centerline{\includegraphics[width=1\textwidth]{figures/2range.JPG}}
-    \caption{hasil penggunaan range}
+    \centerline{\includegraphics[width=.5\textwidth]{figures/2range.JPG}}
+    \caption{Hasil penggunaan range}
     \label{2range}
     \end{figure}
     
@@ -393,8 +393,8 @@ print('Jumlah semua bilangan adalah \%d' \%summ)
 Setelah perintah diatas dijalankan (run) maka akan tampil bilangan seperti gambar \ref{2range2}.
 
 \begin{figure}[ht]
-    \centerline{\includegraphics[width=1\textwidth]{figures/2range2.JPG}}
-    \caption{hasil penggunaan range}
+    \centerline{\includegraphics[width=.5\textwidth]{figures/2range2.JPG}}
+    \caption{Hasil setelah di jalankan}
     \label{2range2}
     \end{figure}
     
@@ -404,12 +404,11 @@ Ini adalah contoh penggunaan range untuk menampilkan bilangan dari 0 sampai 100 
 for i in range(101):
 	print(i,end=' ')
 \end{verbatim}
-Disini nilai akhir menggunakan operator < bukan ≤ jadi untuk menampilkan sampai angka 100 nilai akhir harus dibuat menjadi 101. Dan setelah perintah diatas dijalankan (run) maka akan tampil hasil seperti berikut ini :
-\ref{2range3}
+Disini nilai akhir menggunakan operator < bukan ≤ jadi untuk menampilkan sampai angka 100 nilai akhir harus dibuat menjadi 101. Dan setelah perintah diatas dijalankan (run) maka akan tampil hasil seperti di gambar \ref{2range3}.
 
 \begin{figure}[ht]
     \centerline{\includegraphics[width=1\textwidth]{figures/2range3.JPG}}
-    \caption{hasil penggunaan range}
+    \caption{Nilai Akhir Setelah run}
     \label{2range3}
     \end{figure}
 

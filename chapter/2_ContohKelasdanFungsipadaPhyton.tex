@@ -51,8 +51,8 @@ Untuk menjalankannya, dapat kita tuliskan python pada konsole Linux pengguna. \$
 maka pengguna akan mendapatkan tampilan : Python 2.4.3 (\#1, May 24 2008, 13:47:28) [GCC 4.1.2 20070626 (Red Hat 4.1.2-14)] on 
 Type “help”, “copyright”, “credits” or “license” for more information.
 
-Tanda >>> tersebut menandakan bahwa interpreter Python telah siap menerima perintah pengguna. Kita dapat langsung mengetikkan 
-ekspresi Python pada prompt >>> yang telah tersedia. Ekspresi Python dapat berupa ekspresi sederhana berupa assignment hingga 
+Tanda \verb|>>>| tersebut menandakan bahwa interpreter Python telah siap menerima perintah pengguna. Kita dapat langsung mengetikkan 
+ekspresi Python pada prompt \verb|>>>| yang telah tersedia. Ekspresi Python dapat berupa ekspresi sederhana berupa assignment hingga 
 perintah yang lebih kompleks seperti deklarasi fungsi maupun class. Contoh-contoh dasar ekspresi yang dapat kita tuliskan pada 
 prompt Python adalah sebagai berikut : 
 
@@ -77,7 +77,9 @@ Traceback  (most recent call last):
 File “<stdin>”, line 1, in ? 
 NameError: name 'e' is not defined
 >>>
+\end{verbatim}
 Sedangkan untuk ekspresi Python yang lebih kompleks adalah sebagai berikut : 
+\begin{verbatim}
 >>> a = 1 
 >>> if a == 1:
 ... print “Nilai a adalah 1” ...
@@ -195,7 +197,7 @@ aplikasi web.
 Digunakan untuk mengambil tanggal dan jam. Hasil dari fungsi ini adalah sebuah string
 yang berisi tanggal/jam sesuai dengan format yang diinginkan. Format yang dikenal
 dalam fungsi date ini adalah sebagai berikut:
-\begin{verbatim}
+\begin{lstlisting}
 a - "am" or "pm"
 A - "AM" or "PM"
 B - Swatch Internet time
@@ -230,7 +232,7 @@ Contoh:
 date(“Y-m-d”); // menghasilkan “2001-07-28”
 date(“l, j F Y”); // menghasilkan “Saturday, 28 July 2001”
 date(“H:i:s”); // menghasilkan “20:15:07”
-\end{verbatim}
+\end{lstlisting}
 
 \subsubsection{Fungsi Mail}
 Digunakan untuk mengirimkan e-mail ke alamat e-mail tertentu.
@@ -281,5 +283,77 @@ halo_dunia()  \# memanggil fungsi halo_dunia
 halo_dunia()  \# fungsi halo_dunia dipanggil lagi
 \end{verbatim}
 
+\subsection{Contoh Script Shapefile}
+Shapefile kita modifikasi dengan library python pyshp\cite{stabler2006shapefiles}.
+\begin{lstlisting}
+## Not run: 
+
+#Read entire shapefile 
+shapefile <- read.shapefile("links") 
+
+#Write entire shapefile 
+write.shapefile(shapefile, "temp", T) 
+
+#Read shp, shx, or dbf file 
+dbf <- read.dbf("links.dbf") 
+
+#Write shp, shx, or dbf file 
+write.dbf(dbf, "links.dbf", T) 
+
+#Calculate header (to clean up GeoMedia shapefile exports) 
+shapefile <- calc.header(shapefile) 
+
+#Add the X and Y coordinates to the dbf list of the shapefile list object 
+shapefile <- add.xy(shapefile)
+
+#Scale the shapefile by scale.factor 
+shapefile <- scaleXY(shapefile, scale.factor) 
+
+#Samples of using the convert.to.shapefile function to write out simple shapefiles 
+#from basic R data.frames 
+
+#Point 
+dd <- data.frame(Id=c(1,2),X=c(3,5),Y=c(9,6)) 
+ddTable <- data.frame(Id=c(1,2),Name=c("Item1","Item2")) 
+ddShapefile <- convert.to.shapefile(dd, ddTable, "Id", 1) 
+write.shapefile(ddShapefile, "c:/test", arcgis=T) 
+
+#PolyLine 
+dd <- data.frame(Id=c(1,1,1,2,2,2),X=c(3,5,8,6,7,8),Y=c(9,8,3,6,7,4)) 
+ddTable <- data.frame(Id=c(1,2),Name=c("Item1","Item2")) 
+ddShapefile <- convert.to.shapefile(dd, ddTable, "Id", 3) 
+write.shapefile(ddShapefile, "c:/test", arcgis=T) 
+
+#Polygon 
+dd <- data.frame(Id=c(1,1,1,1,2,2,2,2),X=c(3,5,8,3,6,7,8,6),Y=c(9,8,3,9,6,7,4,6)) 
+ddTable <- data.frame(Id=c(1,2),Name=c("Item1","Item2")) 
+ddShapefile <- convert.to.shapefile(dd, ddTable, "Id", 5) 
+write.shapefile(ddShapefile, "c:/test", arcgis=T)
+
+#Convert to list of shapes 
+ddAsList <- by(dd,dd$Id, function(x) x) 
+
+#Convert to data.frame 
+dd <- do.call(rbind, ddAsList) 
+
+#Read in shp file and convert to simple format 
+shpTest <- read.shp("c:/test.shp") 
+simpleShpFormat <- convert.to.simple(shpTest) 
+simpleShpFormat <- change.id(simpleShpFormat, c("a","b")) 
+simpleAsList <- by(simpleShpFormat, simpleShpFormat[,1], function(x) x) 
+backToShape <- convert.to.shapefile(simpleShpFormat, 
+data.frame(index=c("a","b")), "index", 5) 
+write.shapefile(backToShape, "c:/test", arcgis=T) 
+
+#Polyline simplification with dp algorithm 
+x <- c(5,3,4,1,8,9,10,11)
+ y <- c(6,4,2,1,1,5,2,3) 
+points <- list(x=x,y=y) 
+plot(points, type="l") 
+simpleLine <- dp(points, 2) 
+lines(simpleLine, type="l", col="blue") 
+
+## End(Not run) 
+\end{lstlisting}
 
 
