@@ -1846,7 +1846,7 @@ D R A F T\hfill\today, \realtime\hfill D R A F T\global\titlefalse\vss}}
 Rolly Maulana Awangga
 \vskip6.5pt
 
-ISBN : ..........
+ISBN : 978-602-53897-0-2
 \vskip6.5pt
 
 {\locfont Editor:}\\
@@ -1860,7 +1860,7 @@ Diana Asri Wijayanti\\
 \vskip6.5pt
 
 {\locfont Desain sampul dan Tata letak:}\\
-M. Harry K. Saputra
+Deza Martha Akbar
 \vskip6.5pt
 
 {\locfont Penerbit:}\\
@@ -1875,11 +1875,10 @@ Email : awangga@kreatif.co.id\\
 \vskip6.5pt
 
 {\locfont Distributor:}\\
-Program Studi D4 Teknik Informatika\\
-Politeknik Pos Indonesia\\
+Informatics Research Center\\
 Jl. Sariasih No. 54\\
 Bandung 40151\\
-Email : d4if@poltekpos.ac.id\\
+Email : irc@poltekpos.ac.id\\
 \vskip6.5pt
 
 Cetakan Pertama, #1
