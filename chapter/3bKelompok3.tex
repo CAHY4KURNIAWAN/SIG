@@ -6,7 +6,7 @@
 % Ajrin Darman
 
 \section{Pendahuluan Mapfile}
-    Map  File  merupakan  sebuah  konfigurasi  data  yang terstruktur  yang  digunakan  pada  MapServer.  Map  File mendefinisikan  area-area  pada  peta  dan  juga  menentukan input-an dan output-an kepada program MapServer. Selain itu Map File juga berfungsi untuk mendefinisikan lapisan layer yang digunakan pada MapServer yang meliputi data atribut, proyeksi peta, dan simbol-simbol. Map File harus memiliki format .Map untuk dapat diidentifikasi oleh MapServer.MapScript yang digunakan sebagai interface untuk class-class yang terdapat di MapServer.Secara garis besar,peta tersusun dari beberapa layer.Layer tersusun dari bentuk-bentuk yang polygon,garis, atau titik yang disebut dengan Shape.Class-class yang terdapat di MapServer melingkupi manipulasi untuk Peta,Layer,dan Shape.Class-class didalam MapServer yang sering digunakan untuk mengembangkan Web GIS.Struktur map file yang digunakan berisi konfigurasi dari peta yang akan ditampilkan isinya memuat beberapa bagian penting yang menjadi kelas utama untuk diproses,bagian-bagian ini disebut dengan parameter yang nantinya akan diproses oleh map script obyek untuk penanganan obyek yang akan disajikan dalam sebuah website.
+    Map  File  merupakan  sebuah  konfigurasi  data  yang terstruktur  yang  digunakan  pada  MapServer.  Map  File mendefinisikan  area-area  pada  peta  dan  juga  menentukan input-an dan output-an kepada program MapServer. Selain itu Map File juga berfungsi untuk mendefinisikan lapisan layer yang digunakan pada MapServer yang meliputi data atribut, proyeksi peta, dan simbol-simbol. Map File harus memiliki format .Map untuk dapat diidentifikasi oleh MapServer.MapScript yang digunakan sebagai interface untuk class-class yang terdapat di MapServer.Secara garis besar,peta tersusun dari beberapa layer.Layer tersusun dari bentuk-bentuk yang polygon,garis, atau titik yang disebut dengan Shape.Class-class yang terdapat di MapServer melingkupi manipulasi untuk Peta,Layer dan Shape.Class-class di dalam MapServer yang sering digunakan untuk mengembangkan Web GIS.Struktur map file yang digunakan berisi konfigurasi dari peta yang akan ditampilkan isinya memuat beberapa bagian penting yang menjadi kelas utama untuk diproses,bagian-bagian ini disebut dengan parameter yang nantinya akan diproses oleh map script obyek untuk penanganan obyek yang akan disajikan dalam sebuah website.
 
 \section{Pengertian Class}
     Class merupakan sesuatu yang berhubungan dengan MapFile atau secara tidak langsung berhubungan dengan data peta.Class ini juga sebagai class utama di MapScript untuk memproses dan menyimpan data peta ke file gambar. 
@@ -16,7 +16,7 @@ Beberapa fungsi penting yang terdapat pada class,antara lain :
 \begin{enumerate}
 \item Mempunyai kumpulan class layer Object yang menyusun peta dan fungsi untuk mengatur urutan peta.
 \item Untuk menggambar peta,disimpan ke dalam class image Object.
-\item Untuk menggambarkan legend,dan disimpan ke dalam classs image object.
+\item Untuk menggambarkan legend dan disimpan ke dalam classs image object.
 \item Untuk menggambar scalebar, dan disimpan ke dalam class image object.
 \item Untuk mengatur kelaskelas pada sebuah obyek(layer).
 \item Fungsi SetExtent untuk menentukan Extent dari peta.

@@ -10,7 +10,7 @@ Mekanisme mapserver yaitu membuat layer-layer yang berisi berupa tampilan peta. 
 
 Kekurangan mapserver adalah penggunaan dan konfigurasi mapfile yang cukup sulit untuk pemula. Developer harus melihat dan mengatur layer dengan cara mengcoding mapfile tersebut. Kemudian jika data GIS tersimpan dalam database peta. Mapserver perlu diatur koneksinya. Hal ini cukup sulit karena informasi host, username, password, port, dan database ditampilkan di mapfile tanpa ada proses enkripsi. Solusinya dengan menjaga agar mapfile ini tidak bisa diakses dari luar server.
 
-Map Server bekerja beriringan dengan aplikasi web server. Web Server menerima request peta melalui MapServer, lalu MapServer mengenerate request terhadap peta lalu mengirimkannya ke web server seperti gambar dibawah ini. \ref{gambar5}
+Map Server bekerja beriringan dengan aplikasi web server. Web Server menerima request peta melalui MapServer, lalu MapServer mengenerate request terhadap peta lalu mengirimkannya ke web server seperti gambar di bawah ini. \ref{gambar5}
 \begin{figure}[ht]
 	    \centerline{\includegraphics[width=0.50\textwidth]{figures/gambar5.JPG}}
 	    \caption{Diagram operasi standar pada MapServer}
@@ -18,7 +18,7 @@ Map Server bekerja beriringan dengan aplikasi web server. Web Server menerima re
 		\end{figure}
 Fungsi utama dari MapServer yaitu untuk melakukan pembacaan data dari berbagai sumber dan menempatkannya kedalam layer-layer secara bersamaan yang kemudian menjadi file graphic.
 
-Mapserver menghasilkan keluaran berupa file graphic berdasarkan masukan yang diberikan oleh user. Komponen kuncinya adalah MapServer executable yang terdiri dari CGI program, file peta, sumber data dan output gambar. Seperti pada gambar dibawah ini semua komponen bekerja bersama-sama, setelah user melakukan request/perminataan maka CGI akan mengakses file peta, menggambarkan informasi yang didapat dari sumber data dan kembali menampilkannya pada peta.
+Mapserver menghasilkan keluaran berupa file graphic berdasarkan masukan yang diberikan oleh user. Komponen kuncinya adalah MapServer executable yang terdiri dari CGI program, file peta, sumber data dan output gambar. Seperti pada gambar di bawah ini semua komponen bekerja bersama-sama, setelah user melakukan request/permintaan maka CGI akan mengakses file peta, menggambarkan informasi yang didapat dari sumber data dan kembali menampilkannya pada peta.
 
 \subsection{Pengertian MS4W}
 MapServer for Windows (MS4W) adalah suatu packet software untuk mempermudah pengguna dalam menginstalasi MapServer pada platform OS Microsoft Windows. Tujuannya adalah untuk mempermudah semua user, terhindar dari segala bagian kecil yang rumit dalam mempersiapkan lingkungan kerja yang dibutuhkan oleh MapServer pada lingkungan Microsoft Windows. Software ini juga merupakan suatu cara yang bagus dalam memaketkan kemudian mendistribusikan aplikasi-aplikasi MapServer kepada pihak manapun.
@@ -103,7 +103,7 @@ Sedangkan file HTML digunakan untuk melakukan format penyajian hasil (peta). Fil
 		\label{gambar7}
 		\end{figure}
 		
-Sebuah Map file harus memiliki komponen-komponen utama seperti images, data file berupa data vector maupun data raster yang akan ditampilkan oleh komponen layer. \ref{gambar8}
+Sebuah Map file harus memiliki komponen-komponen utama seperti images, data file berupa data vektor maupun data raster yang akan ditampilkan oleh komponen layer. \ref{gambar8}
 
 \begin{figure}[ht]
 	    \centerline{\includegraphics[width=0.50\textwidth]{figures/gambar8.JPG}}

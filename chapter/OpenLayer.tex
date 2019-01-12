@@ -30,17 +30,17 @@ Syntax diatas menjelaskan sebuah map dengan semua property dari Open Layers.
  Base Layers adalah layer yang bersifat mutually Exclusive yang berarti hanya satu yang bisa diaktifkan setiap saat.
  Base layer yang aktif akan menentukan proyeksi sistem koordinat yang ada dan memperbesar level yang terdapat dalam peta. 
  Base Layer atau bukan, hal ini ditentukan oleh property isBaseLayer pada layer. Kebanyakan Layer raster memiliki Properti isBaseLayer yang diset dengan true secara default. 
- Ini bisa diganti pada layer option. Base layers selalu ditampilkan dibawah overlay layers.
+ Ini bisa diganti pada layer option. Base layers selalu ditampilkan di bawah overlay layers.
 
 \subsection{Non Base Layers}
 Non base layers, terkadang disebut juga sebagaioverlay, adalah merupakan Base Layers alternative. Non-base layer yang banyak dapat diaktifkan setiap saat.
-Layer ini tidak memegang control untuk zoom level dari peta, tapi dapat diaktifkan atau di nonaktifkan pada skala yang tepat dengan min/max scale/parameter resolusi, sehingga hanya dapat diaktifkan pada level tertentu.
+Layer ini tidak memegang control untuk zoom level dari peta, tapi dapat diaktifkan atau dinonaktifkan pada skala yang tepat dengan min/max scale/parameter resolusi, sehingga hanya dapat diaktifkan pada level tertentu.
 
 \subsection {Raster Layers}
 Raster layer adalah layer bayangan. Layer ini merupakan fixed projection yang tidak dapat dirubah pada client side.
 
 \subsection {Google}
-Layer yang digunakan untuk data Google Maps PAA OpenLayer. Untuk informasi API, dapat dilihan pada Google Layer Api Docs. 
+Layer yang digunakan untuk data Google Maps PAA OpenLayer. Untuk informasi API, dapat dilihatpada Google Layer Api Docs. 
 Contoh penggunaanya dapat dilihat pada contoh penggunaan Spherical Mercator.
 Jika kita ingin untuk menumpang tindihkan (overlay) layer dasar Google Maps dengan data lain, kita harus berinteraksi dengan layer Google Maps pada koordinat proyeksi.
 Kita dapat baca selengkapnya pada proyeksi Spherical Mercator dan berbagai layer komersial yang dipergunakan di dalam dokumentasi Spherical Mercator.
@@ -56,19 +56,19 @@ Sebagai informasi API selengkapnya lihat pada KaMapCache Layer API Docs.\\
 Sebagai informasi API selengkapnya lihat pada MapGuide Layer API Docs.\\
 \textbf{MapServer} \\
 Ini tidak diperlukan untuk berinteraksi dengan Map Server. Secara umum, lebih diminati daripada Layer MapServer, sebab MapServer mengekspos sebagian besar fungsi CGI dala modus WMS.
-Lapisan MapServer sering dapat menyebabkan peta yang tampaknya bekerja, tetapi masih bermasalah pada proyeksi atau misconfigurasi seruma lainnya.
+Lapisan MapServer sering dapat menyebabkan peta yang tampaknya bekerja, tetapi masih bermasalah pada proyeksi atau misconfigurasi serupa lainnya.
 Dalam menggunakan WMS kita harus memiliki alasan yang kuat dibandingkan dengan menggunakan MapServer.
-Jika kita menggunakan layer MapServer, dan peta sedang diulang beberapa kali, ini menunjukkan bahwa kita belum melakukan konfigurasi dengan peda dan masih dalam proyeksi yang berbda.
+Jika kita menggunakan layer MapServer, dan peta sedang diulang beberapa kali, ini menunjukkan bahwa kita belum melakukan konfigurasi dengan peda dan masih dalam proyeksi yang berbeda.
 openLayer tidak dapat membaca informasi dari MAPFILE, dan harus dikonfigurasi secara explicit.\\
 
 \subsection {Overlay layer}
 Merupakan lapisan yang memiliki sumberdata dalam format selain citra. Ini termasuk subclass dari kedua layer Marker dan layer Vector.
 
 \subsection {Boxes}
-boxes lebih baik untuk mengimplementasikan fungsi dengan vector layer dan polygon geometric dengan mempertahankan untuk kompatibilitas mundur.
+boxes lebih baik untuk mengimplementasikan fungsi dengan vektor layer dan polygon geometric dengan mempertahankan untuk kompatibilitas mundur.
 
 \subsection {GML}
-GML layer merupakam subclass dari vector layer yang berguna untuk membaca data dan menampilkannya. 
+GML layer merupakam subclass dari vektor layer yang berguna untuk membaca data dan menampilkannya. 
 Contoh :
 var layer = new OpenLayers.Layer.GML(“GML”, “gml/polygon.xml”)
 map.addLayer(layer);
@@ -83,10 +83,10 @@ Markers base layer sangat mudah diaplikasikan dan penggunaan fungsi addMarkers u
 Text layer merupakan data-data dengan format Teks dan menampilkan hasilnya sebagai marker yang dapat diklik. Layer teks adalah subclass dari Marker layer, dan tidak mendukung format garis atau polygon.
 
 \subsection {Vector}
-Vector layer adalah basis dari geometry lanjutan pada class open layer seperti (GML dan subclass WFS). Ketika membuat feature pada pengkodean javaScript, menggunakan vector layer secara langsung adalah cara yang benar.
+Vector layer adalah basis dari geometry lanjutan pada class open layer seperti (GML dan subclass WFS). Ketika membuat feature pada pengkodean javaScript, menggunakan vektor layer secara langsung adalah cara yang benar.
 Untuk informasi API selengkapnya lihat pada Vector Layer API Docs.
 \subsection {WFS}
-Untuk informasi API selengkapnya dapat di lihat pada WFS Layer API Docs.
+Untuk informasi API selengkapnya dapat dilihat pada WFS Layer API Docs.
 Generic Subclasses
 EventPane
 FixedZoomLevels
@@ -167,7 +167,7 @@ map.addControl(toolbar);
 \subsection{ArgParser}
  
 Membawa argumen URL, dan update peta.
-Dalam kontrol ArgParser pada sistemharus terdapat ‘getCenter ()’ supaya dapat mengembalikan nilai null sebelum mengacu pada peta untuk pertama kalinya. 
+Dalam kontrol ArgParser pada sistem harus terdapat ‘getCenter ()’ supaya dapat mengembalikan nilai null sebelum mengacu pada peta untuk pertama kalinya. 
 Berikut sintaxnya :
 var map = new OpenLayers.Map(‘map’);
 

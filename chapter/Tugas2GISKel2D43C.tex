@@ -21,9 +21,9 @@ dan menyimpan data spasial dengan menggunakan struktur matrikx atau pixel yang m
 \begin{figure}[ht]
 	\centerline{\includegraphics[width=1\textwidth]{figures/vektorraster.PNG}}
 	\caption{Perbedaan Vektor dengan Raster.}
-	\label{vektorraster}
+	\label{vektoraster}
 	\end{figure}
-Pada gambar \ref{vektorraster} merupakan contoh perbedaan antara vektor dengan raster.
+Pada gambar \ref{vektoraster} merupakan contoh perbedaan antara vektor dengan raster.
 
 \section{Tipe Data Vektor}
 \subsection{Definisi Tipe Data Vektor}
@@ -36,14 +36,14 @@ Model data vektor diwakili oleh simbol – simbol yang terdiri atas interkoneksi
 dan titik yang merepresentasikan lokasi dan garis batas dari entitas geografi. Dalam
 model data vektor , data dapat direpresentasikan sebagai Lines (garis), Polylines 
 (polygon), Points (titik), Area (daerah), Nodes (titik potong) Pada model data vektor ini, 
-suatu objek dinyatakan dalam bentuk koordinat(x,y) yang berhubungan satu sama lainnya kecuali objek titik.
+suatu objek dinyatakan dalam bentuk koordinat(x,y) yang berhubungan satu sama lainnya kecuali objek titik. Pada gambar \ref{sungai} merupakan salah satu contoh data vektor line pada peta yaitu sungai.
 \begin{figure}[ht]
 	\centerline{\includegraphics[width=1\textwidth]{figures/sungai.PNG}}
 	\caption{Sungai merupakan contoh vektor line pada peta.}
 	\label{sungai}
 	\end{figure}
    
-Pada gambar \ref{sungai} merupakan salah satu contoh data vektor line pada peta yaitu sungai.
+
 \section{Data Atribut}
 \subsection{pengertian Data Atribut}
 Data atribut merupakan data yang mempresentasikan aspek-aspek deskripsi/penjelasan 
@@ -61,6 +61,7 @@ Bentuk-bentuk data atribut:
 \end{enumerate}
 
 \subsubsection{Kelebihan dan Kekurangan Data Atribut}
+
 Kelebihan :
 \begin{enumerate}
    \item Data dapat dimanipulasi 
@@ -138,12 +139,12 @@ Kekurangan :
     \item Memiliki struktur data yang kompleks.
     \item Datanya tidak mudah untuk dimanipulasi.
     \item Pengguna tidak mudah berkreasi untuk membuat programnya sendiri untuk memenuhi kebutuhan aplikasinya. 
-             Hal ini disebabkan oleh struktur data vector yang lebih kompleks dan prosedur fungsi dan analisisnya 
+             Hal ini disebabkan oleh struktur data vektor yang lebih kompleks dan prosedur fungsi dan analisisnya 
              memerlukan kemampuan tinggi karena lebih sulit. 
             Pengguna harus membeli system perangkat lunaknya karena teknologinya masih mahal. Prosedurnyapun terkadang lebih sulit.
-    \item Karena proses keseluruhan untuk mendapatkannya lebih lama, peta vector seringkali mengalami out of date atau kadaluarsa.
+    \item Karena proses keseluruhan untuk mendapatkannya lebih lama, peta vektor seringkali mengalami out of date atau kadaluarsa.
     \item Memerlukan perangkat keras dan perangkat lunak yang lebih mahal.
-    \item Overlay beberapa layers vector secara simultan memerlukan waktu yang relative lama.
+    \item Overlay beberapa layers vektor secara simultan memerlukan waktu yang relatif lama.
  \end{enumerate}
  
  \section{Raster}
@@ -181,7 +182,7 @@ Nilai yang merepresentasikan suatu piksel dapat dihasilkan dengan cara sampling 
     \item Overlay dan kombinasi data raster dengan data inderaja mudah dilakukan
     \item Memiliki kemampuan-kemampuan permodelan dan analisis spasial tingkat lanjut
     \item Metode untuk mendapatkan citra raster lebih mudah
-    \item Gambarab permukaan bumi dalam bentuk citra raster yang didapat dari radar atau satelit 
+    \item Gambaran permukaan bumi dalam bentuk citra raster yang didapat dari radar atau satelit 
              penginderaan jauh selalu lebih actual dari pada bentuk vektornya
     \item Prosedur untuk memperoleh data dalam bentuk raster lebih mudah, sederhana dan murah.
     \item Harga system perangkat lunak aplikasinya cenderung lebih murah.
@@ -199,5 +200,5 @@ Nilai yang merepresentasikan suatu piksel dapat dihasilkan dengan cara sampling 
              sangat bergantung pada resolusi spasial dan toleransi yang diberikan.
     \item Transformasi koordinat dan proyeksi lebih sulit dilakukan
     \item Sangat sulit untuk merepresentasikan hubungan topologi (juga network).
-    \item Metode untuk mendapatkan format data vector melalui proses yang lama, cukup melelahkan dan relative mahal.
+    \item Metode untuk mendapatkan format data vektor melalui proses yang lama, cukup melelahkan dan relatif mahal.
   \end{enumerate}

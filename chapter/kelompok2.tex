@@ -144,14 +144,14 @@ END
 
 \subsection{Class}
 Class adalah prototype, atau blueprint, atau rancangan yang mendefinisikan variable dan method-methode pada seluruh objek tertentu. 
-Class berfungsi untuk menampung isi dari program yang akan di jalankan, di dalamnya berisi atribut / type data dan method untuk menjalankan suatu program.
+Class berfungsi untuk menampung isi dari program yang akan dijalankan, di dalamnya berisi atribut / type data dan method untuk menjalankan suatu program.
 Class merupakan suatu blueprint atau cetakan untuk menciptakan suatu instant dari  object. 
 class juga merupakan grup suatu object dengan kemiripan attributes/properties, behaviour dan relasi ke object lain. 
 Contoh : Class Person, Vehicle, Tree, Fruit dan lain-lain.
 
 \subsection{STYLE Objects}
 Yang dimaksud dengan objek pada java adalah sekumpulan software yang terdiri dari variable dan method-method yang terkait. 
-Objek juga merupakan benda nyata yang di buat berdasarkan rancangan yang di definisikan di dalam class
+Objek juga merupakan benda nyata yang dibuat berdasarkan rancangan yang didefinisikan di dalam class
 
 Object adalah instance dari class. Jika class secara umum mepresentasikan (template) sebuah object, 
 sebuah instance adalah representasi nyata dari class itu sendiri. Contoh : Dari class Fruit kita dapat membuat object Mangga, 
@@ -161,12 +161,12 @@ Pisang, Apel, dan lain-lain.
 MapServer adalah applikasi Open Source yang memungkinkan sebuah data peta diakses melalui web. Teknologi ini pertama kali dikembangkan oleh Universitas Minesotta Amerika Serikat. Hadirnya MapServer menjadikan pekerjaan membuat Peta Digital menjadi lebih mudah dan interaktif. Interaktif peta disini diartikan bahwa pengguna dapat dengan mudah melihat dan mengubah tampilan peta seperti zoom, rotate, dan menampilkan informasi (seperti menampilkan info jalan) dan analisis( seperti menentukan rute perjalanan) pada permukaan geografi. Diagram berikut menggambarkan bagaimana user berinteraksi dengan peta interaktif berbasis MapServer.
 Map Server bekerja secara berdampingan dengan applikasi web server. Web Server menerima request peta melalui MapServer. MapServer mengenerate request terhadap peta dan mengirimkannya ke web server. Fungsi utama dari MapServer adalah melakukan pembacaan data dari banyak sumber dan menempatkannya kedalam layer-layer secara bersamaan menjadi file graphic. Salah satu layernya bisa saja berupa gambar satelit. Setiap layer saling overlay satu dengan lainnya dan ditampilkan kedalam web browser.
 
-Untuk lebih memudahkan pemakaian MapServer, MapServer membuat sebuah aplikasi yang disebut MS4W atau MapServer for Windows. MS4W ditujukan untuk pengguna MapServer pemula yang menggunakan system operasi Microsoft Windows. Didalam MS4W sudah dilengkapi dengan WebServer (Apache), MapServer dan MapScript (PHP, C Sharp, Python, Java) dan dilengkapi pula dengan dukungan terhadap berbagai macam database.
+Untuk lebih memudahkan pemakaian MapServer, MapServer membuat sebuah aplikasi yang disebut MS4W atau MapServer for Windows. MS4W ditujukan untuk pengguna MapServer pemula yang menggunakan sistem operasi Microsoft Windows. Didalam MS4W sudah dilengkapi dengan WebServer (Apache), MapServer dan MapScript (PHP, C Sharp, Python, Java) dan dilengkapi pula dengan dukungan terhadap berbagai macam database.
 
 Mapserver menghasilkan keluaran berupa file graphic berdasarkan masukan yang diberikan oleh user. 
 Komponen kuncinya adalah MapServer executable yang terdiri dari CGI program, file peta, sumber data dan output gambar. 
-Seperti pada gambar dibawah ini semua komponen bekerja bersama-sama, 
-setelah user melakukan request/perminataan maka CGI akan mengakses file peta, 
+Seperti pada gambar di bawah ini semua komponen bekerja bersama-sama, 
+setelah user melakukan request/permintaan maka CGI akan mengakses file peta, 
 menggambarkan informasi yang didapat dari sumber data dan kembali menampilkannya pada peta.
 
 Secara sederhana MapServer menjalankan executable applikasi CGI pada web server yang secara teknis merupakan 
@@ -176,10 +176,10 @@ CGI bekerja sangat sederhana tidak diperlukan sebuah pemrograman untuk dapat men
 Kita tinggal melakukan edit berdasarkan text base, konfigurasi runtime file, membuat halaman web, 
 dan menempatkannya bekerja pada web server. MapServer CGI executable bekerja sebagai perantara antara file peta 
 dengan program web server yang meminta peta. Permintaan di lewatkan dalam bentuk CGI parameter dari web server menuju MapServer.
-Gambar yang di buat oleh MapServer selanjutnya memberikan fed back ke web server dan selanjutnya menuju 
+Gambar yang dibuat oleh MapServer selanjutnya memberikan feed back ke web server dan selanjutnya menuju 
 user melalui web browser.
 
-MapServer seperti sebuah mesin yang membutuhkan bahan bakar untuk dapat bekerja dan membutuhkan system pengiriman (delivery system) bahan bakar untuk mencapai mesin . Program MapServer perlu mengetahui layer peta yang akan digambar, bagaimana menggambarkannya, dan dimana lokasi sumber datanya. Data merupakan bahan bakarnya dan file peta atau .map.file merupakan system pengirimannya (delivery system). File Peta adalah text konfigurasi yang terdiri dari list setting yang digunakan untuk menggambar dan berinteraksi dengan peta. Informasi yang termuat didalamnya adalah layer data apa yang akan digambar, dimana focus geografis petanya, system proyeksi yang digunakan, format apa yang akan digunakan untuk menampilkan gambar, dan cara menentukan legenda dan skala pada peta.
+MapServer seperti sebuah mesin yang membutuhkan bahan bakar untuk dapat bekerja dan membutuhkan sistem pengiriman (delivery system) bahan bakar untuk mencapai mesin . Program MapServer perlu mengetahui layer peta yang akan digambar, bagaimana menggambarkannya, dan dimana lokasi sumber datanya. Data merupakan bahan bakarnya dan file peta atau .map.file merupakan system pengirimannya (delivery system). File Peta adalah text konfigurasi yang terdiri dari list setting yang digunakan untuk menggambar dan berinteraksi dengan peta. Informasi yang termuat di dalamnya adalah layer data apa yang akan digambar, dimana focus geografis petanya, sistem proyeksi yang digunakan, format apa yang akan digunakan untuk menampilkan gambar, dan cara menentukan legenda dan skala pada peta.
 
 Contoh script dasar pemetaan dengan satu layer.
 \begin{verbatim}
@@ -198,7 +198,7 @@ END
 END
 \end{verbatim}
 
-Ketika request atau permintaan dating dari applikasi MapServer maka reguest tersebut mesti menyebutkan sepesifikasi 
+Ketika request atau permintaan datang dari applikasi MapServer maka reguest tersebut mesti menyebutkan sepesifikasi 
 file peta yang diinginkan. Kemudian MapServer membuat petanya berdasarkan pada setting pada file peta yang diberikan tadi.
 
 \subsection{About STYLE Objects}
