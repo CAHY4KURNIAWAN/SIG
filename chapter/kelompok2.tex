@@ -1,0 +1,212 @@
+% Tugas GIS ke 6
+% M. Amran Hakim Siregar 1154106
+% Yusri Rizal 1154072
+% Muhamad Rifan Zamaludin 1154088
+% Faisal Syarifuddin 1154104
+% Mohammad Agung Deomartha 1154032
+
+
+\section{Raster Layer dan Vektor Layer}
+
+\subsection{Raster Layer}
+Dalam raster layer  setiap lokasi direpresentasikan sebagai suatu posisi sel. 
+Sel ini diorganisasikan dalam bentuk kolom dan baris sel-sel dan biasa disebut sebagai grid. 
+Dengan kata lain,  layer raster menampilkan, menempatkan, 
+dan menyimpan data spasial dengan menggunakan struktur matriks atau piksel-piksel yang membentuk grid. 
+Setiap piksel atau sel ini memiliki atribut tersendiri, termasuk koordinatnya yang unik.
+Raster layer terdiri dari piksel (atau sel), dan setiap piksel memiliki nilai yang terkait. Menyederhanakan sedikit, foto digital adalah contoh dataset raster dimana setiap nilai piksel sesuai dengan warna tertentu. Dalam GIS, nilai piksel dapat mewakili elevasi di atas permukaan laut, atau konsentrasi kimiawi, atau curah hujan dan lain-lain. Intinya adalah bahwa semua data ini diwakili sebagai kotak sel (biasanya persegi). Perbedaan antara model elevasi digital (DEM) di GIS dan foto digital adalah bahwa DEM mencakup informasi tambahan yang menjelaskan di mana tepi gambar berada di dunia nyata, bersamaan dengan seberapa besar setiap sel berada di tanah. Ini berarti GIS Anda dapat memposisikan gambar raster Anda (DEM, hillshade, peta lereng dll) dengan benar relatif terhadap satu sama lain, dan ini memungkinkan Anda membangun peta Anda.
+
+Sementara struktur data raster sederhana, ini sangat berguna untuk berbagai aplikasi. Dalam GIS, penggunaan data raster termasuk dalam empat kategori utama:
+
+Raster sebagai basemaps
+Penggunaan data raster yang umum di GIS adalah sebagai tampilan latar belakang untuk lapisan fitur lainnya. Misalnya,
+orthophotographs yang ditampilkan di bawah lapisan lain memberi pengguna peta keyakinan bahwa lapisan peta selaras spasial 
+dan mewakili objek nyata, serta informasi tambahan. Tiga sumber utama raster basemaps adalah orthophotos dari fotografi udara,
+citra satelit, dan peta yang dipindai. Berikut adalah raster yang digunakan sebagai basemap untuk data jalan.
+
+Raster sebagai peta permukaan
+
+Raster sangat cocok untuk mewakili data yang terus berubah melintasi lansekap (permukaan). Mereka menyediakan metode yang 
+efektif untuk menyimpan kontinuitas sebagai permukaan. Mereka juga menyediakan representasi permukaan yang teratur. Nilai 
+elevasi yang diukur dari permukaan bumi adalah aplikasi peta permukaan yang paling umum, namun nilai lainnya, seperti curah
+hujan, suhu, konsentrasi, dan kepadatan populasi, juga dapat menentukan permukaan yang dapat dianalisis secara spasial. Raster
+di bawah ini menampilkan elevasi-menggunakan hijau untuk menunjukkan ketinggian yang lebih rendah dan sel-sel merah, merah muda, 
+dan putih untuk menunjukkan ketinggian yang lebih tinggi.
+
+
+\subsubsection{cara menambahkan Raster Layer}
+Deklarasi lapisan raster sederhana terlihat seperti ini. File DATA ditafsirkan relatif terhadap SHAPEPATH, sama seperti shapefile.
+
+\begin{verbatim}
+LAYER
+  NAME "JacksonvilleNC_CIB"
+  DATA "Jacksonville.tif"
+  TYPE RASTER
+  STATUS ON
+END
+\end{verbatim}
+
+Layer raster dapat memiliki informasi PROJECTION, METADATA, PROCESSING, MINSCALE, dan MAXSCALE. Tidak dapat memiliki informasi label, CONNECTION, CONNECTIONTYPE, atau FEATURE.
+
+\subsubsection{Classifying Rasters}
+Layer Raster dapat diklasifikasikan dengan cara yang mirip dengan vektor, dengan beberapa pengecualian.
+
+Tidak perlu menentukan CLASSITEM. Nilai piksel mentah itu sendiri ("[pixel]") dan, untuk gambar yang diberi palet, warna merah, hijau dan biru yang dikaitkan dengan nilai piksel itu (`[merah]', `[hijau]' dan `[biru]') tersedia untuk digunakan dalam klasifikasi. Bila digunakan dalam ekspresi yang dievaluasi, kata kunci pixel, merah, hijau dan biru harus dalam huruf kecil.
+
+\begin{lstlisting}
+LAYER
+  NAME "JacksonvilleNC_CIB"
+  DATA "Jacksonville.tif"
+  TYPE RASTER
+  STATUS ON
+  CLASSITEM "[pixel]"
+  # class using simple string comparison, equivalent to ([pixel] = 0)
+  CLASS
+    EXPRESSION "0"
+    STYLE
+      COLOR 0 0 0
+    END
+  END
+  # class using an EXPRESSION using only [pixel].
+  CLASS
+    EXPRESSION ([pixel] >= 64 AND [pixel] < 128)
+    STYLE
+    COLOR 255 0 0
+    END
+  END
+  # class using the red/green/blue values from the palette
+  CLASS
+    NAME "near white"
+    EXPRESSION ([red] > 200 AND [green] > 200 AND [blue] > 200)
+    STYLE
+      COLOR 0 255 0
+    END
+  END
+  # Class using a regular expression to capture only pixel values ending in 1
+  CLASS
+    EXPRESSION /*1/
+    STYLE
+      COLOR 0 0 255
+    END
+  END
+END
+\end{lstlisting}
+
+
+\subsection{Vektor Layer}
+Data vektor adalah data yang diperoleh dalam bentuk koordinat titik yang menampilkan, 
+menempatkan dan menyimpan data spasial dengan menggunakan titik, garis atau area (poligon). 
+Terdapat tiga tipe bentuk data vektor (titik, garis, dan poligon) yang bisa digunakan untuk menampilkan informasi pada peta. 
+Titik bisa digunakan sebagai lokasi sebuah tempat atau posisi tertentu dalam peta. 
+Garis bisa digunakan untuk menunjukkan route suatu perjalanan atau menggambarkan batas suatu wilayah 
+dan juga batas suatu kawasan hutan atau area tertentu. 
+Poligon bisa digunakan untuk menggambarkan sebuah danau atau sebuah luasan areal yang kemudian dapat analisis luasan 
+pada areal-areal tersebut.
+Di dalam model layer vektor, garis-garis atau kurva (busur atau arcs) merupakan sekumpulan titik-titik terurut yang dihubungkan (Prahasta, 2001). Poligon akan terbentuk penuh jika titik awal dan titik akhir poligon memiliki nilai koordinat yang sama dengan titik awal. Sedangkan bentuk poligon disimpan sebagai suatu kumpulan list yang saling terkait secara dinamis dengan menggunakan pointer/titik.
+Vektor Layer terdiri dari masing-masing titik, yang (untuk data 2D) disimpan sebagai pasangan koordinat (x, y). 
+Poin dapat digabungkan dalam urutan tertentu untuk membuat garis, atau bergabung dalam cincin tertutup untuk 
+membuat poligon, namun semua data vektor pada dasarnya terdiri dari daftar koordinat yang menentukan simpul, 
+beserta peraturan untuk menentukan apakah dan bagaimana simpul tersebut digabungkan. .
+Perhatikan bahwa sementara data raster terdiri dari sel array yang teratur, 
+titik-titik pada dataset vektor tidak boleh secara teratur spasi.
+Bidang vektor digunakan misalnya di meteorologi untuk menyimpan / menampilkan arah angin dan magnitude-nya.
+Sumbernya adalah dua band data raster, band pertama mewakili komponen U dari vektor, dan pita kedua komponen V. Dengan menggunakan nilai u, v pada lokasi tertentu, kita dapat menghitung rotasi dan besarnya dan menggunakannya untuk menggambar anak panah dengan ukuran yang sebanding dengan magnitude dan menunjuk ke arah fenomena (angin, arus, dll.)
+
+\subsection{Menampilkan Map Bandung}
+\begin{verbatim}
+MAP  
+name "bandung"  
+status on  
+extent 392000 9094000 483500 9166500  
+imagetype png  
+size 800 600  
+shapepath "../data"  
+imagecolor 255 200 34      
+
+WEB   
+imagepath "/tmp/ms_tmp/"   
+imageurl "/ms_tmp/"  END 
+ 
+ LAYER   
+name "bandung"   
+data "bandung_indonesia_osm_polygon"   
+status default   
+type polygon 
+
+CLASS    
+color 123 34 56    
+outlinecolor 255 2 3      
+END    
+END 
+END
+\end{verbatim}
+
+
+\subsection{Class}
+Class adalah prototype, atau blueprint, atau rancangan yang mendefinisikan variable dan method-methode pada seluruh objek tertentu. 
+Class berfungsi untuk menampung isi dari program yang akan dijalankan, di dalamnya berisi atribut / type data dan method untuk menjalankan suatu program.
+Class merupakan suatu blueprint atau cetakan untuk menciptakan suatu instant dari  object. 
+class juga merupakan grup suatu object dengan kemiripan attributes/properties, behaviour dan relasi ke object lain. 
+Contoh : Class Person, Vehicle, Tree, Fruit dan lain-lain.
+
+\subsection{STYLE Objects}
+Yang dimaksud dengan objek pada java adalah sekumpulan software yang terdiri dari variable dan method-method yang terkait. 
+Objek juga merupakan benda nyata yang dibuat berdasarkan rancangan yang didefinisikan di dalam class
+
+Object adalah instance dari class. Jika class secara umum mepresentasikan (template) sebuah object, 
+sebuah instance adalah representasi nyata dari class itu sendiri. Contoh : Dari class Fruit kita dapat membuat object Mangga, 
+Pisang, Apel, dan lain-lain.
+
+\subsection{MapServer}
+MapServer adalah applikasi Open Source yang memungkinkan sebuah data peta diakses melalui web. Teknologi ini pertama kali dikembangkan oleh Universitas Minesotta Amerika Serikat. Hadirnya MapServer menjadikan pekerjaan membuat Peta Digital menjadi lebih mudah dan interaktif. Interaktif peta disini diartikan bahwa pengguna dapat dengan mudah melihat dan mengubah tampilan peta seperti zoom, rotate, dan menampilkan informasi (seperti menampilkan info jalan) dan analisis( seperti menentukan rute perjalanan) pada permukaan geografi. Diagram berikut menggambarkan bagaimana user berinteraksi dengan peta interaktif berbasis MapServer.
+Map Server bekerja secara berdampingan dengan applikasi web server. Web Server menerima request peta melalui MapServer. MapServer mengenerate request terhadap peta dan mengirimkannya ke web server. Fungsi utama dari MapServer adalah melakukan pembacaan data dari banyak sumber dan menempatkannya kedalam layer-layer secara bersamaan menjadi file graphic. Salah satu layernya bisa saja berupa gambar satelit. Setiap layer saling overlay satu dengan lainnya dan ditampilkan kedalam web browser.
+
+Untuk lebih memudahkan pemakaian MapServer, MapServer membuat sebuah aplikasi yang disebut MS4W atau MapServer for Windows. MS4W ditujukan untuk pengguna MapServer pemula yang menggunakan sistem operasi Microsoft Windows. Didalam MS4W sudah dilengkapi dengan WebServer (Apache), MapServer dan MapScript (PHP, C Sharp, Python, Java) dan dilengkapi pula dengan dukungan terhadap berbagai macam database.
+
+Mapserver menghasilkan keluaran berupa file graphic berdasarkan masukan yang diberikan oleh user. 
+Komponen kuncinya adalah MapServer executable yang terdiri dari CGI program, file peta, sumber data dan output gambar. 
+Seperti pada gambar di bawah ini semua komponen bekerja bersama-sama, 
+setelah user melakukan request/permintaan maka CGI akan mengakses file peta, 
+menggambarkan informasi yang didapat dari sumber data dan kembali menampilkannya pada peta.
+
+Secara sederhana MapServer menjalankan executable applikasi CGI pada web server yang secara teknis merupakan 
+proses stateless berbasis pada HTTP. Stateless adalah sebuah proses permintaan yang dilanjutkan dengan stop running. 
+Applikasi CGI menerima permintaan dari web server, kemudian proses dilakukan dan mengembalikan respon atau data ke web server.
+CGI bekerja sangat sederhana tidak diperlukan sebuah pemrograman untuk dapat menggunakannya. 
+Kita tinggal melakukan edit berdasarkan text base, konfigurasi runtime file, membuat halaman web, 
+dan menempatkannya bekerja pada web server. MapServer CGI executable bekerja sebagai perantara antara file peta 
+dengan program web server yang meminta peta. Permintaan di lewatkan dalam bentuk CGI parameter dari web server menuju MapServer.
+Gambar yang dibuat oleh MapServer selanjutnya memberikan feed back ke web server dan selanjutnya menuju 
+user melalui web browser.
+
+MapServer seperti sebuah mesin yang membutuhkan bahan bakar untuk dapat bekerja dan membutuhkan sistem pengiriman (delivery system) bahan bakar untuk mencapai mesin . Program MapServer perlu mengetahui layer peta yang akan digambar, bagaimana menggambarkannya, dan dimana lokasi sumber datanya. Data merupakan bahan bakarnya dan file peta atau .map.file merupakan system pengirimannya (delivery system). File Peta adalah text konfigurasi yang terdiri dari list setting yang digunakan untuk menggambar dan berinteraksi dengan peta. Informasi yang termuat di dalamnya adalah layer data apa yang akan digambar, dimana focus geografis petanya, sistem proyeksi yang digunakan, format apa yang akan digunakan untuk menampilkan gambar, dan cara menentukan legenda dan skala pada peta.
+
+Contoh script dasar pemetaan dengan satu layer.
+\begin{verbatim}
+MAP
+SIZE 600 300
+EXTENT -180 -90 180 90
+LAYER
+NAME countries
+TYPE POLYGON
+STATUS DEFAULT
+DATA countries.shp
+CLASS
+OUTLINECOLOR 100 100 100
+END
+END
+END
+\end{verbatim}
+
+Ketika request atau permintaan datang dari applikasi MapServer maka reguest tersebut mesti menyebutkan sepesifikasi 
+file peta yang diinginkan. Kemudian MapServer membuat petanya berdasarkan pada setting pada file peta yang diberikan tadi.
+
+\subsection{About STYLE Objects}
+Sama seperti Anda menggunakan gaya paragraf dan karakter untuk memformat teks dengan cepat, Anda dapat menggunakan gaya objek untuk membuat grafik dan bingkai dengan cepat. Gaya objek termasuk pengaturan untuk stroke, warna, transparansi, bayangan drop, gaya paragraf, bungkus teks, dan banyak lagi. Anda dapat menetapkan efek transparansi yang berbeda untuk objek, isi, goresan, dan teks.
+
+Anda dapat menerapkan gaya objek ke objek, kelompok, dan bingkai (termasuk bingkai teks). Sebuah gaya dapat menghapus dan mengganti semua pengaturan objek atau hanya dapat mengganti pengaturan tertentu, sehingga pengaturan lainnya tidak berubah. Anda mengontrol pengaturan mana yang mempengaruhi gaya dengan memasukkan atau mengecualikan kategori pengaturan dalam definisi.
+
+Anda juga bisa menerapkan gaya objek ke bingkai grid. Secara default, setiap grid bingkai yang Anda buat menggunakan gaya objek [Kotak Dasar]. Anda bisa mengedit gaya [Grid Dasar] atau Anda bisa menerapkan gaya objek lain ke grid. Saat Anda membuat atau mengedit gaya objek untuk bingkai kotak, gunakan bagian Story Options untuk menentukan arah penulisan, tipe frame, dan kotak bernama.
+
+Saat membuat gaya, Anda mungkin menemukan beberapa gaya memiliki beberapa karakteristik yang sama. Alih-alih menetapkan karakteristik tersebut setiap kali Anda menentukan gaya berikutnya, Anda dapat mendasarkan satu gaya objek ke objek lainnya. Bila Anda mengubah gaya dasar, atribut bersama apa pun yang muncul dalam perubahan gaya "orang tua" pada gaya "anak" juga.
+------

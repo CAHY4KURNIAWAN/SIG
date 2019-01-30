@@ -1,0 +1,86 @@
+%kelompok 4 D4 TI-2D
+%Ayu Permata Sari        1154022
+%Librantara Erlangga     1154071
+%Martin Luter Zega       1154120
+%Putri Aulia Ramadhanie  1154096
+%Ryan Hafizh Herdiana    1154067
+%Copyright (c) 2017 Copyright Holder All Rights Reserved.
+
+\section{Pyshp}
+Shapefile adalah file yang berisi domain map dataset dan dapat dibuka dengan aplikasi-aplikasi tertentu yang memiliki fitur GIS di dalamnya.
+Python adalah bahasa pemrograman yang dapat digunakan untuk membuka shapefile tersebut.
+Pyshp adalah library python yang berfungsi agar bisa membaca shapefile, salah satunya format shp.
+Pip adalah Package Management System yang berfungsi untuk meng-install dan me-manage paket software yang ada di dalam Python.
+Metode yang saya lakukan diatas adalah menghitung jumlah shape yang tersedia di dalam file shapefile tersebut.
+
+\subsection{ESRI Shapefile}
+	
+Shapefiles awalnya dikembangkan oleh Environmental Systems Research Institute (ESRI, 1998)\ref{esri}
+	\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/esri.JPG}}
+	\caption{ESRI.}
+	\label{esri}
+	\end{figure}
+	dan merupakan format data geospasial untuk perangkat lunak sistem informasi geografis , seperti ESRI ArcGIS dan Quantum GIS.
+	Format shapefile spasial menggambarkan geometri sebagai fitur titik, polyline, atau poligon
+
+Shapefile adalah pengelompokan beberapa file untuk mewakili aspek geodata yang berbeda:
+\begin{enumerate}
+	\item .shp: bentuk format; geometri fitur itu sendiri.
+	\item .shx: bentuk format indeks; indeks posisi geometri fitur untuk memungkinkan pencarian cepat.
+	\item .dbf: format atribut; atribut columnar untuk setiap bentuk, dalam format dBase IV.
+\end{enumerate}
+Atribut fitur dapat diperiksa di perangkat lunak SIG, atau dengan membuka berkas .dbf di Microsoft Excel, misalnya. Ada juga beberapa file pilihan dalam format shapefile. Yang paling penting adalah file .prj yang menggambarkan sistem koordinat dan informasi proyeksi yang digunakan. Shapefiles yang dihasilkan untuk model bahaya NBCC2015 ditentukan dengan proyeksi WGS84
+
+\subsection{Instalasi pyshp}
+Install Python terlebih dahulu
+Install PIP di python
+Buka cmd lalu ketik: Python m pip install pyshp ,lalu enter
+Kemudian upgrade pip dengan mengetikkan di cmd: Python m pip install upgrade pip ,lalu enter
+Lalu masuk ke python
+
+\subsection{Dasar Penggunaan}
+berikut ini adalah dasar penggunaan module pyshp di python
+
+Membuat file pada pyshp
+  \begin{verbatim}
+  import shapefile
+  a = shapefile.Writer(shapeType=1)
+  a.field('nama','C','40')
+  a.field('alamat','C','255')
+  a.save('namafile.shp')
+  \end{verbatim}
+
+Mengedit atau Menambah record
+\begin{verbatim}
+  import shapefile
+  a = shapefile.Editor(shapefile='namafile.shp')
+  a.record('politeknis pos','jl.sarijadi')
+  a.point(-6.8731953,107,5737873,0,0)
+  a.save('namafile')
+\end{verbatim}
+
+Menghapus record
+\begin{verbatim}
+  import shapefile
+  a = shapefile.Editor('namafile.shp')
+  a.shape(0) 
+  #masukan data ke berapa 
+  #karena array jadi dimulai dari 0
+  a.delete(0)
+  a.save('namafile')
+\end{verbatim}
+
+Membaca record
+\begin{verbatim}
+  import shapefile
+  a = shapefile.Reader('namafile.shp')
+  a.records() #menampilkan semua record
+  a.record(0) #spesifik record
+\end{verbatim}
+
+
+
+
+
+
