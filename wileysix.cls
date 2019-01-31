@@ -58,12 +58,12 @@ This version is dated \currversion^^J^^J}
 \parskip=0pt %plus .1pt
 
 %% to make the 6 1/8 by 9 1/4 trim size
-%\textheight=45pc \textwidth=28pc
-\textheight=64pc \textwidth=43pc
+\textheight=45pc \textwidth=28pc
 
-
-\topmargin.75in
-\headheight 12pt
+%\topmargin .75in
+%\headheight 12pt
+\topmargin = 0pt
+\headheight = 0pt
 \headsep 18pt
 \topskip  10pt
 \footskip 18pt
@@ -99,6 +99,8 @@ This version is dated \currversion^^J^^J}
 \evensidemargin=0pt
 \advance\evensidemargin-.5in
 \marginparwidth .75in
+\paperwidth=420pt
+\paperheight=595pt
 
 \if@twocolumn
  \setlength\marginparsep {10\p@}
@@ -159,15 +161,15 @@ This version is dated \currversion^^J^^J}
 \@openrighttrue
 
 
-\newcommand{\contentsname}{CONTENTS}
-\newcommand{\listfigurename}{List of Figures}
-\newcommand{\listtablename}{List of Tables}
+\newcommand{\contentsname}{DAFTAR ISI}
+\newcommand{\listfigurename}{Daftar Gambar}
+\newcommand{\listtablename}{Daftar Tabel}
 \newcommand{\bibname}{Bibliography}
 \newcommand{\indexname}{INDEX}
-\newcommand{\figurename}{Figure}
-\newcommand{\tablename}{Table}
-\newcommand{\partname}{PART}
-\newcommand{\chaptername}{Chapter}
+\newcommand{\figurename}{Gambar}
+\newcommand{\tablename}{Tabel}
+\newcommand{\partname}{Bagian}
+\newcommand{\chaptername}{Bab}
 \newcommand{\appendixname}{Appendix}
 
 
@@ -336,10 +338,10 @@ This version is dated \currversion^^J^^J}
 %% Title Pages, Preface, Introduction==>>
 
 \def\preface{\startonoddpage
-\chapter*{Preface}
+\chapter*{Kata Pengantar}
 \global\titletrue
-\markboth{PREFACE}{PREFACE}
-\addcontentsline{toc}{schapter}{Preface}}
+\markboth{Kata Pengantar}{Kata Pengantar}
+\addcontentsline{toc}{schapter}{Kata Pengantar}}
 
 \def\prefacefirst{\startonoddpage
 \chapter*{Preface to the First Edition}
@@ -400,8 +402,8 @@ This version is dated \currversion^^J^^J}
 \vss}\global\everypar={\hskip-\parindent\everypar={}}\vskip1in}
 
 % used
-% \introauthor{Catherine Clark, PhD.}{Harvard School of Public Health\\
-% Boston, MA, USA}
+%\introauthor{Rolly Maulana Awangga.}{D4 Teknik Informatika\\
+% Politeknik Pos Indonesia}
 
 \def\l@ichapter#1#2{%
   \ifnum \c@tocdepth >1
@@ -493,9 +495,9 @@ This version is dated \currversion^^J^^J}
 {\frenchspacing\baselineskip=12pt
 \authorfont \theauthor\vskip1sp}
 \vfill
-\noindent{\includegraphics[width=1.7in]{figures/wileylogo}}
+\noindent{\includegraphics[width=1.7in]{figures/kreatiflogo}}
 \vskip-8pt
-{\wileyfont A JOHN WILEY \& SONS, INC., PUBLICATION}
+{\wileyfont Kreatif Industri Nusantara}
 \vskip24pt}\newpage}
 
 \def\affil#1{{\affilfont #1}\vskip18pt}
@@ -688,7 +690,7 @@ This version is dated \currversion^^J^^J}
   {\parindent \z@ 
     \interlinepenalty\@M
 \Large
-\hbox to\textwidth{\hbox{\chapternumberfont CHAPTER
+\hbox to\textwidth{\hbox{\chapternumberfont BAB
 \the\c@chapter}\hfill\vrule depth12pt width0pt}
 \hrule height3pt
 \vtop to22.5pc{\vfill
@@ -1053,9 +1055,9 @@ This version is dated \currversion^^J^^J}
 \newcommand{\listoftables}{%
 \startonoddpage
 \global\titletrue
-    \chapter*{List of Tables
-        \@mkboth{\uppercase{List of Tables}}{\uppercase{List of Tables}}}%
-\addcontentsline{toc}{schapter}{List of Tables}
+    \chapter*{Daftar Tabel
+        \@mkboth{\uppercase{Daftar Tabel}}{\uppercase{Daftar Tabel}}}%
+\addcontentsline{toc}{schapter}{Daftar Tabel}
 \vskip-9pt
 \bgroup\parskip=2pt
 {\def\numberline##1{\def\one{##1}%
@@ -1075,9 +1077,9 @@ This version is dated \currversion^^J^^J}
 \newcommand{\listoffigures}{%
 \startonoddpage
 \global\titletrue
-    \chapter*{List of Figures
-        \@mkboth{\uppercase{List of Figures}}{\uppercase{List of Figures}}}%
-\addcontentsline{toc}{schapter}{List of Figures}
+    \chapter*{Daftar Gambar
+        \@mkboth{\uppercase{Daftar Gambar}}{\uppercase{Daftar Gambar}}}%
+\addcontentsline{toc}{schapter}{Daftar Gambar}
 \vskip-9pt
 \bgroup\parskip=2pt
 {\def\numberline##1{\def\one{##1}%
@@ -1100,7 +1102,7 @@ This version is dated \currversion^^J^^J}
 \vskip16pt
     \begingroup
       {\centering\leavevmode\chaptocfont
-         \uppercase{Part\ \/ #1}
+         \uppercase{Bagian\ \/ #1}
 \vskip8pt
 \vskip\partskip
 }\par
@@ -1247,9 +1249,9 @@ to\@pnumwidth{\hss #2}\par
 \@input {\jobname.bbl}}
 }
 
-\def\thechapbibliography#1{\section*{References}
-\markright{REFERENCES}
-\addcontentsline{toc}{schapter}{References}
+\def\thechapbibliography#1{\section*{Daftar Pustaka}
+\markright{Daftar Pustaka}
+\addcontentsline{toc}{schapter}{Daftar Pustaka}
 \small
 \labelsep 5pt
 \list
@@ -1287,8 +1289,8 @@ to\@pnumwidth{\hss #2}\par
 \let\endchapthebibliography\endchapreferences
 
 \def\chapreferences#1{\ifvmode\vskip-\lastskip\fi
-\vskip8pt\vskip1sp\section*{REFERENCES}
-\addcontentsline{toc}{schapter}{References}
+\vskip8pt\vskip1sp\section*{Daftar Pustaka}
+\addcontentsline{toc}{schapter}{Daftar Pustaka}
 \bgroup
 \small
 \list
@@ -1307,9 +1309,9 @@ to\@pnumwidth{\hss #2}\par
 
 \def\thebibliography#1{\startonoddpage
 \global\titletrue\dooffprintinfo
-\chapter*{References}
-\markboth{REFERENCES}{REFERENCES}
-\addcontentsline{toc}{schapter}{References}
+\chapter*{Daftar Pustaka}
+\markboth{Daftar Pustaka}{Daftar Pustaka}
+\addcontentsline{toc}{schapter}{Daftar Pustaka}
 \small
 \labelsep 5pt
 \list
@@ -1837,50 +1839,55 @@ D R A F T\hfill\today, \realtime\hfill D R A F T\global\titlefalse\vss}}
 \vbox to\textheight\bgroup\vfill\obeylines\obeyspaces\xcopyrightpage}
 
 \def\xcopyrightpage#1#2\end#3{\scriptsize\parindent=0pt
-Copyright \copyright{#1} by John Wiley \& Sons, Inc. All rights reserved.
-\vskip6.5pt
-Published by John Wiley \& Sons, Inc., Hoboken, New Jersey.\\
-Published simultaneously in Canada.
-\vskip6.5pt
-
-No part of this publication may be reproduced, stored in a retrieval
-system, or transmitted in any form\\ or by any means, electronic,
-mechanical, photocopying, recording, scanning, or otherwise, except
-as\\ permitted under Section 107 or 108 of the 1976 United States
-Copyright Act, without either the prior\\ written permission of the
-Publisher, or authorization through payment of the appropriate
-per-copy fee to\\ the Copyright Clearance Center, Inc., 222 Rosewood
-Drive, Danvers, MA 01923, (978) 750-8400,\\ fax (978) 646-8600, or on
-the web at www.copyright.com. Requests to the Publisher for
-permission should\\ be addressed to the Permissions Department, John
-Wiley \& Sons, Inc., 111 River Street, Hoboken, NJ\\ 07030, (201)
-748-6011, fax (201) 748-6008.  \vskip10pt
-
-Limit of Liability/Disclaimer of Warranty: While the publisher and
-author have used their best efforts in\\ preparing this book, they
-make no representations or warranties with respect to the accuracy
-or\\ completeness of the contents of this book and specifically
-disclaim any implied warranties of\\ merchantability or fitness for a
-particular purpose.  No warranty may be created or extended by
-sales\\ representatives or written sales materials.  The advice and strategies contained herin may not be\\
-suitable for your situation. You should consult with a professional
-where appropriate.  Neither the\\
-publisher nor author shall be liable for any loss of profit or any other commercial damages, including\\
-but not limited to special, incidental, consequential, or other damages.
-\vskip10pt
-For general information on our other products and services please contact our Customer Care\\ Department with the U.S. at 877-762-2974, outside the U.S. at
-317-572-3993 or fax 317-572-4002.
-\vskip10pt
-Wiley also publishes its books in a variety of electronic formats. Some content that appears in print,\\
-however, may not be available in electronic format.
-\vskip10pt
-{\locfont Library of Congress Cataloging-in-Publication Data:}
-\vskip8pt
 #2
-Printed in the United States of America.\\
+\vskip6.5pt
 
-10\ \ 9\ \ 8\ \ 7\ \ 6\ \ 5\ \  4\ \ 3\ \ 2\ \ 1 
-\vskip24pt
+{\locfont Penulis:}\\
+Rolly Maulana Awangga
+\vskip6.5pt
+
+ISBN : 978-602-53897-0-2
+\vskip6.5pt
+
+{\locfont Editor:}\\
+M. Yusril Helmi Setyawan
+\vskip6.5pt
+
+{\locfont Penyunting:}\\
+Syafrial Fachrie Pane\\
+Khaera Tunnisa\\ 
+Diana Asri Wijayanti\\
+\vskip6.5pt
+
+{\locfont Desain sampul dan Tata letak:}\\
+Deza Martha Akbar
+\vskip6.5pt
+
+{\locfont Penerbit:}\\
+Kreatif Industri Nusantara
+\vskip6.5pt
+
+{\locfont Redaksi:}\\
+Jl. Ligar Nyawang No. 2 \\
+Bandung 40191\\
+Tel. 022 2045-8529\\
+Email : awangga@kreatif.co.id\\
+\vskip6.5pt
+
+{\locfont Distributor:}\\
+Informatics Research Center\\
+Jl. Sariasih No. 54\\
+Bandung 40151\\
+Email : irc@poltekpos.ac.id\\
+\vskip6.5pt
+
+Cetakan Pertama, #1
+\vskip6.5pt
+
+Hak cipta dilindungi undang-undang\\
+Dilarang memperbanyak karya tulis ini dalam bentuk dan dengan cara\\
+apapun tanpa ijin tertulis dari penerbit\\
+%\vskip24pt
 \egroup\let\@badend\relax\endgroup}
 
 \let\endcopyrightpage\relax
@@ -1912,8 +1919,7 @@ volume.} \vskip24pt\egroup
 \advance\hsize -10pt \raggedright
 \footnotesize{\it #1. }\\{By #2}
 \noindent\hbox{\footnotesize
-Copyright \copyright\ \thecopyrightyear\ John Wiley \&
-Sons, Inc.}}}
+Copyright \copyright\ \thecopyrightyear\ Kreatif Industri Nusantara.}}}
 
 
 \def\offprintinfo#1#2{
@@ -2002,9 +2008,10 @@ to2pc{\hskip3pt\hrulefill}\hss}\hss}%
 
 %\docropmarks
 
-\voffset-25pt
-\hoffset40pt % was 48
-
+%\voffset-25pt
+%\hoffset40pt % was 48
+\voffset = -67pt
+\hoffset = 7pt
 
 %% new additions, as of Jan 25, 2005
 \newtheorem{theorem}{Theorem}[chapter]
