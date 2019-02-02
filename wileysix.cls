@@ -58,11 +58,12 @@ This version is dated \currversion^^J^^J}
 \parskip=0pt %plus .1pt
 
 %% to make the 6 1/8 by 9 1/4 trim size
-\textheight=45pc \textwidth=28pc
+%\textheight=45pc \textwidth=28pc
+\textheight=65pc \textwidth=43pc
 
 %\topmargin .75in
 %\headheight 12pt
-\topmargin = 0pt
+\topmargin = 2pt
 \headheight = 0pt
 \headsep 18pt
 \topskip  10pt
@@ -99,8 +100,8 @@ This version is dated \currversion^^J^^J}
 \evensidemargin=0pt
 \advance\evensidemargin-.5in
 \marginparwidth .75in
-\paperwidth=420pt
-\paperheight=595pt
+%\paperwidth=420pt
+%\paperheight=595pt
 
 \if@twocolumn
  \setlength\marginparsep {10\p@}
