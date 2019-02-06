@@ -35,30 +35,49 @@ titik, garis, poligon (2-D) dan permukaan (3-D).
 
 
 Dan arti dari gambar di atas adalah:
-Format Titik 						
-- Memiliki koordinat tunggal 		
-- Tanpa memiliki panjang 			
-- Tanpa memiliki luasan
+\begin{itemize} 
+\item Format Titik
+\end{itemize}
 
-Format Garis
-- Memiliki koordinat titik awal dan akhir		
-- Memiliki panjang tanpa luasan
+\begin{itemize} 						
+\item[--] Memiliki koordinat tunggal 		
+\item[--] Tanpa memiliki panjang 			
+\item[--] Tanpa memiliki luasan
+\end{itemize}
 
-Format Poligon 					
-- Memiliki koordinat titik awal dan akhir
-- Memiliki panjang dan luasan 		
+\begin{itemize} 
+\item Format Garis
+\end{itemize}
 
-Format Permukaan
-- Memiliki area koordinat vertikal
-- Memiliki area dengan ketinggian
+\begin{itemize}
+\item[--] Memiliki koordinat titik awal dan akhir		
+\item[--] Memiliki panjang tanpa luasan
+\end{itemize}
+
+\begin{itemize} 
+\item Format Polygon
+\end{itemize}
+
+\begin{itemize} 					
+\item[--] Memiliki koordinat titik awal dan akhir
+\item[--] Memiliki panjang dan luasan
+\end{itemize} 
+
+\begin{itemize} 
+\item Format Permukaan
+\end{itemize}
+
+\begin{itemize}
+\item[--] Memiliki area koordinat vertikal
+\item[--] Memiliki area dengan ketinggian
+\end{itemize}
 
 
 \item Information
 
 Informasi berasal dari kata pengolahan sejumlah data. Di dalam GIS informasi mempunyai
-
 Volume terbesar. Dan setiap object geografi memiliki setting datanya tersendiri karena 
-Tidak sepenuhnya data yang ada dapat terwakili di dalam peta. Maka, semua data harus
+tidak sepenuhnya data yang ada dapat terwakili di dalam peta. Maka, semua data harus
 Diasosiasikan pada objek spasial yang mampu membuat peta menjadi intelligent.
 
 
@@ -79,7 +98,7 @@ Information related to the surface of the earth.
 \item Definisi GIS menurut (Marble \& Peuquet, 1983) and (Parker,
 1988; Ozemoy et al., 1981; Burrough, 1986):
 Yaitu: GIS deals with space-time data and often but not necessarily, employs computer
-Hardware and software.
+Hardware and Software.
 
 \item Definisi GIS menurut (Purwadhi, 1994):
 - SIG adalah suatu sistem yang mampu mengorganisir perangkat keras (hardware),
@@ -88,10 +107,13 @@ Penyimpanan, pengolahan, maupun analisis data yang dilakukan secara simultan, se
 Diperoleh seluruh informasi yang berkaitan secara langsung dengan aspek keruangan.
 - SIG adalah manajemen data spasial dan data non-spasial yang berbasis komputer
 Dengan menggunakan tiga karakteristik dasar, yaitu: 
-(i) Memiliki fenomena yang aktual (variabel data non-lokasi) dan berhubungan dengan topik permasalahan di lokasi bersangkutan; 
-(ii) Merupakan suatu kejadian di suatu lokasi tertentu; 
-(iii) Memiliki dimensi waktu. Alasan GIS dibutuhkan adalah karena untuk data spasial 
-Penanganannya sangat sulit karena peta dan data statistik cepat mengalami kedaluarsa 
+\begin{itemize}
+    \item Memiliki fenomena yang aktual (variabel data non-lokasi) dan berhubungan dengan topik permasalahan di lokasi bersangkutan.
+    \item Merupakan suatu kejadian di suatu lokasi tertentu.
+    \item Memiliki dimensi waktu. Alasan GIS dibutuhkan adalah karena untuk data spasial.
+\end{itemize}
+
+Penanganannya sangat sulit karena peta dan data statistik cepat mengalami kedaluwarsa 
 Sehingga tidak ada pelayanan penyediaan data dan informasi yang diberikan menjadi tidak akurat.
 \end{enumerate} 
 
@@ -123,7 +145,7 @@ Maka artikel :
 \subsection{Pengenalan GIS atau Geography Information System}
 \begin{enumerate}
 	
-\item GIS atau dikenal dengan Sistem Informasi Geografi ditunjukan sebagai sistem yang mampu menyimpan, memeriksa, mengintegrasikan, memanipulasi, menganalisis dan memaparkan data-data yang terkait dengan spasial yang merunjuk terhadap bagian bumi. (Jabatan Alam Sekitar, 1987).
+\item GIS atau dikenal dengan Sistem Informasi Geografi ditujukan sebagai sistem yang mampu menyimpan, memeriksa, mengintegrasikan, memanipulasi, menganalisis dan memaparkan data-data yang terkait dengan spasial yang merujuk terhadap bagian bumi. (Jabatan Alam Sekitar, 1987).
 
 \item GIS merupakan satu set lat untuk mengumpulkan, menyimpan, mendapatkan, mengubah dan memaparkan data ruang dari keadaan  bumi yang sebenarnya untuk keperluan tertentu (Burrough, 1986).
 
@@ -153,16 +175,13 @@ Pada gambar \ref{komponen GIS} dijelaskan bahwa komponen GIS sebagai berikut.
 
 \subsubsection{Komponen GIS atau Geography Information System}
 Sesuai dengan gambar diatas komponen GIS dibagi menjadi 3 bagian, yaitu :
-1. Sistem Komputer (perkakas dan sistem operasi), merupakan hardware dari sebuah sistem GIS. Perkakas terdiri dari monitor, unit sistem atau CPU, keyboard dan mouse (Heywood et al., 2002). Teknologi komputer harus memiliki kemampuan kuasa
-yang tinggi untuk menjalankan per isian GIS.
-
-2. Software GIS, merupakan ArcGIS untuk tujuan perancangan, pengurusan ataupun pemodelan pada kebutuhan tertentu.
-
-3. Database GIS, merupakan tempat yang melibatkan data GIS baik data spatial dan pengurusan datanya. Memori untuk menyimpan jumlah data yang besar dan mempunyai kualitas yang baik dengan resolusi tinggi pada skrin grafik warna (untuk membantu dalam menentukan maklumat yang dihasilkan atau diberikan melalui penggunaan warna yang berbeda).
-
-4. Metode GIS, merupakan prosedur dari analisis sistem GIS yang melibatkan proses input, proses menyimpan, proses mengurus, proses menukar, proses menganalisis, dan proses output yang hanya melibatkan per isian GIS untuk mengatur sistem dan data-data tersebut (Heywood et al., 2002 )
-
-5. People, merupakan orang-orang yang menggunakan sistem GIS, atau orang yang mengendalikan proses input-output sistem GIS. 
+\begin{itemize}
+    \item Sistem Komputer (perkakas dan sistem operasi), merupakan hardware dari sebuah sistem GIS. Perkakas terdiri dari monitor, unit sistem atau CPU, keyboard dan mouse (Heywood et al., 2002). Teknologi komputer harus memiliki kemampuan kuasa yang tinggi untuk menjalankan per isian GIS.
+    \item Software GIS, merupakan ArcGIS untuk tujuan perancangan, pengurusan ataupun pemodelan pada kebutuhan tertentu.
+    \item Database GIS, merupakan tempat yang melibatkan data GIS baik data spatial dan pengurusan datanya. Memori untuk menyimpan jumlah data yang besar dan mempunyai kualitas yang baik dengan resolusi tinggi pada skrin grafik warna (untuk membantu dalam menentukan maklumat yang dihasilkan atau diberikan melalui penggunaan warna yang berbeda).
+    \item Metode GIS, merupakan prosedur dari analisis sistem GIS yang melibatkan proses input, proses menyimpan, proses mengurus, proses menukar, proses menganalisis, dan proses output yang hanya melibatkan per isian GIS untuk mengatur sistem dan data-data tersebut (Heywood et al., 2002 )
+    \item People, merupakan orang-orang yang menggunakan sistem GIS, atau orang yang mengendalikan proses input-output sistem GIS.
+\end{itemize} 
 
 
 \subsection{Kaidah GIS atau Geography Information System}
@@ -191,8 +210,8 @@ Merupakan aktivitas untuk proses melakukan eksplorasi lebih jauh dalam meneliti 
 \item Analisis data
 Merupakan cara untuk memaparkan dan memanipulasi data yang didapat. Dengan menggunakan 2 jenis format, yaitu :
 \begin{itemize}
-\item data vektor : melibatkan beberapa kaedah seperti penimbalan / buffering, penindihan/overlay, pengukuran jarak, statik ruang, dan manipulasi peta.
-\item data raster : menaganalisis pengumpulan data tempatan, kaedah kejiranan, kaedah berzon, dan kaedah operasi global.
+\item data vektor : melibatkan beberapa kaidah seperti penimbalan / buffering, penindihan/overlay, pengukuran jarak, statik ruang, dan manipulasi peta.
+\item data raster : menganalisis pengumpulan data tempatan, kaidah kejiranan, kaidah berzon, dan kaidah operasi global.
 
 (Chang, 2008) (Worboy \& Duckham, 2003) (Heywood et al., 2002)
 \end{itemize}
@@ -223,7 +242,7 @@ Kesimpulannya, GIS merupakan alat yang penting dalam perspektif komputer pada ma
 mempunyai kemampuan aplikasi dalam berbagai bidang, misalnya dalam proses perancangan bandar dan kartografi,
 penilaian kesan alam sekitar dan pengurusan sumber asli. GIS juga memainkan peranan dalam perspektif perniagaan,
 dimana alat ini sangat bermanfaat dalam pengiklanan dan pemasaran, jualan, dan logistik 
-mampu digunakan untuk mencari dan meningkatkan perniagaan seperti tapak perniagaan yang strategic. Sebagai umum, pengguna GIS dapat dilibatkan dengan agensi-agensi penguat kuasaan undang-undang, strategi
+mampu digunakan untuk mencari dan meningkatkan perniagaan seperti tapak perniagaan yang strategi. Sebagai umum, pengguna GIS dapat dilibatkan dengan agensi-agensi penguat kuasaan undang-undang, strategi
 perancangan, perhutanan, industri, pemberdayaan alam, perencanaan kota, profesional
 telekomunikasi, kesehatan, pengangkutan, geografi, dan pembangunan pemasaran. 
 Penjelasan ini menyediakan platform untuk memahami lebih lanjut tentang komponen, kaidah, dan aplikasi GIS, 
@@ -237,11 +256,11 @@ Ada dua tipe data geospasial. Data vektor dan data raster. Model data vektor mer
 dibagi menjadi tiga bagian, yaitu: titik, garis, dan area (polygon).
 Keuntungan dari data vector, yaitu: ketepatan dalam merepresentasikan fitur titik, batasan dan
 garis lurus. Data raster adalah data yang dihasilkan dari sistem pengindraan yang jauh. Pada data raster,
-objek geografis direpresentasikan sebagai struktur sel grid yang disebut pixel. Resolusi pada data
+objek geografis di representasi kan sebagai struktur sel grid yang disebut pixel. Resolusi pada data
 raster tergantung pada ukuran pixel-nya.
 Maka, resolusi pixel menggambarkan ukuran sebenarnya dari permukaan bumi yang diwakili
-oleh setiap pixel pada citra. Semakin tinggi resolusinya, semakin kecil permukaan bumi yang
-direpresentasikan oleh suatu sel. Data raster cocok untuk merepresentasikan batas-batas yang
+oleh setiap pixel pada citra. Semakin tinggi resolusi nya, semakin kecil permukaan bumi yang
+di representasi kan oleh suatu sel. Data raster cocok untuk me representasi kan batas-batas yang
 berubah secara gradual, seperti jenis tanah, vegetasi, suhu tanah, dan kelembaban tanah.
 
 %\subsection{Analisis Pola Titik dan Estimasi Kepadatan}
