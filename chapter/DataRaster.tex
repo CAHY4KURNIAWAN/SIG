@@ -14,7 +14,7 @@ level merah, hijau, dan biru pada sel. Data Raster (atau disebut juga dengan sel
 dihasilkan dari sistem penginderaan jauh. Pada data raster. Obyek geografis direpresentasikan sebagai struktur
 sel grid yang disebut dengan pixel (picture element). Pada data raster. Resolusi (definisi visual) tergantung
 pada ukuran pixelnya. Dengan kata lain. Resolusi pixel menggambarkan ukuran sebenarnya dipermukaan bumi 
-yang diwakili oleh setiap pixel pada citra. Pada data raster, Obyek geografis direpresentaskan sebagai struktur sel grid yang disebut sebagi pixel (picture element). Resolusi (definisi visual) tergantung pada ukuran pixel-nya, semakin kecil ukuran permukaan bumi yang direpresentasikan oleh sel, semakin tinggi resolusinya. Data Raster dihasilkan dari sistem penginderaan jauh dan sangat baik untuk merepresentasikan batas-batas yang berubah secara gradual seperti jenis tanah, kelembaban tanah, suhu, dan lain-lain. Peta raster adalah peta yang diperoleh dari fotografi suatu areal. foto satelit atau foto permukaan bumi yang diperoleh dari komputer. Contoh peta raster yang diambil dari satelit cuaca. Di dalam Sig, data raster dan analisis data raster banyak digunakan untuk pemetaan obyek yang bersifat kontinu (batasnya tidak terlihat jelas di lapangan/gradual) dan pemodelan spasial, baik statis maupun dinamis. Analisis data raster banyak menggunakan peta-peta hasil analisa digital citra satelit karena peta raster dan citra satelit mempunyai struktur data yang sama, yaitu grid cell, sehingga kompatibel satu degan yang lain. Hal ini berbeda dengan data vector, dimana agar bisa dianalisis secara bersama, Data raster hasil analisis harus dikonversi dulu ke struktur data vektor \cite{puntodewo2003sistem}.
+yang diwakili oleh setiap pixel pada citra. Pada data raster, Obyek geografis di representasikan sebagai struktur sel grid yang disebut sebagi pixel (picture element). Resolusi (definisi visual) tergantung pada ukuran pixel-nya, semakin kecil ukuran permukaan bumi yang direpresentasikan oleh sel, semakin tinggi resolusinya. Data Raster dihasilkan dari sistem penginderaan jauh dan sangat baik untuk merepresentasikan batas-batas yang berubah secara gradual seperti jenis tanah, kelembapan tanah, suhu, dan lain-lain. Peta raster adalah peta yang diperoleh dari fotografi suatu areal. Foto satelit atau foto permukaan bumi yang diperoleh dari komputer. Contoh peta raster yang diambil dari satelit cuaca. Di dalam Sig, data raster dan analisis data raster banyak digunakan untuk pemetaan obyek yang bersifat kontinu (batasnya tidak terlihat jelas di lapangan/gradual) dan pemodelan spasial, baik statis maupun dinamis. Analisis data raster banyak menggunakan peta-peta hasil analisa digital citra satelit karena peta raster dan citra satelit mempunyai struktur data yang sama, yaitu grid cell, sehingga kompatibel satu degan yang lain. Hal ini berbeda dengan data vector, dimana agar bisa dianalisis secara bersama, Data raster hasil analisis harus dikonversi dulu ke struktur data vektor \cite{puntodewo2003sistem}.
 
 \subsection{Pengertian Data Vektor}
 Data vektor adalah data yang direkam dalam bentuk koordinat titik yang menampilkan, 
@@ -38,20 +38,20 @@ Adapun kelebihan yang dimiliki oleh data raster menurut \cite{irwansyah2013siste
 		\item metode untuk mendapatkan citra raster lebih mudah
 		\item Gambar permukaan bumi dalam bentuk citra raster yang didapat dari radar atau satelit penginderaan jauh selalu aktual dari pada bentuk vektornya
 		\item prosedur untuk memperoleh data dalam bentuk raster lebih mudah, sederhana dan murah.
-		\item Harga sistem perangkat lunak aplikasinya cenderung lebih murah.
+		\item Harga sistem perangkat lunak aplikasi nya cenderung lebih murah.
 	\end{enumerate}
 
 \subsubsection{Kekurangan Data Raster}
 Adapun Kekurangan yang dimiliki oleh data raster menurut \cite{irwansyah2013sistem} adalah :
 	\begin{enumerate}
-		\item secara umum memerlukan ruang atau tempat penyimpanan (disk) yang besar dalam komputer, banyak terjadi redudancy data baik untuk setiap layer-nya maupun secara keselururhan.
-		\item Pengunaan sel atau ukuran grid yang lebih besar untuk menghemat ruang penyimpaanan akan menyebabkan kehilangan informasi dan ketelitian.
+		\item secara umum memerlukan ruang atau tempat penyimpanan (disk) yang besar dalam komputer, banyak terjadi redudancy data baik untuk setiap layer-nya maupun secara keseluruhan.
+		\item Pengunaan sel atau ukuran grid yang lebih besar untuk menghemat ruang penyimpanan akan menyebabkan kehilangan informasi dan ketelitian.
 		\item sebuah citra raster hanya mengandung satu tematik saja sehingga sulit digabungkan dengan atribut-atribut lainnya dalam satu layer.
 		\item tampilan atau representasi dan akurasi posisi sangat bergantung pada ukuran pikselnya (resolusi spasial)
-		\item sering mengalami kesalahan dalam menggambarkan bentuk dan garis batas suatu obyek. sangat bergantung pada resolusi spasial dan toleransi yang diberikan
-		\item transformasi koordinat dan proyeksi lebih sult dilakukan
-		\item sangat sulit untuk mepresentasikan hubungan topologi (juga network)
-		\item metode untuk medapatakan format data vektor melalui proses yang lama, cukup melelahkan dan relatif mahal.
+		\item sering mengalami kesalahan dalam menggambarkan bentuk dan garis batas suatu obyek. Sangat bergantung pada resolusi spasial dan toleransi yang diberikan
+		\item transformasi koordinat dan proyeksi lebih sulit dilakukan
+		\item sangat sulit untuk merepsentasikan hubungan topologi (juga network)
+		\item metode untuk mendapatkan format data vektor melalui proses yang lama, cukup melelahkan dan relatif mahal.
 	\end{enumerate}
 
 \subsection{perbedaan data raster dan data vektor}
@@ -61,12 +61,12 @@ Data yang tersedia, volume data yang dihasilkan, ketelitian yang diinginkan, ser
 
 Data Vektor relatif lebih ekonomis dalam hal ukuran file dan presisi dalam lokasi. Tetapi sangat sulit untuk 
 digunakan dalam komputasi matematik.
-Sebaliknya Data raster biasanya membutuhkan ruang pentyimpanan file yang lebih besar dan presisi lokasinya lebih rendah.
+Sebaliknya Data raster biasanya membutuhkan ruang penyimpanan file yang lebih besar dan presisi lokasinya lebih rendah.
 Tetapi lebih mudah digunakan secara matematis.
 Model data raster mempunyai struktur data yang tersusun dalam bentuk matriks atau pixel dan membentuk grid. 
-Setiap pixel memiliki nilai tertentu dan memiliki atribut tersendiri, termasuk nilai kordinat yang unik.
+Setiap pixel memiliki nilai tertentu dan memiliki atribut tersendiri, termasuk nilai koordinat yang unik.
 
-Tingkat keakurasian model ini sangat tergantung pada ukurasn piksel atau biasa disebut resolusi.
+Tingkat keakurasian model ini sangat tergantung pada ukuran piksel atau biasa disebut resolusi.
 Model data ini biasanya digunakan dalam remote sensing yang berbasiskan citra satelit maupun airborne (pesawat terbang).
 Selain itu model ini digunakan pula dalam membangun model ketinggian digital(DEM-Digital Elevation Model) dan model permukaan digital(DTM-Digital Terrain Model).
 Model Raster Memberikan Informasi spasial terhadap permukaan di bumi dalam bentuk gambaran yang digeneralisasi.
@@ -75,7 +75,7 @@ Pada setiap piksel mewakili setiap obyek yang terekam dan ditandai dengan nilai-
 Secara konseptual model data raster merupakan model data spasial yang paling sederhana. 
 
 \subsection{karakteristik data raster}
-Resolusi suatu data raster akan merujuk pada ukunan permukaan bumi yang direpresentasikan oleh setiap piksel. 
+Resolusi suatu data raster akan merujuk pada ukuran permukaan bumi yang direpresentasikan oleh setiap piksel. 
 Makin kecil ukuran atau luas permukaan bumi yang dapat direpresentasikan oleh setiap pikselnya, 
 makin tinggi resolusi spasialnya.
 Piksel-piksel di dalam zone atau area yang sejenis memiliki nilai (isi piksel atau ID number) yang sama. 
@@ -91,7 +91,7 @@ Data raster mempunyai beberapa metode penyimpanan data yaitu run length encoding
 					\label{runlengthencoding}
 				\end{figure}
 
-		\item  Block Encoding(Gambar \ref{blockencoding} ). Metode ini memperluas dari Run Length encoding menggunakan rangkaian blok untuk menyimpan data. Hampir menyerupai RLE, namun perbedaanya terletak pada dimensionalnya. untuk RLE hanya sepanjang baris saja tetapi block encoding secara dua dimensional (Baris juga Kolom) .
+		\item  Block Encoding(Gambar \ref{blockencoding} ). Metode ini memperluas dari Run Length encoding menggunakan rangkaian blok untuk menyimpan data. Hampir menyerupai RLE, namun perbedaanya terletak pada dimensionalnya. Untuk RLE hanya sepanjang baris saja tetapi block encoding secara dua dimensional (Baris juga Kolom).
 				\begin{figure} [ht]
 					\centerline{\includegraphics[width=1\textwidth]{figures/blockencoding.JPG}}
 					\caption{Gambar Block Encoding}
@@ -99,7 +99,7 @@ Data raster mempunyai beberapa metode penyimpanan data yaitu run length encoding
 					
 				\end{figure}
 
-		\item  Chain Encoding(Gambar \ref{chainencoding}). Metode pengurangan data dengan mendefinisikan batas-batas entitas. Metode ini mempresentasikan batas (Boundary) suatu region dengan menggunakan rangkaian arah kardinal dan cell-cell, misal N1 berarti berarah ke utara sejauh 1 cell dan S5 berari berarah keselatan sejauh 5 cell.
+		\item  Chain Encoding(Gambar \ref{chainencoding}). Metode pengurangan data dengan mendefinisikan batas-batas entitas. Metode ini mempresentasikan batas (Boundary) suatu region dengan menggunakan rangkaian arah kardinal dan cell-cell, misal N1 berarti berarah ke utara sejauh 1 cell dan S5 berarti berarah keselatan sejauh 5 cell.
 				\begin{figure} [ht]
 					\centerline{\includegraphics[width=1\textwidth]{figures/chainencoding.JPG}}
 					\caption{Gambar Chain Encoding}
@@ -130,7 +130,7 @@ beberapa repositori virtual yang mendukung beragam kelompok pengguna.
 \subsection{Pengertian PostGIS}
 Sistem Informasi Geografis (SIG) adalah sistem informasi khusus yang mengelola data yang memiliki informasi spasial (bereferensi keruangan). 
 Atau dalam arti sempit, adalah sistem komputer yang memiliki kemampuan untuk membangun,
-menyimpan, mengelola dan menampilkan informasi bereferensi geografis, misalnya data yang diidentifikasi menurut lokasinya, dalam sebuah database.
+menyimpan, mengelola dan menampilkan informasi bereferensi geografis, misalnya data yang di identifikasi menurut lokasinya, dalam sebuah database.
 SIG juga merupakan sejenis perangkat lunak, perangkat keras (manusia, prosedur, basis data) yang berguna untuk proses pemasukan, penyimpanan, menampilkan data geografis serta atribut-atribut yang terkait.
 PostGIS adalah extender database spasial gratis untuk PostgreSQL, 
 setiap bit sebaik perangkat lunak berpemilik. Dengan itu, 
