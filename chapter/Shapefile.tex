@@ -29,47 +29,47 @@ dengan lokasi dan dimensi setiap paket tanah kena pajak di county. Alamat setiap
 Shapefile ESRI atau biasa disebut shapefila adalah format data geospasial yang umum untuk perangkat lunak sistem informasi geografis, dengan pengertian bahwa shape merupakan properti intrinsik utama untuk sistem visual manusia. manusia lebih sering mengasosialisasikan objek dengan bentuknya ketimbang elemen lainnya (warna misalnya), pada umumnya, citra yang dibentuk oleh mata merupakan citra dwimatra (2 dimensi), sedangkan objek yang dilihat umumnya berbentuk trimatra (3 dimensi). informasi bentuk objek dapat diekstansi dari citra pada permulaan pra-pengolahan dan segmentasi citra. salah satu tantangan utama pada komputer vision adalah merepresentasikan bentuk, atau aspek-aspek penting dari bentuk.
 
 \subsection{Struktur Data Shapefile}
-Geodatabase adalah struktur data yang kuat dan canggih. selain topologi yang anda dapatkan secara gratis, area dan sekeliling area yang
+Geodatabase adalah struktur data yang kuat dan canggih. Selain topologi yang anda dapatkan secara gratis, area dan sekeliling area yang
 digambarkan dengan fitur linier. Namun, ESRI juga mendukung struktur data yang jauh lebih rumit: shapefile. sebuah shapefile dapat menggabungkan dua elemen penting yang dimiliki oleh geodatabase(komponen geografis dan database atribut) Perangkat lunak 
-basis data adalah sistem manajemen basis data yang dinamai dBASE. Shapefile tertentu dibatasi hanya untuk mewakili satu dari jenis berikut: titik, multipoint, polyLines, atau poligon dengan titik. masing-masing titik memiliki catatan database relasional. Jika sejumlah titik dianggap objek yang sama, maka objek tersebut hanya memiliki satu record di tabel atribut. seperti pada geodatabases, polylines dapat disusun dari satu atau lebih jalur terhubung ataupun terputus-putus. Namun, jalur diperbolehkan untuk disusun hanya dari segmen garis lurus. Poligon dalam shapefile memiliki kemiripan dengan poligon basis geodata, namun tidak ada topologi yang ada dan tidak ada yang dapat diciptakan. setiap poligon berdiri sendiri. Hal ini digambarkan secara lengkap oleh satu entitas linier: urutan segmen yang dimulai di satu lokasi geografis dan kembali ke lokasi tersebut. mungkin ada poligon yang berdekatan atau tidak. poligon lain mungkin tumpang tindih. Lihat gambar berikut :
+basis data adalah sistem manajemen basis data yang dinamai dBASE. Shapefile tertentu dibatasi hanya untuk mewakili satu dari jenis berikut: titik, multipoint, polyLines, atau poligon dengan titik. Masing-masing titik memiliki catatan database relasional. Jika sejumlah titik dianggap objek yang sama, maka objek tersebut hanya memiliki satu record di tabel atribut. Seperti pada geodatabases, polylines dapat disusun dari satu atau lebih jalur terhubung ataupun terputus-putus. Namun, jalur diperbolehkan untuk disusun hanya dari segmen garis lurus. Poligon dalam shapefile memiliki kemiripan dengan poligon basis geodata, namun tidak ada topologi yang ada dan tidak ada yang dapat diciptakan. setiap poligon berdiri sendiri. Hal ini digambarkan secara lengkap oleh satu entitas linier: urutan segmen yang dimulai di satu lokasi geografis dan kembali ke lokasi tersebut. Mungkin ada poligon yang berdekatan atau tidak. Poligon lain mungkin tumpang tindih. Lihat gambar berikut :
 \begin{figure} [ht]
 	\centerline{\includegraphics[width=.5\textwidth]{figures/shapefilepoligon.JPG}}
 	\caption{Gambar Shapefile Poligon}
 	\label{shapefilepoligon}
 	\end{figure}
 Gambar silabus shapefile menggambarkan masalah dengan tumpang tindih dan kesenjangan. (Poligon W memiliki poligon batas kanan melengkung, X memiliki batas kiri lurus)\ref{shapefilepoligon}
-Masalah dimana shapefiles sangat rentan adalah mungkin ada potongan tumpang tindih atau kekosongan-kekosongan (gap) antara poligon yang dimaksud, dan tidak ada yang dapat anda lakukan jika data tetap dalam format shapefile. Pada gambar diatas sliver \'a\' diklaim oleh W dan X, sedangkan sliver \'b\' tidak ada pada keduanya. Area geografis yang dipartisi enjadi poligon shapefile yang saling menggairahkan akan memiliki informasi duplikat. karena batas total masing-masing poligon didefinisikan untuk poligon itu, setiap garis umum adalah \"digital ganda\". Selanjutnya, ada dua batasan independen, dan anda tidak memiliki jaminan bahwa mereka kongruen. Dengan geodatabases, anda dapat membuat peraturan topologi untuk memastikan bahwa poligon tidak tumpang tindih atau memiliki celah, namun tidak dengan shapefile, anda tidak mendapatkan area dari perimeter sebagai atribut. keuntungan dari representasi shapefile adalah kesederhanaan, kecepatan pemrosesan, kecepatan menggambar, dan biasanya, ekonomi penyimpanan. shapefiles berguna bila anda tidak memerlukan geoprocessing yang canggih. Sadarilah bahwa banyak kumpulan data GIS telah dimasukkan ke dalam format shapefile. Mungkin ada banyak konversi ke format geodatabase di masa depan anda jika anda ingin menggunakan kumpulan data tersebut di geoprocessing.\cite{kennedy2013introducing}
+Masalah dimana shapefiles sangat rentan adalah mungkin ada potongan tumpang tindih atau kekosongan-kekosongan (gap) antara poligon yang dimaksud, dan tidak ada yang dapat anda lakukan jika data tetap dalam format shapefile. Pada gambar diatas sliver \'a\' diklaim oleh W dan X, sedangkan sliver \'b\' tidak ada pada keduanya. Area geografis yang dipartisi menjadi poligon shapefile yang saling menggairahkan akan memiliki informasi duplikat. Karena batas total masing-masing poligon didefinisikan untuk poligon itu, setiap garis umum adalah \"digital ganda\". Selanjutnya, ada dua batasan independen, dan anda tidak memiliki jaminan bahwa mereka kongruen. Dengan geodatabases, anda dapat membuat peraturan topologi untuk memastikan bahwa poligon tidak tumpang tindih atau memiliki celah, namun tidak dengan shapefile, anda tidak mendapatkan area dari perimeter sebagai atribut. Keuntungan dari representasi shapefile adalah kesederhanaan, kecepatan pemrosesan, kecepatan menggambar, dan biasanya, ekonomi penyimpanan. shapefiles berguna bila anda tidak memerlukan geoprocessing yang canggih. Sadarilah bahwa banyak kumpulan data GIS telah dimasukkan ke dalam format shapefile. Mungkin ada banyak konversi ke format geodatabase di masa depan anda jika anda ingin menggunakan kumpulan data tersebut di geoprocessing.\cite{kennedy2013introducing}
 
 \subsection{Daftar beberapa file extension}
 \begin{enumerate}
-    \item shp - File yang menyimpan feature geometri (diperlukan dalam sebuah shapefile) 
-    \item shx - File yang menyimpan index dari feature geometri (diperlukan dalam sebuah shapefile) 
-    \item dbf - File dBASE yang menyimpan informasi atribut dari suatu feature (diperlukan dalam sebuah shapefile) 
-    \item sbn dan sbx – File yang menyimpan spatial index dari feature (optional) 
-    \item fbn dan fbx – File yang menyimpan spatial index dari feature shapefile yang read-only (optional) 
-    \item ain dan aih – File yang menyimpan index atribut dari field yang aktif dalam sebuah tabel (optional) 
+    \item shp - File yang menyimpan feature geometri (diperlukan dalam sebuah shapefile).
+    \item shx - File yang menyimpan index dari feature geometri (diperlukan dalam sebuah shapefile).
+    \item dbf - File dBASE yang menyimpan informasi atribut dari suatu feature (diperlukan dalam sebuah shapefile).
+    \item sbn dan sbx – File yang menyimpan spatial index dari feature (optional).
+    \item fbn dan fbx – File yang menyimpan spatial index dari feature shapefile yang read-only (optional).
+    \item ain dan aih – File yang menyimpan index atribut dari field yang aktif dalam sebuah tabel (optional). 
     \item prj - File yang menyimpan informasi koordinat dari sebuah shapefile, file ini dapat muncul jika kita menggunakan ArcView Projection Utility (optional). \cite{surya2013sistem}
 \end{enumerate} 
 \subsubsection{Contoh penggunaan extension shapefile}
 \begin{enumerate}
-    \item read.shapefile (form.name) 
-    \item read.shp (shp.name) 
-    \item read.shx (shx.name)
-    \item read.dbf (dbf.name, sundulan = FALSE)
-    \item write.shapefile (shapefile, out.name, arcgis = FALSE) 
-    \item write.shp (shp, out.name) 
-    \item write.shx (SHX, out.name)
-    \item write.dbf (DBF, out.name, arcgis = FALSE) 
-    \item calc.header (shapefile) 
-    \item add.xy (shapefile)
+    \item read.shapefile (form.name).
+    \item read.shp (shp.name).
+    \item read.shx (shx.name).
+    \item read.dbf (dbf.name, sundulan = FALSE).
+    \item write.shapefile (shapefile, out.name, arcgis = FALSE). 
+    \item write.shp (shp, out.name).
+    \item write.shx (SHX, out.name).
+    \item write.dbf (DBF, out.name, arcgis = FALSE). 
+    \item calc.header (shapefile).
+    \item add.xy (shapefile).
 \end{enumerate}
 \subsubsection{Bentuk file}
 \begin{itemize}
-    \item scaleXY (shapefile, scale.factor)
-    \item convert.to.shapefile (shpTable, attTable, bidang, jenis) 
-    \item convert.to.simple (shp)
-    \item change.id (shpTable, newFieldAsVector) 
-    \item dp (poin, toleransi)
+    \item scaleXY (shapefile, scale.factor).
+    \item convert.to.shapefile (shpTable, attTable, bidang, jenis). 
+    \item convert.to.simple (shp).
+    \item change.id (shpTable, newFieldAsVector).
+    \item dp (poin, toleransi).
 \end{itemize}
 
 
@@ -84,7 +84,8 @@ Komponen utama yang digunakan secara penuh untuk
 menjalankan Aplikasi GIS untuk menangani data
 spasial baik yang tersimpan dalam sebuah flat file atau
 juga dalam DBMS yaitu :
-1. SHAPELIB
+\begin{enumerate}
+\item SHAPELIB
 Shapelib merupakan library yang ditulis
 menggunakan bahasa pemrograman C yang
 digunakan untuk melakukan proses read terhadap
@@ -94,11 +95,11 @@ Format dalam shapefile umum digunakan untuk
 menyimpan data vektor simple (tanpa topologi)
 dengan atribut, shapefile merupakan format data
 default yang digunakan dalam GIS.
+\end{enumerate}
 
 \subsection{Deskripsi Teknis Shapefile}
 SDE, ARC / INFO, PC ARC / INFO, Data Otomasi Kit (DAK), dan ArcCAD
-Perangkat lunak menyediakan penerjemah data form-to-coverage, dan ARC / INFO juga menyediakan a 
-penerjemah coverage-to-shape. Untuk pertukaran dengan format data lainnya, shapefile 
+Perangkat lunak menyediakan penerjemah data form-to-coverage, dan ARC / INFO juga menyediakan penerjemah coverage-to-shape. Untuk pertukaran dengan format data lainnya, shapefile 
 spesifikasi diterbitkan dalam makalah ini. Aliran data lainnya, seperti yang berasal dari global 
 receiver positioning system (GPS), juga dapat disimpan sebagai shapefile atau X, Y event tables. 
 
@@ -137,11 +138,11 @@ Setiap bilangan floating point lebih kecil dari -10 38 dianggap oleh shapefile r
 mewakili nilai \"tidak ada data\". 
 
 \subsection{Pengertian Shapefile}
-	Shapefile adalah format non topologi yang secara efisien dan sederhana serta berfungsi sebagai wadah untuk penyimpan lokasi geometric dan juga atribut informasi dari data geografis. Dan untuk melakukan suatu penambahan shapefile, maka kita dapat menggunakan python dan plugin pyshp. Shapefile merupakan file yang dapat menyimpan data vektor dalam arcview. Yang mana, Shapefile inilah yang kemudian diolah serta dianalisis dalam berbagai pekerjaan spasial dengan sebuah arcview. Maka saat ditampilkan dalam suatu lembar view, maka shapefile  akan menjadi sebagai sebuah theme.
+	Shapefile adalah format non topologi yang secara efisien dan sederhana serta berfungsi sebagai wadah untuk penyimpan lokasi geometric dan juga atribut informasi dari data geografis. Dan untuk melakukan suatu penambahan shapefile, maka kita dapat menggunakan python dan plugin pyshp. Shapefile merupakan file yang dapat menyimpan data vektor dalam arcview. Yang mana, Shapefile inilah yang kemudian diolah serta dianalisis dalam berbagai pekerjaan spasial dengan sebuah archive. Maka saat ditampilkan dalam suatu lembar view, maka shapefile akan menjadi sebagai sebuah theme.
 
 \subsubsection{Cara Mengcreate Shapefile Menggunakan Python}
 \begin{enumerate}
-    \item Import shapefile
+    \item Import shapefile.
     \item Memasukan variable dengan sebuah inisialisasi
 Projection Utility (optional).
 \end{enumerate}
@@ -149,25 +150,25 @@ Projection Utility (optional).
 \subsubsection{Format yang Digunakan Dalam Mengcreate Data}
 \begin{enumerate}
      \item SHP = dalam sebuah format SHP, terdapat 3 tipe shape file yaitu Point, Polyline dan Polygon.
-     \item DBF = dalam sebuah format DBF, ada 3 field yang digunakan. Yang mana, Field pertama  berisikan   atribut    tabel, dan                        field kedua yang berisikan method yang dapat digunakan, serta field yang ketiga berfungsi untuk dapat menyimpan                          nama sebuah shapefile yang sebelumnya telah diinputkan.Dan data geospasial tersebut kemudian disimpan dengan menggunakan method a.save ‘file.shp’.
+     \item DBF = dalam sebuah format DBF, ada 3 field yang digunakan. Yang mana, Field pertama  berisikan   atribut    tabel.                        field kedua yang berisikan method yang dapat digunakan, serta field yang ketiga berfungsi untuk dapat menyimpan nama sebuah shapefile yang sebelumnya telah diinputkan.Dan data geospasial tersebut kemudian disimpan dengan menggunakan method a.save ‘file.shp’.
 \end{enumerate}
 
 \subsubsection{Cara Menambahkan Record}
 \begin{itemize}
     \item Pada Point = $‘a.point(x,y)$ ataupun $a.point(x,y,0,0)$ dan dengan domain x dan y merupakan koordinat.
-    \item Pada Polyline = $a.poly(shapefile=3,parts=[[[x1,y1,z1,w1],[ x2,y2,z2,w2],[……]]])$
-    \item Pada Polygon = $a.poly)shapefile=5,parts=[[[…….],[…….]]])$
+    \item Pada Polyline = $a.poly(shapefile=3,parts=[[[x1,y1,z1,w1],[ x2,y2,z2,w2],[……]]])$.
+    \item Pada Polygon = $a.poly)shapefile=5,parts=[[[…….],[…….]]])$.
 \end{itemize}
 
 \subsubsection{Tipe Field Pada Atribut Shapefile}
        Berikut ini merupakan tipe-tipe FIELD yang dapat disematkan atau digunakan pada Shapefile, diantaranya yaitu:
 \begin{enumerate}
-    \item TEXT — Field ini dapat digunakan pada semua karakter dan berfungis sebagai teks dengan rentang jumlah karakter yaitu 1 s.d.              255. Dan tipe field ini juga digunakan untuk sebuah nilai teks, contohnya seperti nama tempat/anotasi ataupun label. Selain              itu, text dapat juga berisi angka, namun angka tersebut harus tetap dianggap sebagai teks yang tidak bisa dilakukan operasi              aritmatika (tambah, kurang, bagi, kali, dsb).
-    \item FLOAT — 4 bytes; Angka pecahan dengan sebuah rentang luas antara +/-3,438. Float merupakan tipe data angka dengan presisi                tunggal yang juga memiliki pecahan. Yang mana, jumlah presisi atau biasa disebut jumlah angka, dapat juga ditentukan dengan              konstan.
-    \item DOUBLE — 8 bytes; Double yaitu tipe data angka yaitu dengan presisi ganda yang memiliki pecahan. Tipe Double mempunyai                  kesamaan  dengan tipe float, yaitu hanya memiliki presisi yang lebih tinggi. Dan untuk data yang berisi angka-angka desimal              sangat penting, misalnya angka luasan ataupun rupiah, dengan tipe double yang paling sesuai.
-    \item SHORT — 2 bytes; Short integer dapat digunakan untuk angka tanpa pecahan. Dan Short integer juga biasa digunakan untuk                   sebuah data berupa ID, nomor, urutan, dan kode.
-    \item LONG — 4 bytes; Long integer juga mempunyai kesamaan dengan short integer, yang mana dapat digunakan untuk angka tanpa                  pecahan namun juga  dengan kemungkinan digit yang lebih panjang lagi.
-    \item DATE — 8 bytes; Date berfungsi untuk dapat menyimpan tanggal, waktu ataupun tanggal-waktu dengan contoh format mm/dd/yyy                hh:mm:ss
+    \item TEXT — Field ini dapat digunakan pada semua karakter dan berfungis sebagai teks dengan rentang jumlah karakter yaitu 1 s.d.              255. Dan tipe field ini juga digunakan untuk sebuah nilai teks, contohnya seperti nama tempat/anotasi ataupun label. Selain itu, text dapat juga berisi angka, namun angka tersebut harus tetap dianggap sebagai teks yang tidak bisa dilakukan operasi aritmatika (tambah, kurang, bagi, kali, dsb).
+    \item FLOAT — 4 bytes; Angka pecahan dengan sebuah rentang luas antara +/-3,438. Float merupakan tipe data angka dengan presisi.               tunggal yang juga memiliki pecahan. Yang mana, jumlah presisi atau biasa disebut jumlah angka, dapat juga ditentukan dengan konstan.
+    \item DOUBLE — 8 bytes; Double yaitu tipe data angka yaitu dengan presisi ganda yang memiliki pecahan. Tipe Double mempunyai.              kesamaan  dengan tipe float, yaitu hanya memiliki presisi yang lebih tinggi. Dan untuk data yang berisi angka-angka desimal sangat penting, misalnya angka luasan ataupun rupiah, dengan tipe double yang paling sesuai.
+    \item SHORT — 2 bytes; Short integer dapat digunakan untuk angka tanpa pecahan. Dan Short integer juga biasa digunakan untuk.                  sebuah data berupa ID, nomor, urutan, dan kode.
+    \item LONG — 4 bytes; Long integer juga mempunyai kesamaan dengan short integer, yang mana dapat digunakan untuk angka tanpa.                 pecahan namun juga  dengan kemungkinan digit yang lebih panjang lagi.
+    \item DATE — 8 bytes; Date berfungsi untuk dapat menyimpan tanggal, waktu ataupun tanggal-waktu dengan contoh format mm/dd/yyy.               hh:mm:ss
 \end{enumerate}
 
 \subsection {sistem informasi geografis shapefile}
@@ -187,5 +188,5 @@ dbf (attribute format, berisi table attribute dari tiap gambar dalam dBas).
 Ukuran data pada SHP dan file komponen DBF tidak dapat melebihi 2 GB (231 bit ), sekitar 70 juta fitur titik yang terbaik. 
 Jumlah maksimum fitur untuk  jenis geometri lainnya bervariasi tergantung pada jumlah yang digunakan, panjang maksimum nama field adalah 10 karakter, dan jumlah maksimum dari field adalah 255.
 \subsection {pembuatan shapefile}
-Shapefile adalah format data vektor geospatial untuk software GIS yang dikembangakan oleh ESRI (Environmental System Research Institute)
+Shapefile adalah format data vektor geospatial untuk software GIS yang dikembangkan oleh ESRI (Environmental System Research Institute)
 dengan spesifikasi yang terbuka untuk kepentingan software GIS atau software yang bisa mengolah (input) format data pada SHP antara lain ArcGIS, ArcView, MapInfo, ERDAS, Global Mapper.
