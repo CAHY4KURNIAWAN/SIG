@@ -62,12 +62,12 @@ Dimana Layer dari sebuah point dapat dilihat dari gambar \ref{layerpoint}
 	\caption{layerpoint.}
 	\label{layerpoint}
 	\end{figure}
-tipe data yang digunakan merupaka tipe data point yang terdapat koordinat real, yaitu berupa latitude dan longtitude. dimana layer ini mengkonfirmasi letak sekolah dan perumahan.
+tipe data yang digunakan merupakan tipe data point yang terdapat koordinat real, yaitu berupa latitude dan longitude. dimana layer ini mengkonfirmasi letak sekolah dan perumahan.
 
 \subsection{Pola Titik}
 	Pola titik (point pattern) adalah pola yang muncul dari sebuah variabel yang dianalisis pada daerah yang tersampel (Cressie, 1993). Sampel yang digunakan merupakan sebuah sampel yang memiliki bentuk tidak beraturan atau juga sampel yang memiliki jarak berbeda. Daerah tersebut dapat diperoleh dari sebuah data koordinat kartesius (x,y) dengan berdasarkan titik yang diamati. Data pada pola titik spasial yang sudah ada dapat diperoleh dari informasi apakah pola yang tadi diperoleh dapat menggambarkan keteracakan data spasial, clustering, ataupun keteraturan. Seperti contohnya yaitu : Penentuan sebuah posisi pohon-pohon yang memiliki ukuran tertentu. Apakah pohon-pohon tersebut dapat membentuk sebuah pola keteracakan spasial, clustering, ataupun keteraturan. Analisis dari data pola titik yang dilakukan karena agar dapat mengetahui apakah daerah titik yang akan menjadi objek penelitian tersebut membentuk daerah beraturan atau tidak , Sehingga nantinya dapat diketahui apakah terjadi ketergantungan antar titik atau tidak.   
 	Pada estimasi dari data spasial, adalah teknik analisis data geostatistika bertujuan untuk mengetahui serta untuk melakukan estimasi nilai dari variabel teregional pada lokasi s. Nilai dari suatu variabel yang diamati nantinya dapat dinyatakan sebagai variabel random spasial  Z(s) dengan s adalah vektor lokasi $D € R^d$. Dan menggunakan metode kriging ini merupakan metode untuk melakukan estimasi nilai dari variabel yang teregional Z(s) pada suatu lokasi  A. berdasarkan variabel random spasial Z(s). Variabel random spasial  Z(s) pada data geostatistika merupakan suatu variabel random  Z di lokasi s . 
-	Pada data spasial variabel random X dapat didefinisikan sebagai variabel random spasial Z(s) di lokasi  s dan dari variabel random Y didefinisikan sebagai variabel random spasial  $Z(s+h)$ di lokasi s+h.  Pada analisis data geostatistika variansi ini digunakan untuk menentukan korelasi antara variabel random spasial Z(s) dan $Z(s+h)$. Nilai variansi dari variabel random spasial pada lokasi Z(s) dan $Z(s+h)$ dapat ditentukan dengan rumus sebagai berikut:
+	Pada data spasial variabel random X dapat didefinisikan sebagai variabel random spasial Z(s) di lokasi  s dan dari variabel random Y didefinisikan sebagai variabel random spasial  $Z(s+h)$ di lokasi s+h. Pada analisis data geostatistika variansi ini digunakan untuk menentukan korelasi antara variabel random spasial Z(s) dan $Z(s+h)$. Nilai variansi dari variabel random spasial pada lokasi Z(s) dan $Z(s+h)$ dapat ditentukan dengan rumus sebagai berikut:
 \begin{equation}
 	\begin{split}
 	var{z(s)  z(s+h)} = var{z9s0} + var{z(s+h)} 2cov{z(s).z(s+h)} \\
@@ -90,11 +90,13 @@ a.record (‘bdg’)
 Data geospasial tersebut disimpan menggunakan method a.save(‘file.shp’).
 
 Arti dari method pada writer :
-Point (x,y)	: memasukkan data berbentuk paint ke dalam .shp dan seluruh data harus  berformat ESRI.1
-Poly [(a,b),(c,d)]	: memasukkan data geospasial berbentuk polygon (kembali ke titik    awal) atau polyline (tidak kembali ketitik awal).
-Field (‘nama’,’c’,’40’)	: artinya membuat atribut polygon dengan table ‘nama’ dengan tipe data varchar dengan panjang 40. Method ini dapat diulang dan dapat dilakukan untuk krbuthan field baru lagi.
-Record(‘Bandung’)	: Mengisi table dimana yang hanya 1 field dengan value atau nilai    ‘Bandung’.
-Save (‘file name’)	: menyimpan file dengan save file
+\begin{itemize}
+\item Point (x,y)	: memasukkan data berbentuk paint ke dalam .shp dan seluruh data harus  berformat ESRI.1
+\item Poly [(a,b),(c,d)]	: memasukkan data geospasial berbentuk polygon (kembali ke titik    awal) atau polyline (tidak kembali ketitik awal).
+\item Field (‘nama’,’c’,’40’)	: artinya membuat atribut polygon dengan table ‘nama’ dengan tipe data varchar dengan panjang 40. Method ini dapat diulang dan dapat dilakukan untuk kebutuhan field baru lagi.
+\item Record(‘Bandung’)	: Mengisi table dimana yang hanya 1 field dengan value atau nilai    ‘Bandung’.
+\item Save (‘file name’)	: menyimpan file dengan save file
+\end{itemize}
 
 	Titik(dimensi nol - point) adalah representasi grafis atau geometri yang paling sederhana bagi objek spasial. Representasi ini tidak mempunyai dimensi, namun di atas peta dapat di identifikasikan lalu dapat di tampilkan pada layar monitor dengan menggunakan simbol-simbol tertentu. Perlu dipahami juga bahwa skala peta akan menentukan apakah suatu objek akan ditampilkan sebagai titik atau polygon. Pada peta yang berskala besar, unsur unsur bangunan akan di tampilkan sebagai polygon, sedangkan pada skala kecil akan ditampilkan sebagai unsur-unsur titik.
 Format titik : koordinat tunggal, tanpa panjang, tanpa luasan.
