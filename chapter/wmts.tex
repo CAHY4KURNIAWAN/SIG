@@ -30,7 +30,7 @@ Adaptasi konten peta sangat bergantung pada skala: Peta skala kecil berisi infor
 di wilayah yang sama. Proses mengurangi jumlah data dan menyesuaikan informasi dengan skala yang diberikan disebut generalisasi 
 kartografi, dan biasanya dilakukan oleh server peta web.
 
-Untuk menawarkan layanan peta web ubin, server peta web membuat peta melintasi serangkaian skala tetap melalui generalisasi yang 
+Untuk menawarkan layanan peta Web ubin, server peta web membuat peta melintasi serangkaian skala tetap melalui generalisasi yang 
 progresif. Gambar peta yang dirender kemudian dibagi menjadi ubin, menggambarkan piramida ubin seperti yang digambarkan pada
 gambar \ref{TilePyramid}.
 
@@ -56,19 +56,19 @@ pengguna akan Web GIS yang mudah dioperasikan, memiliki tampilan yang ramah, pen
 near real time[7] (Yang, 2011). 
 
 Pendekatan umum untuk meningkatkan waktu respon saat permintaan data spasial adalah dengan memotong map 
-menjadi beberapa bagian kecil atau tiles.Metode pemotongan ini secara standar bisa dibuat dengan WMTS (Web Map Tile Service) atau di 
-kenal dengan tiles tradisional.Pemotongan standar cukup bisa mengurangi beban server namun waktu respon web masih lambat. Hal itu 
+menjadi beberapa bagian kecil atau tiles. Metode pemotongan ini secara standar bisa dibuat dengan WMTS (Web Map Tile Service) atau di 
+kenal dengan tiles tradisional. Pemotongan standar cukup bisa mengurangi beban server namun waktu respon web masih lambat. Hal itu 
 menjadi masalah yang saat ini dihadapi oleh Web Gis E-Government Sistem Pemantauan Bumi Nasional (SPBN). Pengguna harus menunggu lama 
-waktu respon web.Padahal banyak informasi penting yang disampaikan khususnya terkait tanggap bencana titik panas kebakaran hutan yang 
+waktu respon web. Padahal banyak informasi penting yang disampaikan khususnya terkait tanggap bencana titik panas kebakaran hutan yang 
 terjadi saat ini. Dengan melihat fakta-fakta di atas, Penelitian ini ingin menganalisis penggunaan tiling pada open source web GIS, 
 metode ini mempertimbangkan tile static dan dynamic map. Untuk menganalisa digunakan metode matematika, data hasil testing, statistik 
 hasil pengujian dan membandingkan beberapa metode yang telah berkembang untuk meningkatkan performa web gis. Penulis berharap analisis 
 ini dapat meminimalkan waktu respon dan meningkatkan pelayanan E-Government Sistem Pemantauan Bumi Nasional (SPBN). Oleh karena itu 
 penulis melakukan studi `Analisis Optimalisasi Web Gis Dengan Metode Tiling'. Penelitian ini diharapkan dapat membantu memecahkan 
-masalah diatas \cite{dewioptimalisasi} .
+masalah diatas \cite{dewioptimalisasi}.
 
 \subsection{Peta Jalan}
-proses pemetaan bumi secara akurat sampai saat ini, melestarikan yang sangat terampil, well-equipped dan individu terorganisir
+Proses pemetaan bumi secara akurat sampai saat ini, melestarikan yang sangat terampil, well-equipped dan individu terorganisir
 perkelompok. Bertahun-tahun biasanya peran surveyor, kartografer, dan ahli geografi untuk memetakan dunia dengan tulisan di atas kertas
 atau, sejak tahun 1960an, masuk komputer. Ekspedisi Lewis dan Clark ke peta Amerika Utara Barat, dan Lambton dan Ekspedisi Everest's
 Great Arc untuk India,hanya dua episode terkenal dalam sejarah peta dan pembuatan peta. Setiap negara memiliki lembaga pemetaan nasional
@@ -76,7 +76,7 @@ yang didirikan bermuatan dengan menjaga agar peta nasional tetap akurat saat ini
 Inggris).
 
 Pada tanggal 1 Mei 2000. Presiden AS Bill Clinton,mengumumkan penghapusan ketersediaan selektif dari sinyal GPS1 dan dengan demikian,
-disediakan akurasi yang jauh lebih baik untuk biaya sederhana dan murah.yaitu penerima GPS Secara praktis, ini berhasil mungkin untuk
+disediakan akurasi yang jauh lebih baik untuk biaya sederhana dan murah. Yaitu penerima GPS Secara praktis, ini berhasil mungkin untuk
 mendapatkan posisi penerima dengan akurasi 6 sampai 10 meter dalam kondisi normal,berbeda dengan kira-kira 100 meter sebelumnya. Upaya
 untuk mengembangkan lokasi berbasis layanan mendahului pemberitahuan dan berdasarkan informasi dari mobile tiang telepon atau beacon
 lainnya. Namun, metode ini tidak mendapatkan banyak pangsa pasar karena untuk kompleksitas teknis dan ketidakmampuan mereka untuk
@@ -94,14 +94,14 @@ memungkinkan pemetaan mass market berdasarkan penerima GPS terjangkau, komputer 
 Mengekstraksi data deret waktu dari WMTS terdiri dari empat langkah utama:
 \subsubsection{langkah-langkah}
 \begin{enumerate}
-	\item (1) membangun alamat pengenal sumber daya seragam (URL) dari gambar ubin yang tumpang tindih pada titik waktu tertentu, 
-	\item (2) mendownload gambar ubin, 
-	\item (3) temukan koordinat piksel yang sesuai dengan titik kepentingan di dalam gambar yang didownload,
-	\item (4) ubah warna piksel atau indeks warna piksel ke unit variabel yang teramati.
+	\item Membangun alamat pengenal sumber daya seragam (URL) dari gambar ubin yang tumpang tindih pada titik waktu tertentu. 
+	\item Mendownload gambar ubin. 
+	\item Temukan koordinat piksel yang sesuai dengan titik kepentingan di dalam gambar yang di download.
+	\item Ubah warna piksel atau indeks warna piksel ke unit variabel yang teramati.
 \end{enumerate}
 Keempat langkah ini diulang untuk setiap langkah waktu dalam deret waktu (Gambar 1).
 
-Spesifikasi WMTS, yang juga dikenal dengan nama ``TMS'' (layanan peta ubin), adalah protokol layanan web untuk mengambil gambar peta ubin yang telah
+Spesifikasi WMTS, yang juga dikenal dengan nama 'TMS' (layanan peta ubin), adalah protokol layanan Web untuk mengambil gambar peta ubin yang telah
 didefinisikan oleh OGC (Maso et al., 2010). Permintaan WMTS ada dalam format:
 
 \begin{equation}
@@ -142,7 +142,7 @@ Tethys. Tethys (Jones et al., 2014) adalah platform yang dapat digunakan untuk m
 Ini mencakup perangkat lunak open source dan open source: PostgreSQL, GeoServer, dan Web Processing Service. Salah satu keuntungan dari 
 Tethys atas aplikasi web kustom adalah menyediakan arsitektur plug-in (Heineman dan Councill, 2001) untuk penerapan aplikasi baru yang 
 relatif mudah. Gaya grafis, tata letak, panel navigasi, pengelolaan pengguna, dan pengelolaan penyimpanan data web semuanya ditangani 
-oleh Tethys. Tethys plugin dikenal sebagai ``app'' dan memiliki empat komponen: Persistent Storage, Controller, Template, dan Gizmo. 
+oleh Tethys. Tethys plugin dikenal sebagai 'app' dan memiliki empat komponen: Persistent Storage, Controller, Template, dan Gizmo. 
 Penyimpanan persisten digunakan untuk menyimpan pengaturan pengguna, misalnya lokasi favorit. Pengendali menangani perhitungan dan 
 logika bisnis aplikasi. Tethys menyediakan pengendali dasar dengan fungsi built-in untuk menghubungkan ke model. Template mendefinisikan 
 posisi teks, tombol, grafik, tabel, dan peta di antarmuka pengguna. Gizmo adalah komponen antarmuka pengguna yang dapat disesuaikan. 
@@ -153,7 +153,7 @@ menampilkan peta dan bagan interaktif di halaman arahan aplikasi \cite{Kadlec201
 
 \subsection{Desain Antarmuka Pengguna Inspektur Salju}
 
- Antarmuka pengguna web Snow Inspector terdiri dari dua tampilan: `peta salju' dan `grafik salju' . Peta menggunakan kontrol peta interaktif OpenLayers versi 3 (openlayers.org). Pengguna dapat menambahkan titik di manapun pada peta dengan klik mouse. Saat pengguna selesai bekerja dengan peta, koordinat bentuk yang ditentukan pengguna dilewatkan ke pengontrol peta. Pengontrol peta melewati koordinat dan parameter masukan lainnya (rentang waktu, layanan WMTS) ke pengendali salju. Pengontrol salju meluncurkan skrip pengambilan data. Saat skrip pengambilan data berfungsi, ia memiliki opsi untuk menyimpan data yang diunduh dalam cache waktu penyimpanan yang terus-menerus. Dengan menggunakan metode Asynchronous JavaScript (AJAX), peta dan bagan template secara berkala memeriksa pengendali salju untuk status kemajuan dan memperbarui diagram dan bilah kemajuan di halaman web. Setelah pemrosesan selesai, pengendali mengambil rangkaian waktu dan meneruskannya ke bagan bagan tempat grafik interaktif diperbarui \cite{Kadlec2016Extracting}.
+ Antarmuka pengguna web Snow Inspector terdiri dari dua tampilan: 'peta salju' dan 'grafik salju'. Peta menggunakan kontrol peta interaktif OpenLayers versi 3 (openlayers.org). Pengguna dapat menambahkan titik di manapun pada peta dengan klik mouse. Saat pengguna selesai bekerja dengan peta, koordinat bentuk yang ditentukan pengguna dilewatkan ke pengontrol peta. Pengontrol peta melewati koordinat dan parameter masukan lainnya (rentang waktu, layanan WMTS) ke pengendali salju. Pengontrol salju meluncurkan skrip pengambilan data. Saat skrip pengambilan data berfungsi, ia memiliki opsi untuk menyimpan data yang di unduh dalam cache waktu penyimpanan yang terus-menerus. Dengan menggunakan metode Asynchronous JavaScript (AJAX), peta dan bagan template secara berkala memeriksa pengendali salju untuk status kemajuan dan memperbarui diagram dan bilah kemajuan di halaman web. Setelah pemrosesan selesai, pengendali mengambil rangkaian waktu dan meneruskannya ke bagan bagan tempat grafik interaktif diperbarui \cite{Kadlec2016Extracting}.
 
 
 
